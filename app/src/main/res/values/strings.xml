@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">KotlinDemo</string>
     <string name="recycler_view">Recycler View</string>
+    <string name="product_item_image_description">Image of product item.</string>
 </resources>
