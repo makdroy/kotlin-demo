@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import com.bumptech.glide.Glide
 import mutnemom.android.kotlindemo.model.Product
 
 class ProductsAdapter(private val products: ArrayList<Product>) : RecyclerView.Adapter<ProductsAdapter.ProductsViewHolder>() {
@@ -17,6 +18,7 @@ class ProductsAdapter(private val products: ArrayList<Product>) : RecyclerView.A
     override fun getItemCount() = products.size
 
     override fun onBindViewHolder(holder: ProductsViewHolder, position: Int) {
+        Glide.with(holder.itemView.context).load(products[position].imageUrl).into(holder.image)
         holder.title.text = products[position].title
     }
 
