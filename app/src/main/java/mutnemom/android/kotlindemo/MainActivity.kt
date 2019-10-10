@@ -1,23 +1,154 @@
 package mutnemom.android.kotlindemo
 
+import android.Manifest
+import android.content.Context
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
+import android.content.pm.PackageManager
 import android.os.Bundle
+import android.util.Log
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
 import kotlinx.android.synthetic.main.activity_main.*
+import android.widget.Toast
+import android.graphics.SurfaceTexture
+import android.hardware.camera2.*
+import android.util.Size
+import android.view.Surface
+import android.hardware.camera2.CameraAccessException
+import android.hardware.camera2.CameraMetadata
+import android.hardware.camera2.CaptureRequest
+
+
+
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
+
+    companion object {
+        @Suppress("unused")
+        private val LOG_TAG = MainActivity::class.java.simpleName
+    }
+
+
+    private lateinit var cameraDevice: CameraDevice
+    private lateinit var captureRequestBuilder: CaptureRequest.Builder
+    private lateinit var cameraCaptureSessions: CameraCaptureSession
+    private lateinit var imageDimension: Size
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        btn_recycler_view.setOnClickListener(this)
+        btnRecyclerView.setOnClickListener(this)
+        btnCamera?.setOnClickListener(this)
     }
 
     override fun onClick(v: View) {
         when (v.id) {
-            R.id.btn_recycler_view -> startActivity(Intent(this, RecyclerViewActivity::class.java))
+            R.id.btnRecyclerView -> startActivity(Intent(this, RecyclerViewActivity::class.java))
+            R.id.btnCamera -> {
+                val cameraManager = getSystemService(Context.CAMERA_SERVICE) as? CameraManager
+                cameraManager?.apply {
+                    Log.e(LOG_TAG, "-> available camera: ${cameraIdList.size}.")
+
+                    when {
+                        cameraIdList.isNotEmpty() -> {
+                            val callback = object : CameraDevice.StateCallback() {
+                                override fun onDisconnected(camera: CameraDevice) {
+                                    Log.e(LOG_TAG, "-> onDisconnected cameraId: ${camera.id}")
+                                }
+
+                                override fun onError(camera: CameraDevice, error: Int) {
+                                    Log.e(LOG_TAG, "-> onError cameraId: ${camera.id}")
+                                }
+
+                                override fun onOpened(camera: CameraDevice) {
+                                    Log.e(LOG_TAG, "-> onOpened cameraId: ${camera.id}")
+                                    cameraDevice = camera
+                                    createCameraPreview()
+                                }
+
+                                override fun onClosed(camera: CameraDevice) {
+                                    Log.e(LOG_TAG, "-> onClosed cameraId: ${camera.id}")
+                                    super.onClosed(camera)
+                                }
+                            }
+
+                            if (ActivityCompat.checkSelfPermission(this@MainActivity, Manifest.permission.CAMERA)
+                                == PackageManager.PERMISSION_GRANTED) {
+
+                                val cameraId = cameraIdList[0]
+                                val characteristics = getCameraCharacteristics(cameraId)
+                                characteristics
+                                    .get(CameraCharacteristics.SCALER_STREAM_CONFIGURATION_MAP)
+                                    ?.also {
+                                        imageDimension = it.getOutputSizes(SurfaceTexture::class.java)[0]
+                                        openCamera(cameraId, callback, null)
+                                    }
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
+
+    private fun createCameraPreview() {
+        try {
+            textureView?.surfaceTexture?.apply {
+                setDefaultBufferSize(imageDimension.width, imageDimension.height)
+                val surface = Surface(this)
+                captureRequestBuilder =
+                    cameraDevice.createCaptureRequest(CameraDevice.TEMPLATE_PREVIEW)
+                captureRequestBuilder.addTarget(surface)
+                cameraDevice.createCaptureSession(
+                    listOf(surface),
+                    object : CameraCaptureSession.StateCallback() {
+                        override fun onConfigured(cameraCaptureSession: CameraCaptureSession) {
+                            //The camera is already closed
+                            if (this@MainActivity::cameraDevice.isInitialized.not()) {
+                                return
+                            }
+                            // When the session is ready, we start displaying the preview.
+                            cameraCaptureSessions = cameraCaptureSession
+                            updatePreview()
+                        }
+
+                        override fun onConfigureFailed(cameraCaptureSession: CameraCaptureSession) {
+                            Toast.makeText(
+                                this@MainActivity,
+                                "Configuration change",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        }
+                    },
+                    null
+                )
+            }
+        } catch (e: CameraAccessException) {
+            e.printStackTrace()
+        }
+
+    }
+
+    private fun updatePreview() {
+        if (this::cameraDevice.isInitialized.not()) {
+            Log.e(LOG_TAG, "updatePreview error, return")
+        }
+
+        captureRequestBuilder.set(CaptureRequest.CONTROL_MODE, CameraMetadata.CONTROL_MODE_AUTO)
+
+        try {
+            cameraCaptureSessions.setRepeatingRequest(
+                captureRequestBuilder.build(),
+                null,
+                null /* mBackgroundHandler */
+            )
+        } catch (e: CameraAccessException) {
+            e.printStackTrace()
+        }
+
+    }
+
 }

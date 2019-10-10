@@ -1,8 +1,8 @@
 package mutnemom.android.kotlindemo
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v7.widget.LinearLayoutManager
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_recycler_view.*
 import mutnemom.android.kotlindemo.model.Product
 
