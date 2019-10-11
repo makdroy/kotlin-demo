@@ -1,8 +1,10 @@
 package mutnemom.android.kotlindemo
 
 import android.Manifest
+import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
+import android.content.IntentFilter
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.util.Log
@@ -18,8 +20,9 @@ import android.view.Surface
 import android.hardware.camera2.CameraAccessException
 import android.hardware.camera2.CameraMetadata
 import android.hardware.camera2.CaptureRequest
-
-
+import androidx.localbroadcastmanager.content.LocalBroadcastManager
+import mutnemom.android.kotlindemo.model.DownloadModel
+import mutnemom.android.kotlindemo.services.DownloadFileService
 
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
@@ -36,17 +39,50 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var imageDimension: Size
 
 
+    private val broadcastReceiver = object : BroadcastReceiver() {
+        override fun onReceive(context: Context?, intent: Intent?) {
+            intent?.also {
+                if (it.action == "message_progress") {
+                    val downloadModel = intent.getParcelableExtra<DownloadModel>("download")
+                    progressDownload?.progress = downloadModel.progress
+
+                    if (downloadModel.progress == 100) {
+                        txtProgressDownload?.text = getString(R.string.txt_download_file_complete)
+                    } else {
+                        txtProgressDownload?.text = String.format(
+                            "Download (%d/%d) MB",
+                            downloadModel.currentFileSize,
+                            downloadModel.totalFileSize
+                        )
+                    }
+                }
+
+            }
+        }
+    }
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         btnRecyclerView.setOnClickListener(this)
+        btnButton.setOnClickListener(this)
+        btnWebSocket?.setOnClickListener(this)
+        btnProgressBar?.setOnClickListener(this)
         btnCamera?.setOnClickListener(this)
+
+        registerReceiver()
+        btnDownload?.setOnClickListener { startDownload() }
     }
 
     override fun onClick(v: View) {
         when (v.id) {
             R.id.btnRecyclerView -> startActivity(Intent(this, RecyclerViewActivity::class.java))
+            R.id.btnButton -> startActivity(Intent(this, ButtonActivity::class.java))
+            R.id.btnWebSocket -> startActivity(Intent(this, WebSocketActivity::class.java))
+            R.id.btnProgressBar -> startActivity(Intent(this, ProgressBarActivity::class.java))
+
             R.id.btnCamera -> {
                 val cameraManager = getSystemService(Context.CAMERA_SERVICE) as? CameraManager
                 cameraManager?.apply {
@@ -75,15 +111,20 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                                 }
                             }
 
-                            if (ActivityCompat.checkSelfPermission(this@MainActivity, Manifest.permission.CAMERA)
-                                == PackageManager.PERMISSION_GRANTED) {
+                            if (ActivityCompat.checkSelfPermission(
+                                    this@MainActivity,
+                                    Manifest.permission.CAMERA
+                                )
+                                == PackageManager.PERMISSION_GRANTED
+                            ) {
 
                                 val cameraId = cameraIdList[0]
                                 val characteristics = getCameraCharacteristics(cameraId)
                                 characteristics
                                     .get(CameraCharacteristics.SCALER_STREAM_CONFIGURATION_MAP)
                                     ?.also {
-                                        imageDimension = it.getOutputSizes(SurfaceTexture::class.java)[0]
+                                        imageDimension =
+                                            it.getOutputSizes(SurfaceTexture::class.java)[0]
                                         openCamera(cameraId, callback, null)
                                     }
                             }
@@ -149,6 +190,21 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             e.printStackTrace()
         }
 
+    }
+
+    private fun registerReceiver() {
+        LocalBroadcastManager.getInstance(this).apply {
+            val intentFilter = IntentFilter()
+            intentFilter.addAction("message_progress")
+
+            registerReceiver(broadcastReceiver, intentFilter)
+        }
+    }
+
+    private fun startDownload() {
+        Intent(this, DownloadFileService::class.java).apply {
+            startService(this)
+        }
     }
 
 }

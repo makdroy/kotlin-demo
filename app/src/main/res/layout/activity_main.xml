@@ -13,11 +13,52 @@
         android:layout_height="wrap_content"
         android:text="@string/button_recycler_view" />
 
+    <Button
+        android:id="@+id/btnButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_default"
+        android:text="@string/button_button" />
+
+    <Button
+        android:id="@+id/btnWebSocket"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_default"
+        android:text="@string/button_websocket" />
+
+    <Button
+        android:id="@+id/btnProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_default"
+        android:text="@string/button_animate_progress_bar" />
+
+    <Button
+        android:id="@+id/btnDownload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_default"
+        android:text="@string/button_start_download" />
+
+    <ProgressBar
+        android:id="@+id/progressDownload"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/padding_default" />
+
+    <TextView
+        android:id="@+id/txtProgressDownload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="text" />
+
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnCamera"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="@dimen/margin_default"
         android:elevation="4dp"
         android:insetLeft="8dp"
         android:insetRight="8dp"
@@ -27,7 +68,7 @@
 
     <TextureView
         android:id="@+id/textureView"
-        android:layout_width="300dp"
-        android:layout_height="300dp" />
+        android:layout_width="100dp"
+        android:layout_height="100dp" />
 
 </LinearLayout>
