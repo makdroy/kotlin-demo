@@ -6,21 +6,18 @@ import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
 import android.content.pm.PackageManager
-import android.os.Bundle
-import android.util.Log
-import android.view.View
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.app.ActivityCompat
-import kotlinx.android.synthetic.main.activity_main.*
-import android.widget.Toast
 import android.graphics.SurfaceTexture
 import android.hardware.camera2.*
+import android.os.Bundle
+import android.util.Log
 import android.util.Size
 import android.view.Surface
-import android.hardware.camera2.CameraAccessException
-import android.hardware.camera2.CameraMetadata
-import android.hardware.camera2.CaptureRequest
+import android.view.View
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
+import kotlinx.android.synthetic.main.activity_main.*
 import mutnemom.android.kotlindemo.model.DownloadModel
 import mutnemom.android.kotlindemo.services.DownloadFileService
 
@@ -66,6 +63,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        btnWebView.setOnClickListener(this)
         btnRecyclerView.setOnClickListener(this)
         btnButton.setOnClickListener(this)
         btnWebSocket?.setOnClickListener(this)
@@ -78,6 +76,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onClick(v: View) {
         when (v.id) {
+            R.id.btnWebView -> startActivity(Intent(this, WebViewActivity::class.java))
             R.id.btnRecyclerView -> startActivity(Intent(this, RecyclerViewActivity::class.java))
             R.id.btnButton -> startActivity(Intent(this, ButtonActivity::class.java))
             R.id.btnWebSocket -> startActivity(Intent(this, WebSocketActivity::class.java))

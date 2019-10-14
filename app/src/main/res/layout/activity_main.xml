@@ -8,9 +8,16 @@
     tools:context=".MainActivity">
 
     <Button
+        android:id="@+id/btnWebView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button_web_view" />
+
+    <Button
         android:id="@+id/btnRecyclerView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_default"
         android:text="@string/button_recycler_view" />
 
     <Button

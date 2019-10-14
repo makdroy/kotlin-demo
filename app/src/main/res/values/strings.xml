@@ -2,6 +2,7 @@
     <string name="app_name">KotlinDemo</string>
     <string name="product_item_image_description">Image of product item.</string>
 
+    <string name="button_web_view">WebView</string>
     <string name="button_recycler_view">Recycler View</string>
     <string name="button_button">Button</string>
     <string name="button_camera">Camera</string>
@@ -17,4 +18,5 @@
     <string name="button_start_download">Start Download</string>
     <string name="txt_download_file_complete">File Download Complete</string>
     <string name="desc_image_button_with_item_background">Image Button With Item Background</string>
+    <string name="txt_webview_load_pdf_button">Load PDF</string>
 </resources>
