@@ -19,4 +19,5 @@
     <string name="txt_download_file_complete">File Download Complete</string>
     <string name="desc_image_button_with_item_background">Image Button With Item Background</string>
     <string name="txt_webview_load_pdf_button">Load PDF</string>
+    <string name="txt_circle">Circle</string>
 </resources>
