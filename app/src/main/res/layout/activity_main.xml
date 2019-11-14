@@ -1,81 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
-    android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/btnWebView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/button_web_view" />
-
-    <Button
-        android:id="@+id/btnRecyclerView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_default"
-        android:text="@string/button_recycler_view" />
-
-    <Button
-        android:id="@+id/btnButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_default"
-        android:text="@string/button_button" />
-
-    <Button
-        android:id="@+id/btnWebSocket"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_default"
-        android:text="@string/button_websocket" />
-
-    <Button
-        android:id="@+id/btnProgressBar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_default"
-        android:text="@string/button_animate_progress_bar" />
-
-    <Button
-        android:id="@+id/btnDownload"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_default"
-        android:text="@string/button_start_download" />
-
-    <ProgressBar
-        android:id="@+id/progressDownload"
-        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/padding_default" />
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="16dp">
 
-    <TextView
-        android:id="@+id/txtProgressDownload"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:text="text" />
+        <Button
+            android:id="@+id/btnWebView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/button_web_view" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnCamera"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_default"
-        android:elevation="4dp"
-        android:insetLeft="8dp"
-        android:insetRight="8dp"
-        android:padding="8dp"
-        android:text="@string/button_camera"
-        android:textAppearance="@style/AppTheme.Text" />
+        <Button
+            android:id="@+id/btnRecyclerView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_default"
+            android:text="@string/button_recycler_view" />
 
-    <TextureView
-        android:id="@+id/textureView"
-        android:layout_width="100dp"
-        android:layout_height="100dp" />
+        <Button
+            android:id="@+id/btnButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_default"
+            android:text="@string/button_button" />
 
-</LinearLayout>
+        <Button
+            android:id="@+id/btnWebSocket"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_default"
+            android:text="@string/button_websocket" />
+
+        <Button
+            android:id="@+id/btnProgressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_default"
+            android:text="@string/button_animate_progress_bar" />
+
+        <Button
+            android:id="@+id/btnDownload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_default"
+            android:text="@string/button_start_download" />
+
+        <ProgressBar
+            android:id="@+id/progressDownload"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_default" />
+
+        <TextView
+            android:id="@+id/txtProgressDownload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="text" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnCamera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_default"
+            android:elevation="4dp"
+            android:insetLeft="8dp"
+            android:insetRight="8dp"
+            android:padding="8dp"
+            android:text="@string/button_camera"
+            android:textAppearance="@style/AppTheme.Text" />
+
+        <TextureView
+            android:id="@+id/textureView"
+            android:layout_width="100dp"
+            android:layout_height="100dp" />
+
+        <Button
+            android:id="@+id/btnBackPressDispatcher"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/btn_back_press_dispatcher"
+            android:textAllCaps="false" />
+
+    </LinearLayout>
+</ScrollView>

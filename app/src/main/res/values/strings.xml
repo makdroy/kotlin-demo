@@ -20,4 +20,7 @@
     <string name="desc_image_button_with_item_background">Image Button With Item Background</string>
     <string name="txt_webview_load_pdf_button">Load PDF</string>
     <string name="txt_circle">Circle</string>
+    <string name="btn_back_press_dispatcher">Back Press Dispatcher</string>
+
+    <string name="txt_on_back_pressed_dispatcher">Press system UI back button</string>
 </resources>
