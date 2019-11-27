@@ -20,7 +20,16 @@
     <string name="desc_image_button_with_item_background">Image Button With Item Background</string>
     <string name="txt_webview_load_pdf_button">Load PDF</string>
     <string name="txt_circle">Circle</string>
-    <string name="btn_back_press_dispatcher">Back Press Dispatcher</string>
 
     <string name="txt_on_back_pressed_dispatcher">Press system UI back button</string>
+    <string name="txt_fragment_chapter">About Fragment</string>
+
+    <string name="txt_demo">demo</string>
+
+    <!--  about fragment page -->
+    <string name="txt_back_press_dispatcher_description">Handle back press event in active fragment when press system UI back button</string>
+    <string name="txt_custom_fragment_transaction_animation_description">Implement custom animations in fragment transaction instance</string>
+    <string name="txt_hint_display_animation">Tap hear to display fragment transaction animation</string>
+    <!--    -->
+
 </resources>

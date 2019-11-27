@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:clipToPadding="false"
     tools:context=".MainActivity">
 
     <LinearLayout
@@ -13,10 +14,21 @@
         android:orientation="vertical"
         android:padding="16dp">
 
+        <TextView
+            android:id="@+id/txtFragmentChapter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:background="?attr/selectableItemBackground"
+            android:padding="8dp"
+            android:text="@string/txt_fragment_chapter"
+            android:textColor="@color/colorAccent" />
+
         <Button
             android:id="@+id/btnWebView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_default"
             android:text="@string/button_web_view" />
 
         <Button
@@ -83,14 +95,6 @@
             android:id="@+id/textureView"
             android:layout_width="100dp"
             android:layout_height="100dp" />
-
-        <Button
-            android:id="@+id/btnBackPressDispatcher"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="@string/btn_back_press_dispatcher"
-            android:textAllCaps="false" />
 
     </LinearLayout>
 </ScrollView>

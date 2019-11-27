@@ -1,4 +1,4 @@
-package mutnemom.android.kotlindemo.backpress
+package mutnemom.android.kotlindemo.fragments.backpress
 
 import android.content.Context
 import android.net.Uri
@@ -23,8 +23,10 @@ private const val KEY_PRESS_BACK_MESSAGE = "param1"
  * create an instance of this fragment.
  */
 class PressBackFragment : Fragment() {
+
     private var pressBackMessage: String? = null
     private var listener: OnFragmentInteractionListener? = null
+    private var toast: Toast? = null
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -32,7 +34,14 @@ class PressBackFragment : Fragment() {
             listener = context
             val callback = object : OnBackPressedCallback(true) {
                 override fun handleOnBackPressed() {
-                    Toast.makeText(context, pressBackMessage, Toast.LENGTH_SHORT).show()
+                    when {
+                        toast != null && toast!!.view.isShown -> requireActivity().finish()
+                        else -> {
+                            toast = Toast
+                                .makeText(context, pressBackMessage, Toast.LENGTH_SHORT)
+                                .apply { show() }
+                        }
+                    }
                 }
             }
 

@@ -18,7 +18,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import kotlinx.android.synthetic.main.activity_main.*
-import mutnemom.android.kotlindemo.backpress.BackPressDispatcherActivity
+import mutnemom.android.kotlindemo.fragments.AboutFragmentActivity
 import mutnemom.android.kotlindemo.model.DownloadModel
 import mutnemom.android.kotlindemo.services.DownloadFileService
 
@@ -70,10 +70,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         btnWebSocket?.setOnClickListener(this)
         btnProgressBar?.setOnClickListener(this)
         btnCamera?.setOnClickListener(this)
-        btnBackPressDispatcher?.setOnClickListener(this)
 
         registerReceiver()
         btnDownload?.setOnClickListener { startDownload() }
+        txtFragmentChapter?.setOnClickListener { openFragmentChapterPage() }
     }
 
     override fun onClick(v: View) {
@@ -83,7 +83,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             R.id.btnButton -> startActivity(Intent(this, ButtonActivity::class.java))
             R.id.btnWebSocket -> startActivity(Intent(this, WebSocketActivity::class.java))
             R.id.btnProgressBar -> startActivity(Intent(this, ProgressBarActivity::class.java))
-            R.id.btnBackPressDispatcher -> startActivity(Intent(this, BackPressDispatcherActivity::class.java))
 
             R.id.btnCamera -> {
                 val cameraManager = getSystemService(Context.CAMERA_SERVICE) as? CameraManager
@@ -206,6 +205,12 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     private fun startDownload() {
         Intent(this, DownloadFileService::class.java).apply {
             startService(this)
+        }
+    }
+
+    private fun openFragmentChapterPage() {
+        Intent(this, AboutFragmentActivity::class.java).apply {
+            startActivity(this)
         }
     }
 

@@ -3,14 +3,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.backpress.PressBackFragment">
+    android:padding="@dimen/padding_default"
+    tools:context=".fragments.transaction.StandbyFragment">
 
     <TextView
-        android:id="@+id/txtHello"
+        android:id="@+id/txtTapHint"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:padding="8dp"
-        android:text="@string/txt_on_back_pressed_dispatcher" />
+        android:background="?attr/selectableItemBackground"
+        android:padding="@dimen/padding_default"
+        android:text="@string/txt_hint_display_animation"
+        android:textAlignment="center"
+        android:textSize="18sp" />
 
 </FrameLayout>
