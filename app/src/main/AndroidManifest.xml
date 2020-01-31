@@ -16,9 +16,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".fragments.transaction.AnimateFragmentTransactionActivity"></activity>
+        <activity android:name=".draggable.DragViewActivity" />
+        <activity android:name=".fragments.transaction.AnimateFragmentTransactionActivity" />
         <activity android:name=".fragments.AboutFragmentActivity" />
-        <activity android:name="mutnemom.android.kotlindemo.fragments.backpress.BackPressDispatcherActivity" />
+        <activity android:name=".fragments.backpress.BackPressDispatcherActivity" />
         <activity android:name=".WebViewActivity" />
         <activity android:name=".ProgressBarActivity" />
         <activity android:name=".WebSocketActivity" />

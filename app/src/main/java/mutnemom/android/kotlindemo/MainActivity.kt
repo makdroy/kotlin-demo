@@ -18,18 +18,18 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import kotlinx.android.synthetic.main.activity_main.*
+import mutnemom.android.kotlindemo.draggable.DragViewActivity
 import mutnemom.android.kotlindemo.fragments.AboutFragmentActivity
 import mutnemom.android.kotlindemo.model.DownloadModel
 import mutnemom.android.kotlindemo.services.DownloadFileService
 
-
-class MainActivity : AppCompatActivity(), View.OnClickListener {
+class MainActivity :
+    AppCompatActivity(),
+    View.OnClickListener {
 
     companion object {
-        @Suppress("unused")
         private val LOG_TAG = MainActivity::class.java.simpleName
     }
-
 
     private lateinit var cameraDevice: CameraDevice
     private lateinit var captureRequestBuilder: CaptureRequest.Builder
@@ -41,9 +41,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         override fun onReceive(context: Context?, intent: Intent?) {
             intent?.also {
                 if (it.action == "message_progress") {
-                    val downloadModel = intent.getParcelableExtra<DownloadModel>("download")
-                    progressDownload?.progress = downloadModel.progress
+                    val downloadModel =
+                        intent.getParcelableExtra<DownloadModel>("download") ?: return
 
+                    progressDownload?.progress = downloadModel.progress
                     if (downloadModel.progress == 100) {
                         txtProgressDownload?.text = getString(R.string.txt_download_file_complete)
                     } else {
@@ -74,6 +75,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         registerReceiver()
         btnDownload?.setOnClickListener { startDownload() }
         txtFragmentChapter?.setOnClickListener { openFragmentChapterPage() }
+        txtDragView?.setOnClickListener { openDragViewPage() }
     }
 
     override fun onClick(v: View) {
@@ -212,6 +214,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         Intent(this, AboutFragmentActivity::class.java).apply {
             startActivity(this)
         }
+    }
+
+    private fun openDragViewPage() {
+        Intent(this, DragViewActivity::class.java)
+            .apply { startActivity(this) }
     }
 
 }
