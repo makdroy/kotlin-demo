@@ -37,4 +37,12 @@
     <string name="txt_draggable_image_view">Draggable Image View</string>
     <!--    -->
 
+    <!--  TTS page -->
+    <string name="txt_text_to_speech_chapter">Text to Speech</string>
+    <string name="txt_text_to_speech_sample_paragraph">ตามแนวคิดของ Single Responsibility Principle (SRP) มันสำคัญมาก ๆ นั่นคือแต่ละ test case ควรตรวจสอบเรื่องเดียว เป้าหมายเดียว แต่ไม่ใช่บอกว่ามีการ assert เพียงบรรทัดเดียวนะ !! เพราะว่า ถ้ามีการทดสอบในหลาย ๆ เรื่องพร้อมกันใน test case เดียวแล้ว ปัญหาที่ตามมาคือ ความงง ความซับซ้อน ดูแลรักษายากมาก ๆ ดังนั้นในแต่ละ test case ต้องเฉพาะเจาะจงไปเลย ว่าต้องการจะทดสอบอะไร ถ้ามีหลายเรื่องก็ให้แยกเป็นเรื่องย่อย ๆ จากนั้นจึงแยกออกเป็น test case ไปซะ</string>
+    <string name="txt_text_to_speech_start_button">start</string>
+    <string name="txt_text_to_speech_stop_button">stop</string>
+    <string name="txt_text_to_speech_header">Sample quote for reading by TTS</string>
+    <!--    -->
+
 </resources>
