@@ -22,6 +22,7 @@ import mutnemom.android.kotlindemo.draggable.DragViewActivity
 import mutnemom.android.kotlindemo.fragments.AboutFragmentActivity
 import mutnemom.android.kotlindemo.model.DownloadModel
 import mutnemom.android.kotlindemo.services.DownloadFileService
+import mutnemom.android.kotlindemo.tts.TextToSpeechActivity
 
 class MainActivity :
     AppCompatActivity(),
@@ -76,6 +77,7 @@ class MainActivity :
         btnDownload?.setOnClickListener { startDownload() }
         txtFragmentChapter?.setOnClickListener { openFragmentChapterPage() }
         txtDragView?.setOnClickListener { openDragViewPage() }
+        txtTts?.setOnClickListener { openTtsPage() }
     }
 
     override fun onClick(v: View) {
@@ -218,6 +220,11 @@ class MainActivity :
 
     private fun openDragViewPage() {
         Intent(this, DragViewActivity::class.java)
+            .apply { startActivity(this) }
+    }
+
+    private fun openTtsPage() {
+        Intent(this, TextToSpeechActivity::class.java)
             .apply { startActivity(this) }
     }
 
