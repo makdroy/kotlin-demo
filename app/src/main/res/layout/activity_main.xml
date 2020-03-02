@@ -1,48 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:clipToPadding="false"
+    android:scrollbars="none"
     tools:context=".MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center"
         android:orientation="vertical"
         android:padding="16dp">
 
-        <TextView
-            android:id="@+id/txtFragmentChapter"
-            android:layout_width="wrap_content"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:background="?attr/selectableItemBackground"
-            android:padding="8dp"
-            android:text="@string/txt_fragment_chapter"
-            android:textColor="@color/colorAccent" />
+            android:layout_marginBottom="@dimen/margin_default">
 
-        <TextView
-            android:id="@+id/txtDragView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:background="?attr/selectableItemBackground"
-            android:padding="8dp"
-            android:text="@string/txt_drag_view_chapter"
-            android:textColor="@color/colorAccent" />
+            <TextView
+                android:id="@+id/txtFragmentChapter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_default"
+                android:layout_marginTop="@dimen/margin_default"
+                android:layout_marginEnd="@dimen/margin_large"
+                android:background="?attr/selectableItemBackground"
+                android:padding="8dp"
+                android:text="@string/txt_fragment_chapter"
+                android:textColor="@color/colorAccent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/txtTts"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:background="?attr/selectableItemBackground"
-            android:padding="8dp"
-            android:text="@string/txt_text_to_speech_chapter"
-            android:textColor="@color/colorAccent" />
+            <TextView
+                android:id="@+id/txtDragView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_large"
+                android:layout_marginTop="@dimen/margin_default"
+                android:background="?attr/selectableItemBackground"
+                android:padding="8dp"
+                android:text="@string/txt_drag_view_chapter"
+                android:textColor="@color/colorAccent"
+                app:layout_constraintStart_toEndOf="@id/txtFragmentChapter"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txtTts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:background="?attr/selectableItemBackground"
+                android:padding="8dp"
+                android:text="@string/txt_text_to_speech_chapter"
+                android:textColor="@color/colorAccent"
+                app:layout_constraintStart_toStartOf="@id/txtFragmentChapter"
+                app:layout_constraintTop_toBottomOf="@id/txtFragmentChapter" />
+
+            <TextView
+                android:id="@+id/txtEpubReader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:background="?attr/selectableItemBackground"
+                android:padding="8dp"
+                android:text="@string/txt_epub_reader_chapter"
+                android:textColor="@color/colorAccent"
+                app:layout_constraintStart_toStartOf="@id/txtDragView"
+                app:layout_constraintTop_toBottomOf="@id/txtDragView" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <Button
             android:id="@+id/btnWebView"

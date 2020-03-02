@@ -45,4 +45,9 @@
     <string name="txt_text_to_speech_header">Sample quote for reading by TTS</string>
     <!--    -->
 
+    <!--  about epub reader page -->
+    <string name="txt_epub_reader_chapter">EPUB Reader</string>
+    <!--    -->
+
+
 </resources>

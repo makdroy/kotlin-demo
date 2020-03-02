@@ -21,6 +21,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import mutnemom.android.kotlindemo.draggable.DragViewActivity
 import mutnemom.android.kotlindemo.fragments.AboutFragmentActivity
 import mutnemom.android.kotlindemo.model.DownloadModel
+import mutnemom.android.kotlindemo.readium.EpubReaderActivity
 import mutnemom.android.kotlindemo.services.DownloadFileService
 import mutnemom.android.kotlindemo.tts.TextToSpeechActivity
 
@@ -78,6 +79,7 @@ class MainActivity :
         txtFragmentChapter?.setOnClickListener { openFragmentChapterPage() }
         txtDragView?.setOnClickListener { openDragViewPage() }
         txtTts?.setOnClickListener { openTtsPage() }
+        txtEpubReader?.setOnClickListener { openEpubReader() }
     }
 
     override fun onClick(v: View) {
@@ -225,6 +227,11 @@ class MainActivity :
 
     private fun openTtsPage() {
         Intent(this, TextToSpeechActivity::class.java)
+            .apply { startActivity(this) }
+    }
+
+    private fun openEpubReader() {
+        Intent(this, EpubReaderActivity::class.java)
             .apply { startActivity(this) }
     }
 
