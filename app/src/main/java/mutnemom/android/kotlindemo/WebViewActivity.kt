@@ -12,10 +12,7 @@ class WebViewActivity : AppCompatActivity() {
 
         val sampleUrl = "https://stackoverflow.com/"
         val googleDocPrefix = "https://docs.google.com/gview?embedded=true&url="
-        val samplePdf = "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
-        val sampleWord = "https://file-examples.com/wp-content/uploads/2017/02/file-sample_100kB.doc"
         val sampleDocx = "https://file-examples.com/wp-content/uploads/2017/02/file-sample_100kB.docx"
-        val sampleImage = "https://s3-ap-southeast-1.amazonaws.com/htimember/images/profileImage/small/cf1062a5-6fab-4680-9fef-592132399988.jpg"
 
         webContainer?.loadUrl(sampleUrl)
         btnLoadPdf?.setOnClickListener {
