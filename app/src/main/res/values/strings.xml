@@ -45,4 +45,12 @@
     <string name="txt_text_to_speech_header">Sample quote for reading by TTS</string>
     <!--    -->
 
+    <!--  AES256 page -->
+    <string name="txt_aes256_chapter">AES256</string>
+    <string name="txt_aes256_encrypt_button">Encrypt Message</string>
+    <string name="txt_aes256_plain_text">Plain Text</string>
+    <string name="txt_aes256_encrypted">Encrypted</string>
+    <string name="txt_aes256_decrypted">Decrypted</string>
+    <!--    -->
+
 </resources>

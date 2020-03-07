@@ -19,6 +19,7 @@ import androidx.core.app.ActivityCompat
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import kotlinx.android.synthetic.main.activity_main.*
 import mutnemom.android.kotlindemo.draggable.DragViewActivity
+import mutnemom.android.kotlindemo.encrypt.AES256Activity
 import mutnemom.android.kotlindemo.fragments.AboutFragmentActivity
 import mutnemom.android.kotlindemo.model.DownloadModel
 import mutnemom.android.kotlindemo.services.DownloadFileService
@@ -78,6 +79,7 @@ class MainActivity :
         txtFragmentChapter?.setOnClickListener { openFragmentChapterPage() }
         txtDragView?.setOnClickListener { openDragViewPage() }
         txtTts?.setOnClickListener { openTtsPage() }
+        txtAes256?.setOnClickListener { openAES256Page() }
     }
 
     override fun onClick(v: View) {
@@ -207,15 +209,13 @@ class MainActivity :
     }
 
     private fun startDownload() {
-        Intent(this, DownloadFileService::class.java).apply {
-            startService(this)
-        }
+        Intent(this, DownloadFileService::class.java)
+            .apply { startService(this) }
     }
 
     private fun openFragmentChapterPage() {
-        Intent(this, AboutFragmentActivity::class.java).apply {
-            startActivity(this)
-        }
+        Intent(this, AboutFragmentActivity::class.java)
+            .apply { startActivity(this) }
     }
 
     private fun openDragViewPage() {
@@ -225,6 +225,11 @@ class MainActivity :
 
     private fun openTtsPage() {
         Intent(this, TextToSpeechActivity::class.java)
+            .apply { startActivity(this) }
+    }
+
+    private fun openAES256Page() {
+        Intent(this, AES256Activity::class.java)
             .apply { startActivity(this) }
     }
 
