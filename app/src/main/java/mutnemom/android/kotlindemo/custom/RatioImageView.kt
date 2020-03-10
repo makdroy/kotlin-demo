@@ -9,12 +9,12 @@ import mutnemom.android.kotlindemo.R
 class RatioImageView : AppCompatImageView {
 
     companion object {
+        private const val REC_3_2 = 1
         private const val SQUARE = 0
-        private const val PORTRAIT = 0
-        private const val LANDSCAPE = 1
-        private const val RECTANGLE = 1
+
         private const val PIXEL_PERFECT = 1
-        private const val RECTANGLE_DIVISION = 0.5
+        private const val LANDSCAPE = 1
+        private const val PORTRAIT = 0
     }
 
     var imageOrientation: Int? = 0
@@ -37,11 +37,29 @@ class RatioImageView : AppCompatImageView {
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
         val width = MeasureSpec.getSize(widthMeasureSpec)
-        val height = MeasureSpec.getSize(heightMeasureSpec)
+        var height = MeasureSpec.getSize(heightMeasureSpec)
 
         when (imageOrientation) {
-
+            LANDSCAPE -> height = calculateRatioLandscape(width + PIXEL_PERFECT)
+            PORTRAIT -> height = calculateRatioPortrait(width + PIXEL_PERFECT)
         }
+
+        setMeasuredDimension(width, height)
+        layoutParams.width = width
+        layoutParams.height = height
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec)
+    }
+
+    private fun calculateRatioLandscape(measureSpec: Int): Int = when (imageRatio) {
+        REC_3_2 -> (measureSpec * (2.0f / 3.0f)).toInt()
+        SQUARE -> measureSpec
+        else -> 0
+    }
+
+    private fun calculateRatioPortrait(measureSpec: Int): Int = when (imageRatio) {
+        REC_3_2 -> (measureSpec * (3.0f / 2.0f)).toInt()
+        SQUARE -> measureSpec
+        else -> 0
     }
 
 }

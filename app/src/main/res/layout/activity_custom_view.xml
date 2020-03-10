@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/margin_default"
+    android:orientation="vertical"
+    tools:context=".custom.CustomViewActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:text="@string/txt_ratio_image_portrait_ratio_image_view_2_3" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_default"
+        android:layout_marginBottom="@dimen/margin_default"
+        android:orientation="horizontal"
+        android:weightSum="4">
+
+        <mutnemom.android.kotlindemo.custom.RatioImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_small"
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"
+            app:imageOrientation="portrait"
+            app:imageRatio="rectangle" />
+
+        <mutnemom.android.kotlindemo.custom.RatioImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_small"
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"
+            app:imageOrientation="portrait"
+            app:imageRatio="rectangle" />
+
+        <mutnemom.android.kotlindemo.custom.RatioImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_small"
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"
+            app:imageOrientation="portrait"
+            app:imageRatio="rectangle" />
+
+        <mutnemom.android.kotlindemo.custom.RatioImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"
+            app:imageOrientation="portrait"
+            app:imageRatio="rectangle" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_large"
+        android:text="@string/txt_ratio_image_landscape_ratio_image_view_2_3" />
+
+    <mutnemom.android.kotlindemo.custom.RatioImageView
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_default"
+        android:layout_marginEnd="@dimen/margin_small"
+        android:layout_marginBottom="@dimen/margin_small"
+        android:background="@color/colorPrimary"
+        app:imageOrientation="landscape"
+        app:imageRatio="rectangle" />
+
+    <mutnemom.android.kotlindemo.custom.RatioImageView
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        app:imageOrientation="landscape"
+        app:imageRatio="rectangle" />
+
+</LinearLayout>
