@@ -45,7 +45,6 @@ class MainActivity :
         }
     }
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -57,13 +56,13 @@ class MainActivity :
         btnDownload?.setOnClickListener(this)
         btnWebView?.setOnClickListener(this)
         btnButton?.setOnClickListener(this)
+        btnAes256?.setOnClickListener(this)
 
         registerReceiver()
 
         txtFragmentChapter?.setOnClickListener { openFragmentChapterPage() }
         txtDragView?.setOnClickListener { openDragViewPage() }
         txtTts?.setOnClickListener { openTtsPage() }
-        txtAes256?.setOnClickListener { openAES256Page() }
         txtEpubReader?.setOnClickListener { openEpubReader() }
     }
 
@@ -76,6 +75,7 @@ class MainActivity :
             R.id.btnDownload -> startService(Intent(this, DownloadFileService::class.java))
             R.id.btnWebView -> startActivity(Intent(this, WebViewActivity::class.java))
             R.id.btnButton -> startActivity(Intent(this, ButtonActivity::class.java))
+            R.id.btnAes256 -> startActivity(Intent(this, AES256Activity::class.java))
         }
     }
 
@@ -85,11 +85,6 @@ class MainActivity :
             intentFilter.addAction("message_progress")
             registerReceiver(broadcastReceiver, intentFilter)
         }
-    }
-
-    private fun startDownload() {
-        Intent(this, DownloadFileService::class.java)
-            .apply { startService(this) }
     }
 
     private fun openFragmentChapterPage() {
@@ -104,11 +99,6 @@ class MainActivity :
 
     private fun openTtsPage() {
         Intent(this, TextToSpeechActivity::class.java)
-            .apply { startActivity(this) }
-    }
-
-    private fun openAES256Page() {
-        Intent(this, AES256Activity::class.java)
             .apply { startActivity(this) }
     }
 
