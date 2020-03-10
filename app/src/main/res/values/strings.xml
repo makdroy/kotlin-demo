@@ -12,10 +12,12 @@
     <string name="button_material_flat_disable">Material Flat Disable</string>
     <string name="button_borderless">Borderless</string>
     <string name="button_borderless_disable">Borderless Disable</string>
+    <string name="button_custom_view">Custom View</string>
     <string name="button_websocket">WebSocket OkHttp</string>
     <string name="txt_test_call_websocket">Test Call WebSocket</string>
-    <string name="button_animate_progress_bar">Animate Progress Bar</string>
-    <string name="button_start_download">Start Download</string>
+    <string name="button_animate_progress_bar">Animate Progress</string>
+    <string name="button_start_download">Download</string>
+    <string name="txt_0_mb">0 MB</string>
     <string name="txt_download_file_complete">File Download Complete</string>
     <string name="desc_image_button_with_item_background">Image Button With Item Background</string>
     <string name="txt_webview_load_pdf_button">Load PDF</string>
@@ -52,5 +54,15 @@
     <string name="txt_aes256_encrypted">Encrypted</string>
     <string name="txt_aes256_decrypted">Decrypted</string>
     <!--    -->
+
+    <!--  about epub reader page -->
+    <string name="txt_epub_reader_chapter">EPUB Reader</string>
+    <!--    -->
+
+    <!--  about ratio image view page -->
+    <string name="txt_ratio_image_portrait_ratio_image_view_2_3"><![CDATA[-> Portrait Ratio Image View 2:3]]></string>
+    <string name="txt_ratio_image_landscape_ratio_image_view_2_3"><![CDATA[-> Landscape Ratio Image View 2:3]]></string>
+    <!--    -->
+
 
 </resources>
