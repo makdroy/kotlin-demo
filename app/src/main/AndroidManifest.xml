@@ -20,7 +20,6 @@
         tools:replace="android:allowBackup">
         <activity android:name=".encrypt.AES256Activity" />
         <activity android:name=".custom.CustomViewActivity" />
-        <activity android:name=".readium.EpubReaderActivity" />
         <activity android:name=".tts.TextToSpeechActivity" />
         <activity android:name=".draggable.DragViewActivity" />
         <activity android:name=".fragments.transaction.AnimateFragmentTransactionActivity" />
