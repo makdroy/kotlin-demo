@@ -46,6 +46,7 @@ dependencies {
     implementation "androidx.legacy:legacy-support-v4:$legacy_version"
     implementation "androidx.multidex:multidex:$multidex_version"
     implementation "androidx.recyclerview:recyclerview:$recyclerview_version"
+    implementation "androidx.room:room-runtime:$room_version"
 
     implementation "com.google.android.material:material:$material_version"
 
