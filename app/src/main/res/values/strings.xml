@@ -55,6 +55,10 @@
     <string name="txt_aes256_decrypted">Decrypted</string>
     <!--    -->
 
+    <!--  Room + Coroutines page -->
+    <string name="txt_room_coroutines_chapter">Room + Coroutines</string>
+    <!--    -->
+
     <!--  about epub reader page -->
     <string name="txt_epub_reader_chapter">EPUB Reader</string>
     <!--    -->

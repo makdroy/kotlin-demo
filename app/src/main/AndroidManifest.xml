@@ -18,6 +18,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:allowBackup">
+        <activity android:name=".room.RoomCoroutinesActivity" />
         <activity android:name=".encrypt.AES256Activity" />
         <activity android:name=".custom.CustomViewActivity" />
         <activity android:name=".tts.TextToSpeechActivity" />
