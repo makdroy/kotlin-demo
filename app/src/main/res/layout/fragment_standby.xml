@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/padding_default"
+    tools:context=".fragments.transaction.StandbyFragment">
+
+    <TextView
+        android:id="@+id/txtTapHint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="?attr/selectableItemBackground"
+        android:padding="@dimen/padding_default"
+        android:text="@string/txt_hint_display_animation"
+        android:textAlignment="center"
+        android:textSize="18sp" />
+
+</FrameLayout>

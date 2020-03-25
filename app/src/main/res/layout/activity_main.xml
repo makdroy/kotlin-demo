@@ -1,19 +1,158 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:clipToPadding="false"
+    android:scrollbars="none"
     tools:context=".MainActivity">
 
-    <Button
-        android:text="@string/recycler_view"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/btn_recycler_view" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp" app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginLeft="8dp" android:layout_marginStart="8dp" android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toBottomOf="parent" android:layout_marginTop="8dp"
-        app:layout_constraintTop_toTopOf="parent"/>
-</android.support.constraint.ConstraintLayout>
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_default">
+
+            <TextView
+                android:id="@+id/txtFragmentChapter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_default"
+                android:layout_marginTop="@dimen/margin_default"
+                android:layout_marginEnd="@dimen/margin_large"
+                android:background="?attr/selectableItemBackground"
+                android:padding="8dp"
+                android:text="@string/txt_fragment_chapter"
+                android:textColor="@color/colorAccent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txtDragView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_large"
+                android:layout_marginTop="@dimen/margin_default"
+                android:background="?attr/selectableItemBackground"
+                android:padding="8dp"
+                android:text="@string/txt_drag_view_chapter"
+                android:textColor="@color/colorAccent"
+                app:layout_constraintStart_toEndOf="@id/txtFragmentChapter"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txtTts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:background="?attr/selectableItemBackground"
+                android:padding="8dp"
+                android:text="@string/txt_text_to_speech_chapter"
+                android:textColor="@color/colorAccent"
+                app:layout_constraintStart_toStartOf="@id/txtFragmentChapter"
+                app:layout_constraintTop_toBottomOf="@id/txtFragmentChapter" />
+
+            <TextView
+                android:id="@+id/txtRoomCoroutines"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_large"
+                android:padding="8dp"
+                android:text="@string/txt_room_coroutines_chapter"
+                android:textColor="@color/colorAccent"
+                app:layout_constraintStart_toEndOf="@id/txtTts"
+                app:layout_constraintTop_toTopOf="@id/txtTts" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <Button
+            android:id="@+id/btnAes256"
+            android:layout_width="140dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="@dimen/margin_default"
+            android:text="@string/txt_aes256_chapter" />
+
+        <Button
+            android:id="@+id/btnWebView"
+            android:layout_width="140dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="@dimen/margin_default"
+            android:text="@string/button_web_view" />
+
+        <Button
+            android:id="@+id/btnRecyclerView"
+            android:layout_width="140dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="@dimen/margin_default"
+            android:text="@string/button_recycler_view" />
+
+        <Button
+            android:id="@+id/btnButton"
+            android:layout_width="140dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="@dimen/margin_default"
+            android:text="@string/button_button" />
+
+        <Button
+            android:id="@+id/btnCustomView"
+            android:layout_width="140dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="@dimen/margin_default"
+            android:text="@string/button_custom_view" />
+
+        <Button
+            android:id="@+id/btnWebSocket"
+            android:layout_width="200dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="@dimen/margin_default"
+            android:text="@string/button_websocket" />
+
+        <Button
+            android:id="@+id/btnProgressBar"
+            android:layout_width="200dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="@dimen/margin_default"
+            android:text="@string/button_animate_progress_bar" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btnDownload"
+                android:layout_width="140dp"
+                android:layout_height="56dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="@dimen/margin_default"
+                android:text="@string/button_start_download" />
+
+            <ProgressBar
+                android:id="@+id/progressDownload"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_default"
+                android:layout_marginTop="@dimen/margin_large"
+                android:layout_toEndOf="@id/btnDownload" />
+
+            <TextView
+                android:id="@+id/txtProgressDownload"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/progressDownload"
+                android:layout_marginStart="@dimen/margin_default"
+                android:layout_toEndOf="@id/btnDownload"
+                android:text="@string/txt_0_mb" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</ScrollView>

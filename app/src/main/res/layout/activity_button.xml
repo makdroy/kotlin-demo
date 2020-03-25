@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/padding_default"
+    tools:context=".ButtonActivity">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/button_material_raised"
+        android:theme="@style/MaterialButtonTheme" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:enabled="false"
+        android:text="@string/button_material_raised"
+        android:theme="@style/MaterialButtonTheme" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/margin_default"
+        android:enabled="false"
+        android:text="@string/button_material_flat_disable"
+        android:theme="@style/MaterialFlatButtonTheme" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/button_material_flat"
+        android:theme="@style/MaterialFlatButtonTheme" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/margin_default"
+        android:enabled="false"
+        android:text="@string/button_material_flat_disable"
+        android:theme="@style/MaterialFlatBorderButtonTheme" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/button_material_flat"
+        android:theme="@style/MaterialFlatBorderButtonTheme" />
+
+    <Button
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/margin_default"
+        android:padding="@dimen/padding_default"
+        android:text="@string/button_borderless"
+        android:textColor="@color/colorPrimary" />
+
+    <Button
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:enabled="false"
+        android:padding="@dimen/padding_default"
+        android:text="@string/button_borderless_disable"
+        android:textColor="@color/colorPrimary" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_default"
+        android:layout_marginTop="@dimen/margin_default"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/desc_image_button_with_item_background"
+        android:src="@android:drawable/ic_delete" />
+
+    <Button
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_gravity="center_horizontal"
+        android:elevation="12dp"
+        android:layout_marginTop="@dimen/margin_default"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="@dimen/margin_default"
+        android:background="@drawable/bg_circle_video_call_menu_ripple"
+        android:drawableTop="@drawable/ic_speaker_small"
+        android:drawablePadding="-10dp"
+        android:paddingTop="12dp"
+        android:text="@string/txt_circle"
+        android:textSize="12sp" />
+
+</LinearLayout>
