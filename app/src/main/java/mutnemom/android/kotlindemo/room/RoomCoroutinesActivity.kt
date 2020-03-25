@@ -1,6 +1,7 @@
 package mutnemom.android.kotlindemo.room
 
 import android.os.Bundle
+import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -28,16 +29,22 @@ class RoomCoroutinesActivity : AppCompatActivity() {
     }
 
     private fun setupInputForm() {
-        btnInsert?.setOnClickListener { insertMember(editMemberName?.text?.toString()) }
-        btnDelete?.setOnClickListener { deleteMember(editMemberName?.text?.toString()) }
+        btnInsert?.setOnClickListener { insertMember(editMemberName) }
+        btnDelete?.setOnClickListener { deleteMember(editMemberName) }
     }
 
-    private fun deleteMember(name: String?) {
-        name?.let { roomCoroutinesVm.delete(name) }
+    private fun deleteMember(editText: EditText?) {
+        editText?.apply {
+            text?.toString()?.let { roomCoroutinesVm.delete(it) }
+            text?.clear()
+        }
     }
 
-    private fun insertMember(name: String?) {
-        name?.let { roomCoroutinesVm.insert(Member(name = name)) }
+    private fun insertMember(editText: EditText?) {
+        editText?.apply {
+            text?.toString()?.let { roomCoroutinesVm.insert(Member(name = it)) }
+            text?.clear()
+        }
     }
 
     private fun setupViewModel() {

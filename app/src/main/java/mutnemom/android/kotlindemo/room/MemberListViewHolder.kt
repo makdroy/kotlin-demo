@@ -7,6 +7,7 @@ import kotlinx.android.synthetic.main.member_item.view.*
 class MemberListViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
     fun setData(member: Member) {
+        itemView.txtId?.text = member.id.toString()
         itemView.txtName?.text = member.name
     }
 
