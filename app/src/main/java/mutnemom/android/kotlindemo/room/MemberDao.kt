@@ -6,6 +6,7 @@ import androidx.room.*
 @Dao
 interface MemberDao {
 
+    @Transaction
     @Query("SELECT * FROM members ORDER BY id DESC")
     fun getMembers(): LiveData<List<Member>>
 

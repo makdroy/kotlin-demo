@@ -4,6 +4,10 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.room.withTransaction
+import androidx.sqlite.db.SupportSQLiteDatabase
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.launch
 
 @Database(
     entities = [Member::class],
@@ -18,12 +22,12 @@ abstract class KotlinDemoRoom : RoomDatabase() {
         @Volatile
         private var INSTANCE: KotlinDemoRoom? = null
 
-        fun getRoomInstance(context: Context): KotlinDemoRoom =
+        fun getRoomInstance(context: Context, scope: CoroutineScope): KotlinDemoRoom =
             INSTANCE ?: synchronized(this) {
-                INSTANCE ?: createRoomInstance(context).also { INSTANCE = it }
+                INSTANCE ?: createRoomInstance(context, scope).also { INSTANCE = it }
             }
 
-        private fun createRoomInstance(context: Context): KotlinDemoRoom =
+        private fun createRoomInstance(context: Context, scope: CoroutineScope): KotlinDemoRoom =
             Room
                 .databaseBuilder(
                     context.applicationContext,
@@ -31,7 +35,32 @@ abstract class KotlinDemoRoom : RoomDatabase() {
                     "kotlin_demo.db"
                 )
                 .fallbackToDestructiveMigration()
+                .addCallback(KotlinDemoRoomCallback(scope))
                 .build()
+    }
+
+    private class KotlinDemoRoomCallback(
+        private val scope: CoroutineScope
+    ) : RoomDatabase.Callback() {
+
+        override fun onOpen(db: SupportSQLiteDatabase) {
+            super.onOpen(db)
+
+            INSTANCE?.let {
+                scope.launch {
+                    it.withTransaction {
+                        /* call suspension functions from different DAOs inside a transaction */
+                    }
+
+                    populateDatabase(it.memberDao())
+                }
+            }
+        }
+
+        suspend fun populateDatabase(memberDao: MemberDao) {
+            memberDao.deleteMembers()
+        }
+
     }
 
 }
