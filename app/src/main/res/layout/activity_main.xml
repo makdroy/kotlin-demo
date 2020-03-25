@@ -59,16 +59,15 @@
                 app:layout_constraintTop_toBottomOf="@id/txtFragmentChapter" />
 
             <TextView
-                android:id="@+id/txtEpubReader"
+                android:id="@+id/txtRoomCoroutines"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:background="?attr/selectableItemBackground"
+                android:layout_marginStart="@dimen/margin_large"
                 android:padding="8dp"
-                android:text="@string/txt_epub_reader_chapter"
+                android:text="@string/txt_room_coroutines_chapter"
                 android:textColor="@color/colorAccent"
-                app:layout_constraintStart_toStartOf="@id/txtDragView"
-                app:layout_constraintTop_toBottomOf="@id/txtDragView" />
+                app:layout_constraintStart_toEndOf="@id/txtTts"
+                app:layout_constraintTop_toTopOf="@id/txtTts" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -55,6 +55,13 @@
     <string name="txt_aes256_decrypted">Decrypted</string>
     <!--    -->
 
+    <!--  Room + Coroutines page -->
+    <string name="txt_room_coroutines_chapter">Room + Coroutines</string>
+    <string name="txt_hint_member_name">Member Name</string>
+    <string name="txt_insert_button">insert</string>
+    <string name="txt_delete_button">delete</string>
+    <!--    -->
+
     <!--  about epub reader page -->
     <string name="txt_epub_reader_chapter">EPUB Reader</string>
     <!--    -->
@@ -63,6 +70,5 @@
     <string name="txt_ratio_image_portrait_ratio_image_view_2_3"><![CDATA[-> Portrait Ratio Image View 2:3]]></string>
     <string name="txt_ratio_image_landscape_ratio_image_view_2_3"><![CDATA[-> Landscape Ratio Image View 2:3]]></string>
     <!--    -->
-
 
 </resources>

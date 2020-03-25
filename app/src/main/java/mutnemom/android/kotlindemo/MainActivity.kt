@@ -14,7 +14,7 @@ import mutnemom.android.kotlindemo.draggable.DragViewActivity
 import mutnemom.android.kotlindemo.encrypt.AES256Activity
 import mutnemom.android.kotlindemo.fragments.AboutFragmentActivity
 import mutnemom.android.kotlindemo.model.DownloadModel
-import mutnemom.android.kotlindemo.readium.EpubReaderActivity
+import mutnemom.android.kotlindemo.room.RoomCoroutinesActivity
 import mutnemom.android.kotlindemo.services.DownloadFileService
 import mutnemom.android.kotlindemo.tts.TextToSpeechActivity
 
@@ -61,9 +61,9 @@ class MainActivity :
         registerReceiver()
 
         txtFragmentChapter?.setOnClickListener { openFragmentChapterPage() }
+        txtRoomCoroutines?.setOnClickListener { openRoomCoroutinesPage() }
         txtDragView?.setOnClickListener { openDragViewPage() }
         txtTts?.setOnClickListener { openTtsPage() }
-        txtEpubReader?.setOnClickListener { openEpubReader() }
     }
 
     override fun onClick(v: View) {
@@ -102,8 +102,8 @@ class MainActivity :
             .apply { startActivity(this) }
     }
 
-    private fun openEpubReader() {
-        Intent(this, EpubReaderActivity::class.java)
+    private fun openRoomCoroutinesPage() {
+        Intent(this, RoomCoroutinesActivity::class.java)
             .apply { startActivity(this) }
     }
 
