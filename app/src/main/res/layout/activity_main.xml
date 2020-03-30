@@ -72,6 +72,13 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <Button
+            android:id="@+id/btnSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:layout_marginTop="@dimen/margin_default"
+            android:text="@string/txt_switch_chapter" />
+
+        <Button
             android:id="@+id/btnAes256"
             android:layout_width="140dp"
             android:layout_height="56dp"

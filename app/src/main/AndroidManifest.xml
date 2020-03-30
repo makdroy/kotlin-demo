@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="mutnemom.android.kotlindemo">
-    <!-- To access Google+ APIs: -->
+
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CAMERA" />
@@ -18,6 +18,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:allowBackup">
+        <activity android:name=".toggle.SwitchIconActivity" />
+        <activity android:name=".toggle.SwitchActivity" />
         <activity android:name=".room.RoomCoroutinesActivity" />
         <activity android:name=".encrypt.AES256Activity" />
         <activity android:name=".custom.CustomViewActivity" />

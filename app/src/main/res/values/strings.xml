@@ -71,4 +71,26 @@
     <string name="txt_ratio_image_landscape_ratio_image_view_2_3"><![CDATA[-> Landscape Ratio Image View 2:3]]></string>
     <!--    -->
 
+    <!--  Switch Chapter page -->
+    <string name="txt_switch_chapter">switch tutorials</string>
+    <string name="txt_switch_chapter_arrow">-<![CDATA[->]]></string>
+    <string name="txt_switch_chapter_description">Demo for toggle or switching state components</string>
+    <string name="txt_switch_chapter_switch_icon_button">Switch Icon</string>
+    <!--    -->
+
+    <!--  Switch Icon page -->
+    <string name="txt_switch_icon_description">Switch Icon</string>
+    <string name="txt_switch_icon_properties">
+        android:layout_width="wrap_content"
+        \nandroid:layout_height="wrap_content"
+        \nandroid:padding="8dp"
+        \napp:si_animation_duration="500"
+        \napp:si_disabled_alpha=".3"
+        \napp:si_disabled_color="#b7b7b7"
+        \napp:si_tint_color="#ff3c00"
+        \napp:si_enabled="false"
+        \napp:si_no_dash="true"
+        \napp:srcCompat="@drawable/ic_cloud"</string>
+    <!--    -->
+
 </resources>

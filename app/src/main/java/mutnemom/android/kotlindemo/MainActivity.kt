@@ -16,6 +16,7 @@ import mutnemom.android.kotlindemo.fragments.AboutFragmentActivity
 import mutnemom.android.kotlindemo.model.DownloadModel
 import mutnemom.android.kotlindemo.room.RoomCoroutinesActivity
 import mutnemom.android.kotlindemo.services.DownloadFileService
+import mutnemom.android.kotlindemo.toggle.SwitchActivity
 import mutnemom.android.kotlindemo.tts.TextToSpeechActivity
 
 class MainActivity :
@@ -57,6 +58,7 @@ class MainActivity :
         btnWebView?.setOnClickListener(this)
         btnButton?.setOnClickListener(this)
         btnAes256?.setOnClickListener(this)
+        btnSwitch?.setOnClickListener(this)
 
         registerReceiver()
 
@@ -76,6 +78,7 @@ class MainActivity :
             R.id.btnWebView -> startActivity(Intent(this, WebViewActivity::class.java))
             R.id.btnButton -> startActivity(Intent(this, ButtonActivity::class.java))
             R.id.btnAes256 -> startActivity(Intent(this, AES256Activity::class.java))
+            R.id.btnSwitch -> startActivity(Intent(this, SwitchActivity::class.java))
         }
     }
 
