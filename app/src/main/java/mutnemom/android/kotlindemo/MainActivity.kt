@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import kotlinx.android.synthetic.main.activity_main.*
 import mutnemom.android.kotlindemo.custom.CustomViewActivity
+import mutnemom.android.kotlindemo.datetime.DateTimeActivity
 import mutnemom.android.kotlindemo.draggable.DragViewActivity
 import mutnemom.android.kotlindemo.encrypt.AES256Activity
 import mutnemom.android.kotlindemo.fragments.AboutFragmentActivity
@@ -59,6 +60,7 @@ class MainActivity :
         btnButton?.setOnClickListener(this)
         btnAes256?.setOnClickListener(this)
         btnSwitch?.setOnClickListener(this)
+        btnDateTime?.setOnClickListener(this)
 
         registerReceiver()
 
@@ -79,6 +81,7 @@ class MainActivity :
             R.id.btnButton -> startActivity(Intent(this, ButtonActivity::class.java))
             R.id.btnAes256 -> startActivity(Intent(this, AES256Activity::class.java))
             R.id.btnSwitch -> startActivity(Intent(this, SwitchActivity::class.java))
+            R.id.btnDateTime -> startActivity(Intent(this, DateTimeActivity::class.java))
         }
     }
 

@@ -93,4 +93,14 @@
         \napp:srcCompat="@drawable/ic_cloud"</string>
     <!--    -->
 
+    <!--  DateTime page -->
+    <string name="txt_date_time_chapter">date time</string>
+    <string name="txt_date_time_destination_format">Format %s</string>
+    <string name="txt_date_time_2_days_ago">2 days ago</string>
+    <string name="txt_date_time_in_5_days">in 5 days</string>
+    <string name="txt_date_time_today">today</string>
+    <string name="txt_date_time_timestamp">Timestamp</string>
+    <string name="txt_date_time_title">Convert Timestamp to DateTime format</string>
+    <!--    -->
+
 </resources>
