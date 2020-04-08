@@ -33,13 +33,6 @@
             android:textColor="@color/colorAccent" />
 
         <Button
-            android:id="@+id/btnAnimations"
-            android:layout_width="wrap_content"
-            android:layout_height="56dp"
-            android:layout_marginTop="@dimen/margin_default"
-            android:text="@string/txt_animations_chapter" />
-
-        <Button
             android:id="@+id/btnRoomCoroutines"
             android:layout_width="wrap_content"
             android:layout_height="56dp"
@@ -106,6 +99,12 @@
             android:layout_width="wrap_content"
             android:layout_height="56dp"
             android:text="@string/button_custom_view" />
+
+        <Button
+            android:id="@+id/btnAnimations"
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:text="@string/txt_animations_chapter" />
 
         <RelativeLayout
             android:layout_width="match_parent"
