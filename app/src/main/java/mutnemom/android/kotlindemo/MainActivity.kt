@@ -16,6 +16,7 @@ import mutnemom.android.kotlindemo.encrypt.AES256Activity
 import mutnemom.android.kotlindemo.fragments.AboutFragmentActivity
 import mutnemom.android.kotlindemo.model.DownloadModel
 import mutnemom.android.kotlindemo.room.RoomCoroutinesActivity
+import mutnemom.android.kotlindemo.screenshot.ScreenshotActivity
 import mutnemom.android.kotlindemo.services.DownloadFileService
 import mutnemom.android.kotlindemo.toggle.SwitchActivity
 import mutnemom.android.kotlindemo.tts.TextToSpeechActivity
@@ -42,7 +43,6 @@ class MainActivity :
                         )
                     }
                 }
-
             }
         }
     }
@@ -53,35 +53,37 @@ class MainActivity :
 
         btnRecyclerView?.setOnClickListener(this)
         btnProgressBar?.setOnClickListener(this)
+        btnScreenshot?.setOnClickListener(this)
         btnCustomView?.setOnClickListener(this)
         btnWebSocket?.setOnClickListener(this)
+        btnDateTime?.setOnClickListener(this)
         btnDownload?.setOnClickListener(this)
         btnWebView?.setOnClickListener(this)
         btnButton?.setOnClickListener(this)
         btnAes256?.setOnClickListener(this)
         btnSwitch?.setOnClickListener(this)
-        btnDateTime?.setOnClickListener(this)
 
         registerReceiver()
 
-        txtFragmentChapter?.setOnClickListener { openFragmentChapterPage() }
-        txtRoomCoroutines?.setOnClickListener { openRoomCoroutinesPage() }
-        txtDragView?.setOnClickListener { openDragViewPage() }
-        txtTts?.setOnClickListener { openTtsPage() }
+        btnFragmentChapter?.setOnClickListener { openFragmentChapterPage() }
+        btnRoomCoroutines?.setOnClickListener { openRoomCoroutinesPage() }
+        btnDragView?.setOnClickListener { openDragViewPage() }
+        btnTts?.setOnClickListener { openTtsPage() }
     }
 
     override fun onClick(v: View) {
         when (v.id) {
             R.id.btnRecyclerView -> startActivity(Intent(this, RecyclerViewActivity::class.java))
             R.id.btnProgressBar -> startActivity(Intent(this, ProgressBarActivity::class.java))
+            R.id.btnScreenshot -> startActivity(Intent(this, ScreenshotActivity::class.java))
             R.id.btnCustomView -> startActivity(Intent(this, CustomViewActivity::class.java))
             R.id.btnWebSocket -> startActivity(Intent(this, WebSocketActivity::class.java))
             R.id.btnDownload -> startService(Intent(this, DownloadFileService::class.java))
+            R.id.btnDateTime -> startActivity(Intent(this, DateTimeActivity::class.java))
             R.id.btnWebView -> startActivity(Intent(this, WebViewActivity::class.java))
             R.id.btnButton -> startActivity(Intent(this, ButtonActivity::class.java))
             R.id.btnAes256 -> startActivity(Intent(this, AES256Activity::class.java))
             R.id.btnSwitch -> startActivity(Intent(this, SwitchActivity::class.java))
-            R.id.btnDateTime -> startActivity(Intent(this, DateTimeActivity::class.java))
         }
     }
 

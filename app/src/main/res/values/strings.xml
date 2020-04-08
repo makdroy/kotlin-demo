@@ -5,6 +5,7 @@
     <string name="button_web_view">WebView</string>
     <string name="button_recycler_view">Recycler View</string>
     <string name="button_button">Button</string>
+    <string name="button_screenshot">Screenshot</string>
     <string name="button_camera">Camera</string>
     <string name="button_material_raised">Material Raised</string>
     <string name="button_material_raised_disable">Material Raised Disable</string>
@@ -101,6 +102,10 @@
     <string name="txt_date_time_today">today</string>
     <string name="txt_date_time_timestamp">Timestamp</string>
     <string name="txt_date_time_title">Convert Timestamp to DateTime format</string>
+    <!--    -->
+
+    <!--  DateTime page -->
+    <string name="txt_screenshot_title">take screenshot full page</string>
     <!--    -->
 
 </resources>
