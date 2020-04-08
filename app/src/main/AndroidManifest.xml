@@ -3,7 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="mutnemom.android.kotlindemo">
 
+    <!-- normal permission -->
     <uses-permission android:name="android.permission.INTERNET" />
+
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CAMERA" />
 
@@ -19,6 +21,7 @@
         android:theme="@style/AppTheme"
         tools:replace="android:allowBackup">
         <activity android:name=".screenshot.ScreenshotActivity" />
+        <activity android:name=".animations.transitions.TransitionsActivity" />
         <activity android:name=".datetime.DateTimeActivity" />
         <activity android:name=".toggle.SwitchIconActivity" />
         <activity android:name=".toggle.SwitchActivity" />

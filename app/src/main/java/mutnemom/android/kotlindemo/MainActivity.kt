@@ -9,6 +9,7 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import kotlinx.android.synthetic.main.activity_main.*
+import mutnemom.android.kotlindemo.animations.transitions.TransitionsActivity
 import mutnemom.android.kotlindemo.custom.CustomViewActivity
 import mutnemom.android.kotlindemo.datetime.DateTimeActivity
 import mutnemom.android.kotlindemo.draggable.DragViewActivity
@@ -62,6 +63,7 @@ class MainActivity :
         btnButton?.setOnClickListener(this)
         btnAes256?.setOnClickListener(this)
         btnSwitch?.setOnClickListener(this)
+        btnAnimations?.setOnClickListener(this)
 
         registerReceiver()
 
@@ -84,6 +86,8 @@ class MainActivity :
             R.id.btnButton -> startActivity(Intent(this, ButtonActivity::class.java))
             R.id.btnAes256 -> startActivity(Intent(this, AES256Activity::class.java))
             R.id.btnSwitch -> startActivity(Intent(this, SwitchActivity::class.java))
+            R.id.btnDateTime -> startActivity(Intent(this, DateTimeActivity::class.java))
+            R.id.btnAnimations -> startActivity(Intent(this, TransitionsActivity::class.java))
         }
     }
 
