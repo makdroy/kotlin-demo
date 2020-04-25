@@ -115,4 +115,11 @@
     <string name="btn_transitions_first">First</string>
     <!--    -->
 
+    <!--  Bottom Navigation -->
+    <string name="txt_bottom_navigation_chapter">Bottom Nav</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <!--    -->
+
 </resources>

@@ -19,11 +19,11 @@ android {
         experimental = true
     }
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = "1.8"
     }
     compileOptions {
-        sourceCompatibility '1.8'
-        targetCompatibility '1.8'
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
     buildTypes {
         release {
@@ -50,6 +50,12 @@ dependencies {
     implementation "androidx.multidex:multidex:$multidex_version"
     implementation "androidx.recyclerview:recyclerview:$recyclerview_version"
     implementation "com.google.android.material:material:$material_version"
+
+    // Bottom Navigation
+    implementation "androidx.navigation:navigation-fragment-ktx:$navigation_version"
+    implementation "androidx.navigation:navigation-fragment:$navigation_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$navigation_version"
+    implementation "androidx.navigation:navigation-ui:$navigation_version"
 
     // lifecycle-viewmodel-ktx: for using CoroutineScope ViewModel extension
     androidTestImplementation "androidx.arch.core:core-testing:$coretesting_version"
