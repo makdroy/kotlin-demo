@@ -122,4 +122,8 @@
     <string name="title_notifications">Notifications</string>
     <!--    -->
 
+    <!--  Gesture -->
+    <string name="txt_gesture_chapter">Gesture</string>
+    <!--    -->
+
 </resources>
