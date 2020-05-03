@@ -4,13 +4,14 @@ import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_gesture.*
-import mutnemom.android.kotlindemo.R
 
 class GestureActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_gesture)
+//        setContentView(R.layout.activity_gesture)
+//        setContentView(DrawingCanvas(this))
+        setContentView(MultiTouchCanvas(this))
 
         setEvent()
     }
