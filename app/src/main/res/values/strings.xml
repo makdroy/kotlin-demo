@@ -126,4 +126,8 @@
     <string name="txt_gesture_chapter">Gesture</string>
     <!--    -->
 
+    <!--  Search Field -->
+    <string name="txt_search_field_chapter">Search</string>
+    <!--    -->
+
 </resources>

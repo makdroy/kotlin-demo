@@ -2,11 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="mutnemom.android.kotlindemo">
-
     <!-- normal permission -->
-    <uses-permission android:name="android.permission.INTERNET" />
-
-    <!-- request permission -->
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- request permission -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CAMERA" />
 
@@ -36,6 +33,7 @@
         <activity android:name=".gesture.GestureActivity" />
         <activity android:name=".encrypt.AES256Activity" />
         <activity android:name=".toggle.SwitchActivity" />
+        <activity android:name=".search.SearchActivity" />
         <activity android:name=".RecyclerViewActivity" />
         <activity android:name=".ProgressBarActivity" />
         <activity android:name=".WebSocketActivity" />
