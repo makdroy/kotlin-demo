@@ -16,9 +16,11 @@ import mutnemom.android.kotlindemo.datetime.DateTimeActivity
 import mutnemom.android.kotlindemo.draggable.DragViewActivity
 import mutnemom.android.kotlindemo.encrypt.AES256Activity
 import mutnemom.android.kotlindemo.fragments.AboutFragmentActivity
+import mutnemom.android.kotlindemo.gesture.GestureActivity
 import mutnemom.android.kotlindemo.model.DownloadModel
 import mutnemom.android.kotlindemo.room.RoomCoroutinesActivity
 import mutnemom.android.kotlindemo.screenshot.ScreenshotActivity
+import mutnemom.android.kotlindemo.search.SearchActivity
 import mutnemom.android.kotlindemo.services.DownloadFileService
 import mutnemom.android.kotlindemo.toggle.SwitchActivity
 import mutnemom.android.kotlindemo.tts.TextToSpeechActivity
@@ -62,10 +64,12 @@ class MainActivity :
         btnWebSocket?.setOnClickListener(this)
         btnDateTime?.setOnClickListener(this)
         btnDownload?.setOnClickListener(this)
+        btnGesture?.setOnClickListener(this)
         btnWebView?.setOnClickListener(this)
         btnButton?.setOnClickListener(this)
         btnAes256?.setOnClickListener(this)
         btnSwitch?.setOnClickListener(this)
+        btnSearch?.setOnClickListener(this)
 
         registerReceiver()
 
@@ -86,10 +90,12 @@ class MainActivity :
             R.id.btnWebSocket -> startActivity(Intent(this, WebSocketActivity::class.java))
             R.id.btnDownload -> startService(Intent(this, DownloadFileService::class.java))
             R.id.btnDateTime -> startActivity(Intent(this, DateTimeActivity::class.java))
+            R.id.btnGesture -> startActivity(Intent(this, GestureActivity::class.java))
             R.id.btnWebView -> startActivity(Intent(this, WebViewActivity::class.java))
             R.id.btnButton -> startActivity(Intent(this, ButtonActivity::class.java))
             R.id.btnAes256 -> startActivity(Intent(this, AES256Activity::class.java))
             R.id.btnSwitch -> startActivity(Intent(this, SwitchActivity::class.java))
+            R.id.btnSearch -> startActivity(Intent(this, SearchActivity::class.java))
         }
     }
 

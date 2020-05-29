@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="mutnemom.android.kotlindemo">
     <!-- normal permission -->
-    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- request permission -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CAMERA" />
 
@@ -18,25 +18,27 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:allowBackup">
-        <activity android:name=".bottomnav.BottomNavActivity" />
-        <activity android:name=".screenshot.ScreenshotActivity" />
+        <activity android:name=".fragments.transaction.AnimateFragmentTransactionActivity" />
+        <activity android:name=".fragments.backpress.BackPressDispatcherActivity" />
         <activity android:name=".animations.transitions.TransitionsActivity" />
+        <activity android:name=".fragments.AboutFragmentActivity" />
+        <activity android:name=".screenshot.ScreenshotActivity" />
+        <activity android:name=".bottomnav.BottomNavActivity" />
+        <activity android:name=".room.RoomCoroutinesActivity" />
+        <activity android:name=".draggable.DragViewActivity" />
+        <activity android:name=".custom.CustomViewActivity" />
         <activity android:name=".datetime.DateTimeActivity" />
         <activity android:name=".toggle.SwitchIconActivity" />
-        <activity android:name=".toggle.SwitchActivity" />
-        <activity android:name=".room.RoomCoroutinesActivity" />
-        <activity android:name=".encrypt.AES256Activity" />
-        <activity android:name=".custom.CustomViewActivity" />
         <activity android:name=".tts.TextToSpeechActivity" />
-        <activity android:name=".draggable.DragViewActivity" />
-        <activity android:name=".fragments.transaction.AnimateFragmentTransactionActivity" />
-        <activity android:name=".fragments.AboutFragmentActivity" />
-        <activity android:name=".fragments.backpress.BackPressDispatcherActivity" />
-        <activity android:name=".WebViewActivity" />
+        <activity android:name=".gesture.GestureActivity" />
+        <activity android:name=".encrypt.AES256Activity" />
+        <activity android:name=".toggle.SwitchActivity" />
+        <activity android:name=".search.SearchActivity" />
+        <activity android:name=".RecyclerViewActivity" />
         <activity android:name=".ProgressBarActivity" />
         <activity android:name=".WebSocketActivity" />
+        <activity android:name=".WebViewActivity" />
         <activity android:name=".ButtonActivity" />
-        <activity android:name=".RecyclerViewActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
