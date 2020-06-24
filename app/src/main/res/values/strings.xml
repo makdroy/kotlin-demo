@@ -113,6 +113,7 @@
     <string name="txt_animations_sample_transitions_label"><![CDATA[with -> TransitionManager\n#beginDelayedTransition()]]></string>
     <string name="txt_transition_first">Transition First Sample</string>
     <string name="btn_transitions_first">First</string>
+    <string name="btn_transitions_toggle">Toggle Menu</string>
     <!--    -->
 
     <!--  Bottom Navigation -->
