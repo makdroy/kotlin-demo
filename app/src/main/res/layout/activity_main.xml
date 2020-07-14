@@ -126,6 +126,12 @@
             android:layout_height="56dp"
             android:text="@string/txt_search_field_chapter" />
 
+        <Button
+            android:id="@+id/btnCoil"
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:text="@string/txt_coil_chapter" />
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

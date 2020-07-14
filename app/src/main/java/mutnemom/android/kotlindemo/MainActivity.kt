@@ -11,6 +11,7 @@ import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import kotlinx.android.synthetic.main.activity_main.*
 import mutnemom.android.kotlindemo.animations.transitions.TransitionsActivity
 import mutnemom.android.kotlindemo.bottomnav.BottomNavActivity
+import mutnemom.android.kotlindemo.coil.CoilActivity
 import mutnemom.android.kotlindemo.custom.CustomViewActivity
 import mutnemom.android.kotlindemo.datetime.DateTimeActivity
 import mutnemom.android.kotlindemo.draggable.DragViewActivity
@@ -70,6 +71,7 @@ class MainActivity :
         btnAes256?.setOnClickListener(this)
         btnSwitch?.setOnClickListener(this)
         btnSearch?.setOnClickListener(this)
+        btnCoil?.setOnClickListener(this)
 
         registerReceiver()
 
@@ -96,6 +98,7 @@ class MainActivity :
             R.id.btnAes256 -> startActivity(Intent(this, AES256Activity::class.java))
             R.id.btnSwitch -> startActivity(Intent(this, SwitchActivity::class.java))
             R.id.btnSearch -> startActivity(Intent(this, SearchActivity::class.java))
+            R.id.btnCoil -> startActivity(Intent(this, CoilActivity::class.java))
         }
     }
 
