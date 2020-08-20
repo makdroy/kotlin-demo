@@ -34,14 +34,14 @@ class PressBackFragment : Fragment() {
             listener = context
             val callback = object : OnBackPressedCallback(true) {
                 override fun handleOnBackPressed() {
-                    when {
-                        toast != null && toast!!.view.isShown -> requireActivity().finish()
-                        else -> {
-                            toast = Toast
-                                .makeText(context, pressBackMessage, Toast.LENGTH_SHORT)
-                                .apply { show() }
-                        }
-                    }
+//                    when {
+//                        toast != null && toast!!.view.isShown -> requireActivity().finish()
+//                        else -> {
+//                            toast = Toast
+//                                .makeText(context, pressBackMessage, Toast.LENGTH_SHORT)
+//                                .apply { show() }
+//                        }
+//                    }
                 }
             }
 
