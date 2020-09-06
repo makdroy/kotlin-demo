@@ -131,4 +131,10 @@
     <string name="txt_search_field_chapter">Search</string>
     <!--    -->
 
+    <!--  Coroutines Image Loader -->
+    <string name="txt_coil_chapter">Coil</string>
+    <string name="desc_coil_rounded_corner_image">Rounded Corner Image</string>
+    <string name="desc_coil_circle_crop_image">Circle Crop Image</string>
+    <!--    -->
+
 </resources>

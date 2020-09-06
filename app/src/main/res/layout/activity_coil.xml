@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".coil.CoilActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/txt_coil_chapter"
+        android:textSize="22sp" />
+
+    <ImageView
+        android:id="@+id/imgRoundedCorner"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/margin_default"
+        android:contentDescription="@string/desc_coil_rounded_corner_image" />
+
+    <ImageView
+        android:id="@+id/imgCircleCrop"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/margin_default"
+        android:contentDescription="@string/desc_coil_circle_crop_image" />
+
+</LinearLayout>

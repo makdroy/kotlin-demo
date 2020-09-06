@@ -37,6 +37,7 @@
         <activity android:name=".RecyclerViewActivity" />
         <activity android:name=".ProgressBarActivity" />
         <activity android:name=".WebSocketActivity" />
+        <activity android:name=".coil.CoilActivity" />
         <activity android:name=".WebViewActivity" />
         <activity android:name=".ButtonActivity" />
         <activity android:name=".MainActivity">
