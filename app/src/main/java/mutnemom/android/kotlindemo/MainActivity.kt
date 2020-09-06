@@ -14,6 +14,7 @@ import mutnemom.android.kotlindemo.bottomnav.BottomNavActivity
 import mutnemom.android.kotlindemo.coil.CoilActivity
 import mutnemom.android.kotlindemo.custom.CustomViewActivity
 import mutnemom.android.kotlindemo.datetime.DateTimeActivity
+import mutnemom.android.kotlindemo.dialog.DialogActivity
 import mutnemom.android.kotlindemo.draggable.DragViewActivity
 import mutnemom.android.kotlindemo.encrypt.AES256Activity
 import mutnemom.android.kotlindemo.fragments.AboutFragmentActivity
@@ -71,6 +72,7 @@ class MainActivity :
         btnAes256?.setOnClickListener(this)
         btnSwitch?.setOnClickListener(this)
         btnSearch?.setOnClickListener(this)
+        btnDialog?.setOnClickListener(this)
         btnCoil?.setOnClickListener(this)
 
         registerReceiver()
@@ -98,6 +100,7 @@ class MainActivity :
             R.id.btnAes256 -> startActivity(Intent(this, AES256Activity::class.java))
             R.id.btnSwitch -> startActivity(Intent(this, SwitchActivity::class.java))
             R.id.btnSearch -> startActivity(Intent(this, SearchActivity::class.java))
+            R.id.btnDialog -> startActivity(Intent(this, DialogActivity::class.java))
             R.id.btnCoil -> startActivity(Intent(this, CoilActivity::class.java))
         }
     }

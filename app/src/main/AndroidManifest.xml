@@ -32,6 +32,7 @@
         <activity android:name=".tts.TextToSpeechActivity" />
         <activity android:name=".gesture.GestureActivity" />
         <activity android:name=".encrypt.AES256Activity" />
+        <activity android:name=".dialog.DialogActivity" />
         <activity android:name=".toggle.SwitchActivity" />
         <activity android:name=".search.SearchActivity" />
         <activity android:name=".RecyclerViewActivity" />

@@ -137,4 +137,13 @@
     <string name="desc_coil_circle_crop_image">Circle Crop Image</string>
     <!--    -->
 
+    <!--  Dialog -->
+    <string name="txt_dialog_chapter">Dialog</string>
+    <string name="txt_dialog_multiple_choice_title">เลือกรายการ</string>
+    <string name="txt_dialog_multiple_choice_1">คืนอีบุ๊ก</string>
+    <string name="txt_dialog_multiple_choice_2">ลบไฟล์</string>
+    <string name="txt_dialog_description_1">Custom multiple choice dialog fragment</string>
+    <string name="txt_description_2">Other Header</string>
+    <!--    -->
+
 </resources>
