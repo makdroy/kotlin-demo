@@ -20,6 +20,7 @@ import mutnemom.android.kotlindemo.encrypt.AES256Activity
 import mutnemom.android.kotlindemo.fragments.AboutFragmentActivity
 import mutnemom.android.kotlindemo.gesture.GestureActivity
 import mutnemom.android.kotlindemo.model.DownloadModel
+import mutnemom.android.kotlindemo.notification.NotificationActivity
 import mutnemom.android.kotlindemo.room.RoomCoroutinesActivity
 import mutnemom.android.kotlindemo.screenshot.ScreenshotActivity
 import mutnemom.android.kotlindemo.search.SearchActivity
@@ -57,6 +58,7 @@ class MainActivity :
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        btnNotification?.setOnClickListener(this)
         btnRecyclerView?.setOnClickListener(this)
         btnProgressBar?.setOnClickListener(this)
         btnAnimations?.setOnClickListener(this)
@@ -85,6 +87,7 @@ class MainActivity :
 
     override fun onClick(v: View) {
         when (v.id) {
+            R.id.btnNotification -> startActivity(Intent(this, NotificationActivity::class.java))
             R.id.btnRecyclerView -> startActivity(Intent(this, RecyclerViewActivity::class.java))
             R.id.btnProgressBar -> startActivity(Intent(this, ProgressBarActivity::class.java))
             R.id.btnAnimations -> startActivity(Intent(this, TransitionsActivity::class.java))

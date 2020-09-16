@@ -21,6 +21,7 @@
         <activity android:name=".fragments.transaction.AnimateFragmentTransactionActivity" />
         <activity android:name=".fragments.backpress.BackPressDispatcherActivity" />
         <activity android:name=".animations.transitions.TransitionsActivity" />
+        <activity android:name=".notification.NotificationActivity" />
         <activity android:name=".fragments.AboutFragmentActivity" />
         <activity android:name=".screenshot.ScreenshotActivity" />
         <activity android:name=".bottomnav.BottomNavActivity" />

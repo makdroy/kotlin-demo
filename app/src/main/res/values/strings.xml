@@ -146,4 +146,10 @@
     <string name="txt_description_2">Other Header</string>
     <!--    -->
 
+    <!--  Notification -->
+    <string name="txt_notification_chapter">Notification</string>
+    <string name="btn_send">send</string>
+    <string name="txt_send_notification_immediately_label">Send notification immediately</string>
+    <!--    -->
+
 </resources>

@@ -138,6 +138,12 @@
             android:layout_height="56dp"
             android:text="@string/txt_dialog_chapter" />
 
+        <Button
+            android:id="@+id/btnNotification"
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:text="@string/txt_notification_chapter" />
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
