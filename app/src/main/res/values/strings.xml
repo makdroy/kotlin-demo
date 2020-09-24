@@ -152,4 +152,8 @@
     <string name="txt_send_notification_immediately_label">Send notification immediately</string>
     <!--    -->
 
+    <!--  BottomSheet -->
+    <string name="txt_bottom_sheet_chapter">Bottom Sheet</string>
+    <!--    -->
+
 </resources>

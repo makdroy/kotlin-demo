@@ -67,22 +67,16 @@
             android:textColor="@color/colorAccent" />
 
         <Button
-            android:id="@+id/btnSwitch"
-            android:layout_width="wrap_content"
-            android:layout_height="56dp"
-            android:text="@string/txt_switch_chapter" />
-
-        <Button
-            android:id="@+id/btnProgressBar"
-            android:layout_width="wrap_content"
-            android:layout_height="56dp"
-            android:text="@string/button_animate_progress_bar" />
-
-        <Button
             android:id="@+id/btnRecyclerView"
             android:layout_width="wrap_content"
             android:layout_height="56dp"
             android:text="@string/button_recycler_view" />
+
+        <Button
+            android:id="@+id/btnScreenshot"
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:text="@string/button_screenshot" />
 
         <Button
             android:id="@+id/btnButton"
@@ -91,10 +85,22 @@
             android:text="@string/button_button" />
 
         <Button
-            android:id="@+id/btnScreenshot"
+            android:id="@+id/btnDialog"
             android:layout_width="wrap_content"
             android:layout_height="56dp"
-            android:text="@string/button_screenshot" />
+            android:text="@string/txt_dialog_chapter" />
+
+        <Button
+            android:id="@+id/btnNotification"
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:text="@string/txt_notification_chapter" />
+
+        <Button
+            android:id="@+id/btnBottomNav"
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:text="@string/txt_bottom_navigation_chapter" />
 
         <Button
             android:id="@+id/btnCustomView"
@@ -115,12 +121,6 @@
             android:text="@string/txt_gesture_chapter" />
 
         <Button
-            android:id="@+id/btnBottomNav"
-            android:layout_width="wrap_content"
-            android:layout_height="56dp"
-            android:text="@string/txt_bottom_navigation_chapter" />
-
-        <Button
             android:id="@+id/btnSearch"
             android:layout_width="wrap_content"
             android:layout_height="56dp"
@@ -133,16 +133,22 @@
             android:text="@string/txt_coil_chapter" />
 
         <Button
-            android:id="@+id/btnDialog"
+            android:id="@+id/btnBottomSheet"
             android:layout_width="wrap_content"
             android:layout_height="56dp"
-            android:text="@string/txt_dialog_chapter" />
+            android:text="@string/txt_bottom_sheet_chapter" />
 
         <Button
-            android:id="@+id/btnNotification"
+            android:id="@+id/btnSwitch"
             android:layout_width="wrap_content"
             android:layout_height="56dp"
-            android:text="@string/txt_notification_chapter" />
+            android:text="@string/txt_switch_chapter" />
+
+        <Button
+            android:id="@+id/btnProgressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:text="@string/button_animate_progress_bar" />
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -176,7 +182,5 @@
                 android:text="@string/txt_0_mb" />
 
         </RelativeLayout>
-
     </com.nex3z.flowlayout.FlowLayout>
-
 </ScrollView>

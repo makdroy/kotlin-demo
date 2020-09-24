@@ -11,6 +11,7 @@ import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import kotlinx.android.synthetic.main.activity_main.*
 import mutnemom.android.kotlindemo.animations.transitions.TransitionsActivity
 import mutnemom.android.kotlindemo.bottomnav.BottomNavActivity
+import mutnemom.android.kotlindemo.bottomsheet.BottomSheetActivity
 import mutnemom.android.kotlindemo.coil.CoilActivity
 import mutnemom.android.kotlindemo.custom.CustomViewActivity
 import mutnemom.android.kotlindemo.datetime.DateTimeActivity
@@ -60,6 +61,7 @@ class MainActivity :
 
         btnNotification?.setOnClickListener(this)
         btnRecyclerView?.setOnClickListener(this)
+        btnBottomSheet?.setOnClickListener(this)
         btnProgressBar?.setOnClickListener(this)
         btnAnimations?.setOnClickListener(this)
         btnScreenshot?.setOnClickListener(this)
@@ -89,6 +91,7 @@ class MainActivity :
         when (v.id) {
             R.id.btnNotification -> startActivity(Intent(this, NotificationActivity::class.java))
             R.id.btnRecyclerView -> startActivity(Intent(this, RecyclerViewActivity::class.java))
+            R.id.btnBottomSheet -> startActivity(Intent(this, BottomSheetActivity::class.java))
             R.id.btnProgressBar -> startActivity(Intent(this, ProgressBarActivity::class.java))
             R.id.btnAnimations -> startActivity(Intent(this, TransitionsActivity::class.java))
             R.id.btnCustomView -> startActivity(Intent(this, CustomViewActivity::class.java))
