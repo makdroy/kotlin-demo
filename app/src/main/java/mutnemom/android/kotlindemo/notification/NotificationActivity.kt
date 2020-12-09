@@ -10,22 +10,26 @@ import android.os.Build
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.NotificationCompat
-import kotlinx.android.synthetic.main.activity_notification.*
 import mutnemom.android.kotlindemo.MainActivity
 import mutnemom.android.kotlindemo.R
+import mutnemom.android.kotlindemo.databinding.ActivityNotificationBinding
 
 class NotificationActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityNotificationBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_notification)
+
+        binding = ActivityNotificationBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         setNotificationChannel()
         setEvent()
     }
 
     private fun setEvent() {
-        btnSend?.setOnClickListener { sendNotification() }
+        binding.btnSend.setOnClickListener { sendNotification() }
     }
 
     private fun setNotificationChannel() {

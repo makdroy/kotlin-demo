@@ -1,7 +1,7 @@
 package mutnemom.android.kotlindemo.model
 
 import android.os.Parcelable
-import kotlinx.android.parcel.Parcelize
+import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class DownloadModel(

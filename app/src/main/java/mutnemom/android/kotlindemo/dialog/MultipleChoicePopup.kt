@@ -1,11 +1,13 @@
 package mutnemom.android.kotlindemo.dialog
 
 import android.os.Bundle
-import android.view.*
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.DialogFragment
-import kotlinx.android.synthetic.main.popup_multiple_choice.*
 import mutnemom.android.kotlindemo.R
+import mutnemom.android.kotlindemo.databinding.PopupMultipleChoiceBinding
 import mutnemom.android.kotlindemo.extensions.toast
 
 class MultipleChoicePopup : DialogFragment() {
@@ -22,6 +24,7 @@ class MultipleChoicePopup : DialogFragment() {
             }
     }
 
+    private lateinit var binding: PopupMultipleChoiceBinding
     private lateinit var dialogTitle: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,32 +42,17 @@ class MultipleChoicePopup : DialogFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        txtHeader?.text = dialogTitle
+        binding.txtHeader.text = dialogTitle
         setEvent()
 
         dialog?.apply {
-//            requestWindowFeature(Window.FEATURE_NO_TITLE)
-//            window?.setLayout(
-//                WindowManager.LayoutParams.MATCH_PARENT,
-//                WindowManager.LayoutParams.MATCH_PARENT
-//            )
-//
             window?.setBackgroundDrawableResource(R.drawable.bg_rounded_dialog)
-//            setStyle(STYLE_NO_INPUT, android.R.style.Theme)
         }
     }
 
-//    override fun onStart() {
-//        super.onStart()
-//        dialog?.window?.setLayout(
-//            ViewGroup.LayoutParams.MATCH_PARENT,
-//            ViewGroup.LayoutParams.MATCH_PARENT
-//        )
-//    }
-
     private fun setEvent() {
-        btnChoiceOne?.setOnClickListener { toastMessage("ONE") }
-        btnChoiceTwo?.setOnClickListener { toastMessage("TWO") }
+        binding.btnChoiceOne.setOnClickListener { toastMessage("ONE") }
+        binding.btnChoiceTwo.setOnClickListener { toastMessage("TWO") }
     }
 
     private fun toastMessage(message: String) {

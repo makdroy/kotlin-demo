@@ -1,20 +1,24 @@
 package mutnemom.android.kotlindemo.dialog
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import kotlinx.android.synthetic.main.activity_dialog.*
+import androidx.appcompat.app.AppCompatActivity
 import mutnemom.android.kotlindemo.R
+import mutnemom.android.kotlindemo.databinding.ActivityDialogBinding
 
 class DialogActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityDialogBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_dialog)
+
+        binding = ActivityDialogBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         setEvent()
     }
 
     private fun setEvent() {
-        btnDialogFragment?.setOnClickListener { showMultipleChoiceDialog() }
+        binding.btnDialogFragment.setOnClickListener { showMultipleChoiceDialog() }
     }
 
     private fun showMultipleChoiceDialog() {

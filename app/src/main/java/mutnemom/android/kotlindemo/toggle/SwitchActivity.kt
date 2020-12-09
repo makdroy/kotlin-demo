@@ -3,19 +3,22 @@ package mutnemom.android.kotlindemo.toggle
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_switch.*
-import mutnemom.android.kotlindemo.R
+import mutnemom.android.kotlindemo.databinding.ActivitySwitchBinding
 
 class SwitchActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivitySwitchBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_switch)
+
+        binding = ActivitySwitchBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         setEvent()
     }
 
     private fun setEvent() {
-        btnSwitchIcon?.setOnClickListener { openSwitchIconPage() }
+        binding.btnSwitchIcon.setOnClickListener { openSwitchIconPage() }
     }
 
     private fun openSwitchIconPage() {

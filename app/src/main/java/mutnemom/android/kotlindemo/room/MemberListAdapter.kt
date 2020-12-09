@@ -4,7 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import mutnemom.android.kotlindemo.R
+import mutnemom.android.kotlindemo.databinding.MemberItemBinding
 
 class MemberListAdapter(val context: Context) : RecyclerView.Adapter<MemberListViewHolder>() {
 
@@ -12,8 +12,8 @@ class MemberListAdapter(val context: Context) : RecyclerView.Adapter<MemberListV
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MemberListViewHolder =
         LayoutInflater.from(context).let {
-            val view = it.inflate(R.layout.member_item, parent, false)
-            MemberListViewHolder(view)
+            val binding = MemberItemBinding.inflate(it, parent, false)
+            MemberListViewHolder(binding)
         }
 
     override fun onBindViewHolder(holder: MemberListViewHolder, position: Int) {

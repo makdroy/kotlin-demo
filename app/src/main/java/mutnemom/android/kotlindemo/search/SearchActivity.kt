@@ -1,29 +1,31 @@
 package mutnemom.android.kotlindemo.search
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.Menu
-import android.view.View
 import android.view.ViewGroup
 import android.widget.Filter
 import android.widget.Filterable
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.synthetic.main.activity_search.*
-import kotlinx.android.synthetic.main.layout_search_item.view.*
 import mutnemom.android.kotlindemo.R
+import mutnemom.android.kotlindemo.databinding.ActivitySearchBinding
+import mutnemom.android.kotlindemo.databinding.LayoutSearchItemBinding
 import java.util.*
 
 class SearchActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivitySearchBinding
     private val searchAdapter = SearchAdapter()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_search)
+
+        binding = ActivitySearchBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         setupRecyclerView()
     }
 
@@ -48,20 +50,22 @@ class SearchActivity : AppCompatActivity() {
     }
 
     private fun setupRecyclerView() {
-        recyclerSearch?.apply {
+        binding.recyclerSearch.apply {
             layoutManager = LinearLayoutManager(this@SearchActivity)
             adapter = searchAdapter
             addItemDecoration(DividerItemDecoration(context, RecyclerView.VERTICAL))
         }
     }
 
-    inner class SearchItem(view: View) : RecyclerView.ViewHolder(view) {
+    inner class SearchItem(private val binding: LayoutSearchItemBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+
         fun setData(str: String) {
-            itemView.txtItemIndex?.text = str
+            binding.txtItemIndex.text = str
         }
     }
 
-    inner class SearchAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>(), Filterable{
+    inner class SearchAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>(), Filterable {
 
         private val indexArr = (0..16).toList().toTypedArray()
         private val itemAll = indexArr.map { "item index: ${it.inc()}" }
@@ -93,13 +97,11 @@ class SearchActivity : AppCompatActivity() {
         }
 
         override fun getItemCount(): Int = itemShow.size
-        override fun onCreateViewHolder(
-            parent: ViewGroup,
-            viewType: Int
-        ): RecyclerView.ViewHolder = LayoutInflater
-            .from(parent.context)
-            .inflate(R.layout.layout_search_item, parent, false)
-            .let { SearchItem(it) }
+        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder =
+            LayoutInflater.from(parent.context).let {
+                val binding = LayoutSearchItemBinding.inflate(it, parent, false)
+                SearchItem(binding)
+            }
 
         override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
             if (holder is SearchItem) {

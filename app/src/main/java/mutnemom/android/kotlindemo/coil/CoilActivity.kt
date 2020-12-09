@@ -5,28 +5,32 @@ import androidx.appcompat.app.AppCompatActivity
 import coil.load
 import coil.transform.CircleCropTransformation
 import coil.transform.RoundedCornersTransformation
-import kotlinx.android.synthetic.main.activity_coil.*
 import mutnemom.android.kotlindemo.R
+import mutnemom.android.kotlindemo.databinding.ActivityCoilBinding
 
 class CoilActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityCoilBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_coil)
 
-        imgRoundedCorner?.load("https://homepages.cae.wisc.edu/~ece533/images/girl.png") {
+        binding = ActivityCoilBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        binding.imgRoundedCorner.load("https://homepages.cae.wisc.edu/~ece533/images/girl.png") {
             crossfade(true)
             placeholder(R.drawable.img_placeholder)
             transformations(RoundedCornersTransformation(12f))
         }
 
-        imgCircleCrop?.load("https://homepages.cae.wisc.edu/~ece533/images/girl.png") {
+        binding.imgCircleCrop.load("https://homepages.cae.wisc.edu/~ece533/images/girl.png") {
             crossfade(true)
             placeholder(R.drawable.img_placeholder)
             transformations(CircleCropTransformation())
         }
 
-        imgRoundedCornerResource?.load(R.drawable.sample) {
+        binding.imgRoundedCornerResource.load(R.drawable.sample) {
             crossfade(true)
             placeholder(R.drawable.img_placeholder)
             transformations(RoundedCornersTransformation(5f))
@@ -34,4 +38,3 @@ class CoilActivity : AppCompatActivity() {
     }
 
 }
-

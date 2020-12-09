@@ -1,14 +1,14 @@
 package mutnemom.android.kotlindemo.room
 
-import android.view.View
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.synthetic.main.member_item.view.*
+import mutnemom.android.kotlindemo.databinding.MemberItemBinding
 
-class MemberListViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+class MemberListViewHolder(private val binding: MemberItemBinding) :
+    RecyclerView.ViewHolder(binding.root) {
 
     fun setData(member: Member) {
-        itemView.txtId?.text = member.id.toString()
-        itemView.txtName?.text = member.name
+        binding.txtId.text = member.id.toString()
+        binding.txtName.text = member.name
     }
 
 }

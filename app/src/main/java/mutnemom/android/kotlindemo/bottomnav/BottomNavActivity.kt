@@ -6,14 +6,18 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
-import kotlinx.android.synthetic.main.activity_bottom_nav.*
 import mutnemom.android.kotlindemo.R
+import mutnemom.android.kotlindemo.databinding.ActivityBottomNavBinding
 
 class BottomNavActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityBottomNavBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_bottom_nav)
+
+        binding = ActivityBottomNavBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
@@ -27,7 +31,7 @@ class BottomNavActivity : AppCompatActivity() {
 
         findNavController(R.id.nav_host_fragment).apply {
             setupActionBarWithNavController(this, appBarConfiguration)
-            bottomNav?.setupWithNavController(this)
+            binding.bottomNav.setupWithNavController(this)
         }
     }
 }

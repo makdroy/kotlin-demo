@@ -8,12 +8,12 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
-import kotlinx.android.synthetic.main.activity_main.*
 import mutnemom.android.kotlindemo.animations.transitions.TransitionsActivity
 import mutnemom.android.kotlindemo.bottomnav.BottomNavActivity
 import mutnemom.android.kotlindemo.bottomsheet.BottomSheetActivity
 import mutnemom.android.kotlindemo.coil.CoilActivity
 import mutnemom.android.kotlindemo.custom.CustomViewActivity
+import mutnemom.android.kotlindemo.databinding.ActivityMainBinding
 import mutnemom.android.kotlindemo.datetime.DateTimeActivity
 import mutnemom.android.kotlindemo.dialog.DialogActivity
 import mutnemom.android.kotlindemo.draggable.DragViewActivity
@@ -33,6 +33,8 @@ class MainActivity :
     AppCompatActivity(),
     View.OnClickListener {
 
+    private lateinit var binding: ActivityMainBinding
+
     private val broadcastReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context?, intent: Intent?) {
             intent?.also {
@@ -40,11 +42,12 @@ class MainActivity :
                     val downloadModel =
                         intent.getParcelableExtra<DownloadModel>("download") ?: return
 
-                    progressDownload?.progress = downloadModel.progress
+                    binding.progressDownload.progress = downloadModel.progress
                     if (downloadModel.progress == 100) {
-                        txtProgressDownload?.text = getString(R.string.txt_download_file_complete)
+                        binding.txtProgressDownload.text =
+                            getString(R.string.txt_download_file_complete)
                     } else {
-                        txtProgressDownload?.text = String.format(
+                        binding.txtProgressDownload.text = String.format(
                             "Download (%d/%d) MB",
                             downloadModel.currentFileSize,
                             downloadModel.totalFileSize
@@ -57,34 +60,36 @@ class MainActivity :
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
 
-        btnNotification?.setOnClickListener(this)
-        btnRecyclerView?.setOnClickListener(this)
-        btnBottomSheet?.setOnClickListener(this)
-        btnProgressBar?.setOnClickListener(this)
-        btnAnimations?.setOnClickListener(this)
-        btnScreenshot?.setOnClickListener(this)
-        btnCustomView?.setOnClickListener(this)
-        btnBottomNav?.setOnClickListener(this)
-        btnWebSocket?.setOnClickListener(this)
-        btnDateTime?.setOnClickListener(this)
-        btnDownload?.setOnClickListener(this)
-        btnGesture?.setOnClickListener(this)
-        btnWebView?.setOnClickListener(this)
-        btnButton?.setOnClickListener(this)
-        btnAes256?.setOnClickListener(this)
-        btnSwitch?.setOnClickListener(this)
-        btnSearch?.setOnClickListener(this)
-        btnDialog?.setOnClickListener(this)
-        btnCoil?.setOnClickListener(this)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        binding.btnNotification.setOnClickListener(this)
+        binding.btnRecyclerView.setOnClickListener(this)
+        binding.btnBottomSheet.setOnClickListener(this)
+        binding.btnProgressBar.setOnClickListener(this)
+        binding.btnAnimations.setOnClickListener(this)
+        binding.btnScreenshot.setOnClickListener(this)
+        binding.btnCustomView.setOnClickListener(this)
+        binding.btnBottomNav.setOnClickListener(this)
+        binding.btnWebSocket.setOnClickListener(this)
+        binding.btnDateTime.setOnClickListener(this)
+        binding.btnDownload.setOnClickListener(this)
+        binding.btnGesture.setOnClickListener(this)
+        binding.btnWebView.setOnClickListener(this)
+        binding.btnButton.setOnClickListener(this)
+        binding.btnAes256.setOnClickListener(this)
+        binding.btnSwitch.setOnClickListener(this)
+        binding.btnSearch.setOnClickListener(this)
+        binding.btnDialog.setOnClickListener(this)
+        binding.btnCoil.setOnClickListener(this)
 
         registerReceiver()
 
-        btnFragmentChapter?.setOnClickListener { openFragmentChapterPage() }
-        btnRoomCoroutines?.setOnClickListener { openRoomCoroutinesPage() }
-        btnDragView?.setOnClickListener { openDragViewPage() }
-        btnTts?.setOnClickListener { openTtsPage() }
+        binding.btnFragmentChapter.setOnClickListener { openFragmentChapterPage() }
+        binding.btnRoomCoroutines.setOnClickListener { openRoomCoroutinesPage() }
+        binding.btnDragView.setOnClickListener { openDragViewPage() }
+        binding.btnTts.setOnClickListener { openTtsPage() }
     }
 
     override fun onClick(v: View) {

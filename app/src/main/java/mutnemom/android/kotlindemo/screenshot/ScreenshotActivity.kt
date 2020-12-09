@@ -6,10 +6,7 @@ import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.media.MediaScannerConnection
-import android.os.Build
-import android.os.Bundle
-import android.os.Environment
-import android.os.Handler
+import android.os.*
 import android.provider.MediaStore
 import android.text.format.DateFormat
 import android.util.Log
@@ -41,7 +38,7 @@ class ScreenshotActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
 
-        Handler().postDelayed({
+        Handler(Looper.myLooper()!!).postDelayed({
             when (ContextCompat.checkSelfPermission(this, storagePerm)) {
                 PackageManager.PERMISSION_GRANTED -> takeScreenshot()
                 else -> requestPermission(storagePerm, storagePermCode)

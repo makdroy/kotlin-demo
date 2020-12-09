@@ -1,32 +1,36 @@
 package mutnemom.android.kotlindemo
 
 import android.animation.ObjectAnimator
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import android.os.Looper
 import android.view.animation.DecelerateInterpolator
-import kotlinx.android.synthetic.main.activity_progress_bar.*
+import androidx.appcompat.app.AppCompatActivity
+import mutnemom.android.kotlindemo.databinding.ActivityProgressBarBinding
 
 class ProgressBarActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityProgressBarBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_progress_bar)
-    }
 
+        binding = ActivityProgressBarBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+    }
 
     override fun onStart() {
         super.onStart()
 
-        progress?.also {
-            Handler().postDelayed({
+        binding.progress.also {
+            Handler(Looper.myLooper()!!).postDelayed({
                 val animation = ObjectAnimator.ofInt(it, "progress", 40)
                 animation.duration = 200
                 animation.interpolator = DecelerateInterpolator()
                 animation.start()
             }, 1_000)
 
-            Handler().postDelayed({
+            Handler(Looper.myLooper()!!).postDelayed({
                 val animation = ObjectAnimator.ofInt(it, "progress", 80)
                 animation.duration = 200
                 animation.interpolator = DecelerateInterpolator()

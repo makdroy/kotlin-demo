@@ -2,21 +2,24 @@ package mutnemom.android.kotlindemo.toggle
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_switch_icon.*
-import mutnemom.android.kotlindemo.R
+import mutnemom.android.kotlindemo.databinding.ActivitySwitchIconBinding
 
 class SwitchIconActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivitySwitchIconBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_switch_icon)
+
+        binding = ActivitySwitchIconBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         setEvent()
     }
 
     private fun setEvent() {
-        toggleSpeaker?.apply { setOnClickListener { switchState(animate = true) } }
-        toggleCheck?.apply { setOnClickListener { switchState(animate = true) } }
-        toggleIcon?.apply { setOnClickListener { switchState(animate = true) } }
+        binding.toggleSpeaker.apply { setOnClickListener { switchState(animate = true) } }
+        binding.toggleCheck.apply { setOnClickListener { switchState(animate = true) } }
+        binding.toggleIcon.apply { setOnClickListener { switchState(animate = true) } }
     }
 
 }
