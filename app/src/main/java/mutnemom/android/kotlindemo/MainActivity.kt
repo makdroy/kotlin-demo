@@ -9,6 +9,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
+import mutnemom.android.kotlindemo.animations.text.ExpandableTextViewActivity
 import mutnemom.android.kotlindemo.animations.transitions.TransitionsActivity
 import mutnemom.android.kotlindemo.bottomnav.BottomNavActivity
 import mutnemom.android.kotlindemo.bottomsheet.BottomSheetActivity
@@ -26,6 +27,9 @@ import mutnemom.android.kotlindemo.image.ShapeableImageViewActivity
 import mutnemom.android.kotlindemo.location.LocationDemoActivity
 import mutnemom.android.kotlindemo.model.DownloadModel
 import mutnemom.android.kotlindemo.notification.NotificationActivity
+import mutnemom.android.kotlindemo.playback.ExoPlayerActivity
+import mutnemom.android.kotlindemo.playback.ExoPlayerCastActivity
+import mutnemom.android.kotlindemo.playback.PlaybackNotificationActivity
 import mutnemom.android.kotlindemo.recyclerview.ListAdapterDemoActivity
 import mutnemom.android.kotlindemo.recyclerview.RecyclerViewActivity
 import mutnemom.android.kotlindemo.room.RoomCoroutinesActivity
@@ -79,6 +83,7 @@ class MainActivity :
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.btnExoPlayerCast.setOnClickListener(this)
         binding.btnNotification.setOnClickListener(this)
         binding.btnRecyclerView.setOnClickListener(this)
         binding.btnBottomSheet.setOnClickListener(this)
@@ -87,6 +92,7 @@ class MainActivity :
         binding.btnScreenshot.setOnClickListener(this)
         binding.btnCustomView.setOnClickListener(this)
         binding.btnBottomNav.setOnClickListener(this)
+        binding.btnExoPlayer.setOnClickListener(this)
         binding.btnWebSocket.setOnClickListener(this)
         binding.btnDateTime.setOnClickListener(this)
         binding.btnDownload.setOnClickListener(this)
@@ -108,7 +114,9 @@ class MainActivity :
         binding.btnTts.setOnClickListener { openTtsPage() }
 
         with(binding) {
+            btnPlaybackNotification.setOnClickListener { openPlaybackNotificationPage() }
             btnShapeableImageView.setOnClickListener { openShapeableImageViewPage() }
+            btnExpandableTextView.setOnClickListener { openExpandableTextViewPage() }
             btnMonitorNetwork.setOnClickListener { openMonitorNetworkStatePage() }
             btnListAdapter.setOnClickListener { openListAdapterDemoPage() }
             btnCounterFab.setOnClickListener { increaseCounterFabNumber() }
@@ -122,6 +130,7 @@ class MainActivity :
 
     override fun onClick(v: View) {
         when (v.id) {
+            R.id.btnExoPlayerCast -> startActivity(Intent(this, ExoPlayerCastActivity::class.java))
             R.id.btnNotification -> startActivity(Intent(this, NotificationActivity::class.java))
             R.id.btnRecyclerView -> startActivity(Intent(this, RecyclerViewActivity::class.java))
             R.id.btnBottomSheet -> startActivity(Intent(this, BottomSheetActivity::class.java))
@@ -130,6 +139,7 @@ class MainActivity :
             R.id.btnCustomView -> startActivity(Intent(this, CustomViewActivity::class.java))
             R.id.btnScreenshot -> startActivity(Intent(this, ScreenshotActivity::class.java))
             R.id.btnBottomNav -> startActivity(Intent(this, BottomNavActivity::class.java))
+            R.id.btnExoPlayer -> startActivity(Intent(this, ExoPlayerActivity::class.java))
             R.id.btnWebSocket -> startActivity(Intent(this, WebSocketActivity::class.java))
             R.id.btnDownload -> startService(Intent(this, DownloadFileService::class.java))
             R.id.btnDateTime -> startActivity(Intent(this, DateTimeActivity::class.java))
@@ -152,6 +162,11 @@ class MainActivity :
         }
     }
 
+    private fun openExpandableTextViewPage() {
+        Intent(this, ExpandableTextViewActivity::class.java)
+            .apply { startActivity(this) }
+    }
+
     private fun openFragmentChapterPage() {
         Intent(this, AboutFragmentActivity::class.java)
             .apply { startActivity(this) }
@@ -169,6 +184,11 @@ class MainActivity :
 
     private fun openRoomCoroutinesPage() {
         Intent(this, RoomCoroutinesActivity::class.java)
+            .apply { startActivity(this) }
+    }
+
+    private fun openPlaybackNotificationPage() {
+        Intent(this, PlaybackNotificationActivity::class.java)
             .apply { startActivity(this) }
     }
 

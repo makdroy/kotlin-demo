@@ -6,14 +6,17 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
+    <!-- request permission -->
     <!-- Always include this permission if your app use location services. -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <!-- Include only if your app benefits from precise location access. -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
-    <!-- request permission -->
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28" />
 
     <uses-feature android:name="android.hardware.camera2.full" />
     <uses-feature
@@ -33,9 +36,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
         tools:targetApi="tiramisu">
 
         <activity android:name=".animations.transitions.TransitionsActivity" />
+        <activity android:name=".animations.text.ExpandableTextViewActivity" />
 
         <activity android:name=".fragments.transaction.AnimateFragmentTransactionActivity" />
         <activity android:name=".fragments.backpress.BackPressDispatcherActivity" />
@@ -45,6 +50,10 @@
 
         <activity android:name=".image.ShapeableImageViewActivity" />
         <activity android:name=".image.CoilActivity" />
+
+        <activity android:name=".playback.PlaybackNotificationActivity" />
+        <activity android:name=".playback.ExoPlayerCastActivity" />
+        <activity android:name=".playback.ExoPlayerActivity" />
 
         <activity android:name=".location.LocationDemoActivity" />
 
@@ -101,6 +110,14 @@
                 android:name="autoStoreLocales"
                 android:value="true" />
         </service>
-    </application>
 
+        <meta-data
+            android:name="video-cast-provider-id"
+            android:value="B0088888" />
+
+        <meta-data
+            android:name="com.google.android.gms.cast.framework.OPTIONS_PROVIDER_CLASS_NAME"
+            android:value="mutnemom.android.kotlindemo.playback.VideoCastOptionsProvider" />
+
+    </application>
 </manifest>

@@ -158,4 +158,14 @@
     <string name="txt_bottom_sheet_chapter">Bottom Sheet</string>
     <!--    -->
 
+    <!--  Exo Player -->
+    <string name="media_route_menu_title">Cast</string>
+    <string name="txt_playback_library_chapter">Exo Player</string>
+    <string name="txt_video_cast_exoplayer_chapter">Exo Player + Video Cast</string>
+    <!--    -->
+
+    <!--  Expandable TextView -->
+    <string name="txt_expandable_text_view_chapter">Expandable TextView</string>
+    <!--    -->
+
 </resources>

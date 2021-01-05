@@ -27,6 +27,22 @@ android {
     }
 
     ndkVersion '25.2.9519653'
+    externalNativeBuild {
+        cmake {
+            path 'CMakeLists.txt'
+            version '3.22.1'
+        }
+    }
+
+    splits {
+        abi {
+            enable true
+            reset()
+            include 'x86', 'x86_64', 'arm64-v8a', 'armeabi-v7a'
+            universalApk true
+        }
+    }
+
     buildFeatures {
         viewBinding true
     }
@@ -98,6 +114,10 @@ dependencies {
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
 
+    // playback library
+    implementation "com.google.android.exoplayer:extension-cast:2.17.1"
+    implementation 'com.google.android.exoplayer:exoplayer:2.17.1'
+
     // Switch Icon
     implementation "com.github.zagum:Android-SwitchIcon:1.4.0"
 
@@ -109,6 +129,9 @@ dependencies {
 
     // Coil
     implementation "io.coil-kt:coil:0.13.0"
+
+    // playback notification
+    implementation 'androidx.media:media:1.6.0'
 
     // Unit test
     testImplementation 'junit:junit:4.13.2'

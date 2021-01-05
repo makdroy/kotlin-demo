@@ -121,6 +121,25 @@
             android:text="@string/txt_gesture_chapter" />
 
         <Button
+            android:id="@+id/btnPlaybackNotification"
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:text="Playback Notification"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/btnBottomSheet"
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:text="@string/txt_bottom_sheet_chapter" />
+
+        <Button
+            android:id="@+id/btnExoPlayer"
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:text="@string/txt_playback_library_chapter" />
+
+        <Button
             android:id="@+id/btnSearch"
             android:layout_width="wrap_content"
             android:layout_height="56dp"
@@ -131,12 +150,6 @@
             android:layout_width="wrap_content"
             android:layout_height="56dp"
             android:text="@string/txt_coil_chapter" />
-
-        <Button
-            android:id="@+id/btnBottomSheet"
-            android:layout_width="wrap_content"
-            android:layout_height="56dp"
-            android:text="@string/txt_bottom_sheet_chapter" />
 
         <Button
             android:id="@+id/btnSwitch"
@@ -156,6 +169,13 @@
             android:layout_height="56dp"
             android:text="Data and File"
             tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/btnExoPlayerCast"
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:text="@string/txt_video_cast_exoplayer_chapter"
+            android:textColor="@color/colorAccent" />
 
         <Button
             android:id="@+id/btnMediaStore"
@@ -216,6 +236,12 @@
             android:text="MDC Shapeable Image View"
             android:textAllCaps="false"
             tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/btnExpandableTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:text="@string/txt_expandable_text_view_chapter" />
 
         <mutnemom.android.kotlindemo.custom.CounterFab
             android:id="@+id/btnCounterFab"

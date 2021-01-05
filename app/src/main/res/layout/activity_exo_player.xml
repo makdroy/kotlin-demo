@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".playback.ExoPlayerActivity">
+
+    <com.google.android.exoplayer2.ui.PlayerView
+        android:id="@+id/exoPlayback"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        app:controller_layout_id="@layout/exo_playback_custom_control_view"
+        app:resize_mode="fill"
+        app:use_controller="true" />
+
+    <com.nex3z.flowlayout.FlowLayout
+        android:id="@+id/flowButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/padding_default"
+        android:paddingEnd="@dimen/padding_default"
+        android:paddingTop="@dimen/padding_default">
+
+        <Button
+            android:id="@+id/btnSpeed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="x2"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/btnPlay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="play"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/btnPause"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="pause"
+            tools:ignore="HardcodedText" />
+
+    </com.nex3z.flowlayout.FlowLayout>
+
+</LinearLayout>
