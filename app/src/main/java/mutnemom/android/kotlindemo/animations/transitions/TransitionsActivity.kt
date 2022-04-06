@@ -1,5 +1,8 @@
 package mutnemom.android.kotlindemo.animations.transitions
 
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
+import android.graphics.drawable.TransitionDrawable
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -7,6 +10,7 @@ import android.view.View
 import android.view.animation.AccelerateInterpolator
 import android.view.animation.DecelerateInterpolator
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.transition.TransitionManager
 import mutnemom.android.kotlindemo.R
 import mutnemom.android.kotlindemo.databinding.ActivityTransitionsBinding
@@ -39,6 +43,8 @@ class TransitionsActivity : AppCompatActivity() {
     }
 
     private fun setEvent() {
+        binding.btnCrossFadeDrawable.setOnClickListener { startDrawableCrossFadeTransition() }
+        binding.btnCrossFadeBgColor.setOnClickListener { startColorCrossFadeTransition() }
         binding.btnToggleMenu.setOnClickListener {
             when {
                 isMenuShow -> {
@@ -86,6 +92,22 @@ class TransitionsActivity : AppCompatActivity() {
                     }
                 }
             }
+        }
+    }
+
+    private fun startDrawableCrossFadeTransition() {
+        (ContextCompat.getDrawable(this, R.drawable.cross_fade_transition) as? TransitionDrawable)
+            ?.also { transitionDrawable ->
+                binding.imgCrossFading.setImageDrawable(transitionDrawable)
+                transitionDrawable.startTransition(700)
+            }
+    }
+
+    private fun startColorCrossFadeTransition() {
+        val colors = arrayOf(ColorDrawable(Color.BLACK), ColorDrawable(Color.MAGENTA))
+        TransitionDrawable(colors).also { transition ->
+            binding.imgCrossFadingBgColor.background = transition
+            transition.startTransition(700)
         }
     }
 

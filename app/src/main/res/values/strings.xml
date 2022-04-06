@@ -114,6 +114,8 @@
     <string name="txt_transition_first">Transition First Sample</string>
     <string name="btn_transitions_first">First</string>
     <string name="btn_transitions_toggle">Toggle Menu</string>
+    <string name="btn_cross_fade_drawable">Cross-fade drawable</string>
+    <string name="btn_cross_fade_color">Cross-fade BG color</string>
     <!--    -->
 
     <!--  Bottom Navigation -->
