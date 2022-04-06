@@ -52,6 +52,7 @@ class TextToSpeechActivity : AppCompatActivity() {
             }
         }
 
+        @Suppress("OVERRIDE_DEPRECATION")
         override fun onError(utteranceId: String?) {
             Log.e("utterance", "-> onError()")
         }

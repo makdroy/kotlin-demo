@@ -80,7 +80,7 @@ class SearchActivity : AppCompatActivity() {
                 } else {
                     val lc = Locale.US
                     itemAll.forEach {
-                        if (it.toLowerCase(lc).contains(chars.toString().toLowerCase(lc))) {
+                        if (it.lowercase(lc).contains(chars.toString().lowercase(lc))) {
                             filteredList.add(it)
                         }
                     }
@@ -89,6 +89,7 @@ class SearchActivity : AppCompatActivity() {
                 return FilterResults().apply { values = filteredList }
             }
 
+            @Suppress("UNCHECKED_CAST", "NotifyDataSetChanged")
             override fun publishResults(chars: CharSequence?, results: FilterResults?) {
                 itemShow.clear()
                 itemShow.addAll(results!!.values as Collection<String>)
