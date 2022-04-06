@@ -53,6 +53,52 @@
             android:layout_marginTop="@dimen/margin_default"
             tools:text="Toggle Menu" />
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imgCrossFading"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/margin_default"
+                android:src="@drawable/img_cross_fade_1"
+                tools:ignore="ContentDescription" />
+
+            <Button
+                android:id="@+id/btnCrossFadeDrawable"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/margin_default"
+                android:text="@string/btn_cross_fade_drawable" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imgCrossFadingBgColor"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/margin_default"
+                android:background="@android:color/black"
+                tools:ignore="ContentDescription" />
+
+            <Button
+                android:id="@+id/btnCrossFadeBgColor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/margin_default"
+                android:text="@string/btn_cross_fade_color" />
+
+        </LinearLayout>
+
     </LinearLayout>
 
     <FrameLayout
