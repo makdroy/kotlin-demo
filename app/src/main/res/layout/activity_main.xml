@@ -5,124 +5,155 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:clipToPadding="false"
+    android:padding="@dimen/padding_default"
     android:scrollbars="none"
     tools:context=".MainActivity">
 
-    <LinearLayout
+    <com.nex3z.flowlayout.FlowLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp">
+        app:flChildSpacing="auto">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/margin_default">
+        <Button
+            android:id="@+id/btnDragView"
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:text="@string/txt_drag_view_chapter"
+            android:textColor="@color/colorAccent" />
 
-            <TextView
-                android:id="@+id/txtFragmentChapter"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/margin_default"
-                android:layout_marginTop="@dimen/margin_default"
-                android:layout_marginEnd="@dimen/margin_large"
-                android:background="?attr/selectableItemBackground"
-                android:padding="8dp"
-                android:text="@string/txt_fragment_chapter"
-                android:textColor="@color/colorAccent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+        <Button
+            android:id="@+id/btnDateTime"
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:text="@string/txt_date_time_chapter" />
 
-            <TextView
-                android:id="@+id/txtDragView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/margin_large"
-                android:layout_marginTop="@dimen/margin_default"
-                android:background="?attr/selectableItemBackground"
-                android:padding="8dp"
-                android:text="@string/txt_drag_view_chapter"
-                android:textColor="@color/colorAccent"
-                app:layout_constraintStart_toEndOf="@id/txtFragmentChapter"
-                app:layout_constraintTop_toTopOf="parent" />
+        <Button
+            android:id="@+id/btnTts"
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:text="@string/txt_text_to_speech_chapter"
+            android:textColor="@color/colorAccent" />
 
-            <TextView
-                android:id="@+id/txtTts"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:background="?attr/selectableItemBackground"
-                android:padding="8dp"
-                android:text="@string/txt_text_to_speech_chapter"
-                android:textColor="@color/colorAccent"
-                app:layout_constraintStart_toStartOf="@id/txtFragmentChapter"
-                app:layout_constraintTop_toBottomOf="@id/txtFragmentChapter" />
+        <Button
+            android:id="@+id/btnRoomCoroutines"
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:text="@string/txt_room_coroutines_chapter"
+            android:textColor="@color/colorAccent" />
 
-            <TextView
-                android:id="@+id/txtRoomCoroutines"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/margin_large"
-                android:padding="8dp"
-                android:text="@string/txt_room_coroutines_chapter"
-                android:textColor="@color/colorAccent"
-                app:layout_constraintStart_toEndOf="@id/txtTts"
-                app:layout_constraintTop_toTopOf="@id/txtTts" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        <Button
+            android:id="@+id/btnWebSocket"
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:text="@string/button_websocket" />
 
         <Button
             android:id="@+id/btnAes256"
-            android:layout_width="140dp"
+            android:layout_width="wrap_content"
             android:layout_height="56dp"
-            android:layout_marginTop="@dimen/margin_default"
             android:text="@string/txt_aes256_chapter" />
 
         <Button
             android:id="@+id/btnWebView"
-            android:layout_width="140dp"
+            android:layout_width="wrap_content"
             android:layout_height="56dp"
-            android:layout_marginTop="@dimen/margin_default"
             android:text="@string/button_web_view" />
 
         <Button
-            android:id="@+id/btnRecyclerView"
-            android:layout_width="140dp"
+            android:id="@+id/btnFragmentChapter"
+            android:layout_width="wrap_content"
             android:layout_height="56dp"
-            android:layout_marginTop="@dimen/margin_default"
+            android:text="@string/txt_fragment_chapter"
+            android:textColor="@color/colorAccent" />
+
+        <Button
+            android:id="@+id/btnRecyclerView"
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
             android:text="@string/button_recycler_view" />
 
         <Button
-            android:id="@+id/btnButton"
-            android:layout_width="140dp"
+            android:id="@+id/btnScreenshot"
+            android:layout_width="wrap_content"
             android:layout_height="56dp"
-            android:layout_marginTop="@dimen/margin_default"
+            android:text="@string/button_screenshot" />
+
+        <Button
+            android:id="@+id/btnButton"
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
             android:text="@string/button_button" />
 
         <Button
-            android:id="@+id/btnCustomView"
-            android:layout_width="140dp"
+            android:id="@+id/btnDialog"
+            android:layout_width="wrap_content"
             android:layout_height="56dp"
-            android:layout_marginTop="@dimen/margin_default"
+            android:text="@string/txt_dialog_chapter" />
+
+        <Button
+            android:id="@+id/btnNotification"
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:text="@string/txt_notification_chapter" />
+
+        <Button
+            android:id="@+id/btnBottomNav"
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:text="@string/txt_bottom_navigation_chapter" />
+
+        <Button
+            android:id="@+id/btnCustomView"
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
             android:text="@string/button_custom_view" />
 
         <Button
-            android:id="@+id/btnWebSocket"
-            android:layout_width="200dp"
+            android:id="@+id/btnAnimations"
+            android:layout_width="wrap_content"
             android:layout_height="56dp"
-            android:layout_marginTop="@dimen/margin_default"
-            android:text="@string/button_websocket" />
+            android:text="@string/txt_animations_chapter" />
+
+        <Button
+            android:id="@+id/btnGesture"
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:text="@string/txt_gesture_chapter" />
+
+        <Button
+            android:id="@+id/btnSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:text="@string/txt_search_field_chapter" />
+
+        <Button
+            android:id="@+id/btnCoil"
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:text="@string/txt_coil_chapter" />
+
+        <Button
+            android:id="@+id/btnBottomSheet"
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:text="@string/txt_bottom_sheet_chapter" />
+
+        <Button
+            android:id="@+id/btnSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:text="@string/txt_switch_chapter" />
 
         <Button
             android:id="@+id/btnProgressBar"
-            android:layout_width="200dp"
+            android:layout_width="wrap_content"
             android:layout_height="56dp"
-            android:layout_marginTop="@dimen/margin_default"
             android:text="@string/button_animate_progress_bar" />
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_default">
 
             <Button
                 android:id="@+id/btnDownload"
@@ -130,7 +161,6 @@
                 android:layout_height="56dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginTop="@dimen/margin_default"
                 android:text="@string/button_start_download" />
 
             <ProgressBar
@@ -152,7 +182,5 @@
                 android:text="@string/txt_0_mb" />
 
         </RelativeLayout>
-
-    </LinearLayout>
-
+    </com.nex3z.flowlayout.FlowLayout>
 </ScrollView>

@@ -2,13 +2,11 @@ package mutnemom.android.kotlindemo.fragments.transaction
 
 import android.content.Context
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import kotlinx.android.synthetic.main.fragment_standby.*
-
-import mutnemom.android.kotlindemo.R
+import androidx.fragment.app.Fragment
+import mutnemom.android.kotlindemo.databinding.FragmentStandbyBinding
 
 class StandbyFragment : Fragment() {
 
@@ -17,6 +15,10 @@ class StandbyFragment : Fragment() {
         fun newInstance() =
             StandbyFragment()
     }
+
+    private var _binding: FragmentStandbyBinding? = null
+    private val binding: FragmentStandbyBinding
+        get() = _binding!!
 
     private lateinit var listener: OnHintTappedListener
 
@@ -31,13 +33,19 @@ class StandbyFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_standby, container, false)
+    ): View {
+        _binding = FragmentStandbyBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        txtTapHint?.setOnClickListener { listener.onHintTapped() }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.txtTapHint.setOnClickListener { listener.onHintTapped() }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
     interface OnHintTappedListener {

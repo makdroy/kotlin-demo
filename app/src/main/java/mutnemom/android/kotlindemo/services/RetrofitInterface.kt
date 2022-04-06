@@ -7,7 +7,7 @@ import retrofit2.http.Streaming
 
 interface RetrofitInterface {
 
-    @GET("files/Node-Android-Chat.zip")
+    @GET("storage/fe6011afaa624cd00a160ee/2017/10/file-example_PDF_1MB.pdf")
     @Streaming
     fun downloadFile(): Call<ResponseBody>
 

@@ -8,12 +8,13 @@ import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.net.toUri
-import kotlinx.android.synthetic.main.activity_text_to_speech.*
-import mutnemom.android.kotlindemo.R
+import mutnemom.android.kotlindemo.databinding.ActivityTextToSpeechBinding
 import java.io.File
 import java.util.*
 
 class TextToSpeechActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityTextToSpeechBinding
 
     private var tts: TextToSpeech? = null
     private val ttsListener = TextToSpeech.OnInitListener { status: Int ->
@@ -23,12 +24,12 @@ class TextToSpeechActivity : AppCompatActivity() {
                     when (result) {
                         TextToSpeech.LANG_MISSING_DATA,
                         TextToSpeech.LANG_NOT_SUPPORTED -> {
-                            btnStart?.isEnabled = false
+                            binding.btnStart.isEnabled = false
                             Toast
                                 .makeText(this, "Language is not supported", Toast.LENGTH_LONG)
                                 .show()
                         }
-                        else -> btnStart?.isEnabled = true
+                        else -> binding.btnStart.isEnabled = true
                     }
                 }
             else -> Toast
@@ -51,6 +52,7 @@ class TextToSpeechActivity : AppCompatActivity() {
             }
         }
 
+        @Suppress("OVERRIDE_DEPRECATION")
         override fun onError(utteranceId: String?) {
             Log.e("utterance", "-> onError()")
         }
@@ -63,15 +65,17 @@ class TextToSpeechActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_text_to_speech)
+
+        binding = ActivityTextToSpeechBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         wavFile = File("${applicationContext.getExternalFilesDir(null)}/tts_backup.wav")
 
         tts = TextToSpeech(this, ttsListener)
         tts?.setOnUtteranceProgressListener(utteranceProgressListener)
 
-        btnStart?.setOnClickListener { speakOut() }
-        btnStop?.setOnClickListener { player?.pause() }
+        binding.btnStart.setOnClickListener { speakOut() }
+        binding.btnStop.setOnClickListener { player?.pause() }
     }
 
     override fun onDestroy() {
@@ -90,7 +94,7 @@ class TextToSpeechActivity : AppCompatActivity() {
 
     private fun speakOut() {
         when (player) {
-            null -> txtSample?.text?.toString()?.let {
+            null -> binding.txtSample.text?.toString()?.let {
                 tts?.synthesizeToFile(it, null, wavFile, synthesizeId)
             }
             else -> player!!.start()

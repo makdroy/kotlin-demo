@@ -9,8 +9,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
-import kotlinx.android.synthetic.main.fragment_press_back.*
-import mutnemom.android.kotlindemo.R
+import mutnemom.android.kotlindemo.databinding.FragmentPressBackBinding
 
 private const val KEY_PRESS_BACK_MESSAGE = "param1"
 
@@ -24,9 +23,12 @@ private const val KEY_PRESS_BACK_MESSAGE = "param1"
  */
 class PressBackFragment : Fragment() {
 
+    private var _binding: FragmentPressBackBinding? = null
+    private val binding: FragmentPressBackBinding
+        get() = _binding!!
+
     private var pressBackMessage: String? = null
     private var listener: OnFragmentInteractionListener? = null
-    private var toast: Toast? = null
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -34,14 +36,8 @@ class PressBackFragment : Fragment() {
             listener = context
             val callback = object : OnBackPressedCallback(true) {
                 override fun handleOnBackPressed() {
-                    when {
-                        toast != null && toast!!.view.isShown -> requireActivity().finish()
-                        else -> {
-                            toast = Toast
-                                .makeText(context, pressBackMessage, Toast.LENGTH_SHORT)
-                                .apply { show() }
-                        }
-                    }
+                    Toast.makeText(context, "back", Toast.LENGTH_SHORT).show()
+                    requireActivity().finish()
                 }
             }
 
@@ -59,15 +55,22 @@ class PressBackFragment : Fragment() {
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_press_back, container, false)
+    ): View {
+        _binding = FragmentPressBackBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        txtHello?.setOnClickListener { onInteract(Uri.parse(pressBackMessage)) }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.txtHello.setOnClickListener { onInteract(Uri.parse(pressBackMessage)) }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
     private fun onInteract(uri: Uri) {

@@ -3,20 +3,21 @@ package mutnemom.android.kotlindemo.room
 import android.os.Bundle
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import kotlinx.android.synthetic.main.activity_room_coroutines.*
-import mutnemom.android.kotlindemo.R
+import mutnemom.android.kotlindemo.databinding.ActivityRoomCoroutinesBinding
 
 class RoomCoroutinesActivity : AppCompatActivity() {
 
     private lateinit var roomCoroutinesVm: RoomCoroutinesViewModel
+    private lateinit var binding: ActivityRoomCoroutinesBinding
     private val memberListAdapter = MemberListAdapter(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_room_coroutines)
+
+        binding = ActivityRoomCoroutinesBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         setupRecyclerView()
         setupInputForm()
@@ -24,13 +25,13 @@ class RoomCoroutinesActivity : AppCompatActivity() {
     }
 
     private fun setupRecyclerView() {
-        recyclerMember?.layoutManager = LinearLayoutManager(this)
-        recyclerMember?.adapter = memberListAdapter
+        binding.recyclerMember.layoutManager = LinearLayoutManager(this)
+        binding.recyclerMember.adapter = memberListAdapter
     }
 
     private fun setupInputForm() {
-        btnInsert?.setOnClickListener { insertMember(editMemberName) }
-        btnDelete?.setOnClickListener { deleteMember(editMemberName) }
+        binding.btnInsert.setOnClickListener { insertMember(binding.editMemberName) }
+        binding.btnDelete.setOnClickListener { deleteMember(binding.editMemberName) }
     }
 
     private fun deleteMember(editText: EditText?) {
@@ -51,9 +52,9 @@ class RoomCoroutinesActivity : AppCompatActivity() {
         roomCoroutinesVm = ViewModelProvider(this, RoomCoroutinesViewModelFactory(application))
             .get(RoomCoroutinesViewModel::class.java)
 
-        roomCoroutinesVm.allMembers.observe(this, Observer { list ->
+        roomCoroutinesVm.allMembers.observe(this) { list ->
             list?.let { memberListAdapter.setMemberList(it) }
-        })
+        }
     }
 
 }

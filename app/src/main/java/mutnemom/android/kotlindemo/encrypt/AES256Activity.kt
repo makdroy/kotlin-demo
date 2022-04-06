@@ -2,8 +2,7 @@ package mutnemom.android.kotlindemo.encrypt
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_aes_256.*
-import mutnemom.android.kotlindemo.R
+import mutnemom.android.kotlindemo.databinding.ActivityAes256Binding
 import mutnemom.android.kotlindemo.extensions.sha256
 import java.security.SecureRandom
 import javax.crypto.Cipher
@@ -20,23 +19,27 @@ class AES256Activity : AppCompatActivity() {
     private val keySpec = SecretKeySpec("$salt$rootKey$contentId$memberId".sha256(), "AES")
     private val iv = genIv()
 
+    private lateinit var binding: ActivityAes256Binding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_aes_256)
+
+        binding = ActivityAes256Binding.inflate(layoutInflater)
+        setContentView(binding.root)
         setEvent()
     }
 
     private fun setEvent() {
-        btnEncrypt?.setOnClickListener { startEncryption() }
+        binding.btnEncrypt.setOnClickListener { startEncryption() }
     }
 
     private fun startEncryption() {
-        editInput?.text?.toString()?.let {
+        binding.editInput.text?.toString()?.let {
             encryptCbc(it.toByteArray())?.apply {
-                txtEncrypted?.text = String(this)
+                binding.txtEncrypted.text = String(this)
 
                 decryptCbc(this)?.apply {
-                    txtDecrypted?.text = String(this)
+                    binding.txtDecrypted.text = String(this)
                 }
             }
         }

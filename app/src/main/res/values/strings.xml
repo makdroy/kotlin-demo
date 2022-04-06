@@ -5,6 +5,7 @@
     <string name="button_web_view">WebView</string>
     <string name="button_recycler_view">Recycler View</string>
     <string name="button_button">Button</string>
+    <string name="button_screenshot">Screenshot</string>
     <string name="button_camera">Camera</string>
     <string name="button_material_raised">Material Raised</string>
     <string name="button_material_raised_disable">Material Raised Disable</string>
@@ -69,6 +70,90 @@
     <!--  about ratio image view page -->
     <string name="txt_ratio_image_portrait_ratio_image_view_2_3"><![CDATA[-> Portrait Ratio Image View 2:3]]></string>
     <string name="txt_ratio_image_landscape_ratio_image_view_2_3"><![CDATA[-> Landscape Ratio Image View 2:3]]></string>
+    <!--    -->
+
+    <!--  Switch Chapter page -->
+    <string name="txt_switch_chapter">switch tutorials</string>
+    <string name="txt_switch_chapter_arrow">-<![CDATA[->]]></string>
+    <string name="txt_switch_chapter_description">Demo for toggle or switching state components</string>
+    <string name="txt_switch_chapter_switch_icon_button">Switch Icon</string>
+    <!--    -->
+
+    <!--  Switch Icon page -->
+    <string name="txt_switch_icon_description">Switch Icon</string>
+    <string name="txt_switch_icon_properties">
+        android:layout_width="wrap_content"
+        \nandroid:layout_height="wrap_content"
+        \nandroid:padding="8dp"
+        \napp:si_animation_duration="500"
+        \napp:si_disabled_alpha=".3"
+        \napp:si_disabled_color="#b7b7b7"
+        \napp:si_tint_color="#ff3c00"
+        \napp:si_enabled="false"
+        \napp:si_no_dash="true"
+        \napp:srcCompat="@drawable/ic_cloud"</string>
+    <!--    -->
+
+    <!--  DateTime page -->
+    <string name="txt_date_time_chapter">date time</string>
+    <string name="txt_date_time_destination_format">Format %s</string>
+    <string name="txt_date_time_2_days_ago">2 days ago</string>
+    <string name="txt_date_time_in_5_days">in 5 days</string>
+    <string name="txt_date_time_today">today</string>
+    <string name="txt_date_time_timestamp">Timestamp</string>
+    <string name="txt_date_time_title">Convert Timestamp to DateTime format</string>
+    <!--    -->
+
+    <!--  Screenshot page -->
+    <string name="txt_screenshot_title">take screenshot full page</string>
+    <!--    -->
+
+    <!--  Transitions page -->
+    <string name="txt_animations_chapter">Transitions</string>
+    <string name="txt_animations_sample_transitions_label"><![CDATA[with -> TransitionManager\n#beginDelayedTransition()]]></string>
+    <string name="txt_transition_first">Transition First Sample</string>
+    <string name="btn_transitions_first">First</string>
+    <string name="btn_transitions_toggle">Toggle Menu</string>
+    <!--    -->
+
+    <!--  Bottom Navigation -->
+    <string name="txt_bottom_navigation_chapter">Bottom Nav</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <!--    -->
+
+    <!--  Gesture -->
+    <string name="txt_gesture_chapter">Gesture</string>
+    <!--    -->
+
+    <!--  Search Field -->
+    <string name="txt_search_field_chapter">Search</string>
+    <!--    -->
+
+    <!--  Coroutines Image Loader -->
+    <string name="txt_coil_chapter">Coil</string>
+    <string name="desc_coil_rounded_corner_image">Rounded Corner Image</string>
+    <string name="desc_coil_circle_crop_image">Circle Crop Image</string>
+    <!--    -->
+
+    <!--  Dialog -->
+    <string name="txt_dialog_chapter">Dialog</string>
+    <string name="txt_dialog_multiple_choice_title">เลือกรายการ</string>
+    <string name="txt_dialog_multiple_choice_1">คืนอีบุ๊ก</string>
+    <string name="txt_dialog_multiple_choice_2">ลบไฟล์</string>
+    <string name="txt_dialog_description_1">Custom multiple choice dialog fragment</string>
+    <string name="txt_description_2">Other Header</string>
+    <!--    -->
+
+    <!--  Notification -->
+    <string name="txt_notification_chapter">Notification</string>
+    <string name="btn_send">send</string>
+    <string name="txt_send_notification_immediately_label">Send notification immediately</string>
+    <!--    -->
+
+    <!--  BottomSheet -->
+    <string name="txt_bottom_sheet_chapter">Bottom Sheet</string>
     <!--    -->
 
 </resources>
