@@ -1,3 +1,5 @@
+@file:Suppress("OVERRIDE_DEPRECATION", "DEPRECATION")
+
 package mutnemom.android.kotlindemo.services
 
 import android.app.IntentService
@@ -44,7 +46,7 @@ class DownloadFileService : IntentService("Download Service") {
 
     private fun initDownload() {
         val retrofit = Retrofit.Builder()
-            .baseUrl("https://download.learn2crack.com/")
+            .baseUrl("https://file-examples.com/")
             .build()
 
         retrofit.create(RetrofitInterface::class.java).apply {
