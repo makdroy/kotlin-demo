@@ -26,6 +26,7 @@ import mutnemom.android.kotlindemo.image.ShapeableImageViewActivity
 import mutnemom.android.kotlindemo.location.LocationDemoActivity
 import mutnemom.android.kotlindemo.model.DownloadModel
 import mutnemom.android.kotlindemo.notification.NotificationActivity
+import mutnemom.android.kotlindemo.progress.VerticalProgressBarActivity
 import mutnemom.android.kotlindemo.recyclerview.ListAdapterDemoActivity
 import mutnemom.android.kotlindemo.recyclerview.RecyclerViewActivity
 import mutnemom.android.kotlindemo.room.RoomCoroutinesActivity
@@ -79,6 +80,7 @@ class MainActivity :
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.btnVerticalProgress.setOnClickListener(this)
         binding.btnNotification.setOnClickListener(this)
         binding.btnRecyclerView.setOnClickListener(this)
         binding.btnBottomSheet.setOnClickListener(this)
@@ -141,6 +143,9 @@ class MainActivity :
             R.id.btnSearch -> startActivity(Intent(this, SearchActivity::class.java))
             R.id.btnDialog -> startActivity(Intent(this, DialogActivity::class.java))
             R.id.btnCoil -> startActivity(Intent(this, CoilActivity::class.java))
+
+            R.id.btnVerticalProgress ->
+                startActivity(Intent(this, VerticalProgressBarActivity::class.java))
         }
     }
 

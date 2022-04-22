@@ -257,5 +257,14 @@
                 android:text="@string/txt_0_mb" />
 
         </RelativeLayout>
+
+        <Button
+            android:id="@+id/btnVerticalProgress"
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:layout_marginTop="@dimen/margin_default"
+            android:text="vertical progress"
+            tools:ignore="HardcodedText" />
+
     </com.nex3z.flowlayout.FlowLayout>
 </ScrollView>

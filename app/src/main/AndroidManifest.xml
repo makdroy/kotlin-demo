@@ -51,6 +51,7 @@
         <activity android:name=".storage.DataAndFileDemoActivity" />
         <activity android:name=".storage.MediaStoreActivity" />
 
+        <activity android:name=".progress.VerticalProgressBarActivity" />
         <activity android:name=".notification.NotificationActivity" />
         <activity android:name=".bottomsheet.BottomSheetActivity" />
         <activity android:name=".fragments.AboutFragmentActivity" />
