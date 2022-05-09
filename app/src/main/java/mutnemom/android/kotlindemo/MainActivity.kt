@@ -29,6 +29,7 @@ import mutnemom.android.kotlindemo.room.RoomCoroutinesActivity
 import mutnemom.android.kotlindemo.screenshot.ScreenshotActivity
 import mutnemom.android.kotlindemo.search.SearchActivity
 import mutnemom.android.kotlindemo.services.DownloadFileService
+import mutnemom.android.kotlindemo.storage.DataAndFileDemoActivity
 import mutnemom.android.kotlindemo.storage.MediaStoreActivity
 import mutnemom.android.kotlindemo.toggle.SwitchActivity
 import mutnemom.android.kotlindemo.tts.TextToSpeechActivity
@@ -106,6 +107,7 @@ class MainActivity :
         with(binding) {
             btnMonitorNetwork.setOnClickListener { openMonitorNetworkStatePage() }
             btnListAdapter.setOnClickListener { openListAdapterDemoPage() }
+            btnDataFile.setOnClickListener { openDataAndFileDemoPage() }
         }
     }
 
@@ -173,6 +175,11 @@ class MainActivity :
 
     private fun openListAdapterDemoPage() {
         Intent(this, ListAdapterDemoActivity::class.java)
+            .apply { startActivity(this) }
+    }
+
+    private fun openDataAndFileDemoPage() {
+        Intent(this, DataAndFileDemoActivity::class.java)
             .apply { startActivity(this) }
     }
 

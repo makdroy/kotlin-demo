@@ -151,6 +151,13 @@
             android:text="@string/button_animate_progress_bar" />
 
         <Button
+            android:id="@+id/btnDataFile"
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:text="Data and File"
+            tools:ignore="HardcodedText" />
+
+        <Button
             android:id="@+id/btnMediaStore"
             android:layout_width="wrap_content"
             android:layout_height="56dp"
