@@ -26,6 +26,7 @@ import mutnemom.android.kotlindemo.room.RoomCoroutinesActivity
 import mutnemom.android.kotlindemo.screenshot.ScreenshotActivity
 import mutnemom.android.kotlindemo.search.SearchActivity
 import mutnemom.android.kotlindemo.services.DownloadFileService
+import mutnemom.android.kotlindemo.storage.MediaStoreActivity
 import mutnemom.android.kotlindemo.toggle.SwitchActivity
 import mutnemom.android.kotlindemo.tts.TextToSpeechActivity
 
@@ -88,6 +89,7 @@ class MainActivity :
 
         binding.btnFragmentChapter.setOnClickListener { openFragmentChapterPage() }
         binding.btnRoomCoroutines.setOnClickListener { openRoomCoroutinesPage() }
+        binding.btnMediaStore.setOnClickListener { openMediaStorePage() }
         binding.btnDragView.setOnClickListener { openDragViewPage() }
         binding.btnTts.setOnClickListener { openTtsPage() }
     }
@@ -141,6 +143,11 @@ class MainActivity :
 
     private fun openRoomCoroutinesPage() {
         Intent(this, RoomCoroutinesActivity::class.java)
+            .apply { startActivity(this) }
+    }
+
+    private fun openMediaStorePage() {
+        Intent(this, MediaStoreActivity::class.java)
             .apply { startActivity(this) }
     }
 

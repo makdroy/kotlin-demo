@@ -16,7 +16,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
+        <activity
+            android:name=".storage.MediaStoreActivity"
+            android:exported="false" />
         <activity android:name=".fragments.transaction.AnimateFragmentTransactionActivity" />
         <activity android:name=".fragments.backpress.BackPressDispatcherActivity" />
         <activity android:name=".animations.transitions.TransitionsActivity" />
