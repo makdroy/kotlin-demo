@@ -92,6 +92,8 @@ class MainActivity :
         binding.btnMediaStore.setOnClickListener { openMediaStorePage() }
         binding.btnDragView.setOnClickListener { openDragViewPage() }
         binding.btnTts.setOnClickListener { openTtsPage() }
+
+        binding.btnMonitorNetwork.setOnClickListener { openMonitorNetworkStatePage() }
     }
 
     override fun onClick(v: View) {
@@ -148,6 +150,11 @@ class MainActivity :
 
     private fun openMediaStorePage() {
         Intent(this, MediaStoreActivity::class.java)
+            .apply { startActivity(this) }
+    }
+
+    private fun openMonitorNetworkStatePage() {
+        Intent(this, NetworkStateActivity::class.java)
             .apply { startActivity(this) }
     }
 

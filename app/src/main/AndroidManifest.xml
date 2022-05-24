@@ -3,6 +3,7 @@
     package="mutnemom.android.kotlindemo">
 
     <!-- normal permission -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <!-- request permission -->
@@ -16,9 +17,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <activity
+            android:name=".NetworkStateActivity"
+            android:exported="false" />
         <activity
             android:name=".storage.MediaStoreActivity"
             android:exported="false" />
+
         <activity android:name=".fragments.transaction.AnimateFragmentTransactionActivity" />
         <activity android:name=".fragments.backpress.BackPressDispatcherActivity" />
         <activity android:name=".animations.transitions.TransitionsActivity" />
