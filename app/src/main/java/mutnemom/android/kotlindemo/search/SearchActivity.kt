@@ -1,13 +1,12 @@
 package mutnemom.android.kotlindemo.search
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.Menu
-import android.view.ViewGroup
+import android.view.*
 import android.widget.Filter
 import android.widget.Filterable
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
+import androidx.core.view.MenuProvider
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -26,25 +25,31 @@ class SearchActivity : AppCompatActivity() {
 
         binding = ActivitySearchBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        setupOptionsMenu()
         setupRecyclerView()
     }
 
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        menuInflater.inflate(R.menu.search_menu, menu)
-        val item = menu.findItem(R.id.action_search)
-        val searchView = item.actionView as? SearchView
-        searchView?.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-            override fun onQueryTextChange(newText: String?): Boolean {
-                searchAdapter.filter.filter(newText)
-                return false
+    private fun setupOptionsMenu() {
+        addMenuProvider(object : MenuProvider {
+            override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
+                menuInflater.inflate(R.menu.search_menu, menu)
+                val item = menu.findItem(R.id.action_search)
+                val searchView = item.actionView as? SearchView
+                searchView?.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+                    override fun onQueryTextChange(newText: String?): Boolean {
+                        searchAdapter.filter.filter(newText)
+                        return false
+                    }
+
+                    override fun onQueryTextSubmit(query: String?): Boolean {
+                        return false
+                    }
+                })
             }
 
-            override fun onQueryTextSubmit(query: String?): Boolean {
-                return false
-            }
+            override fun onMenuItemSelected(menuItem: MenuItem): Boolean = false
         })
-
-        return super.onCreateOptionsMenu(menu)
     }
 
     private fun setupRecyclerView() {

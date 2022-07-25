@@ -55,6 +55,7 @@
         <activity android:name=".bottomsheet.BottomSheetActivity" />
         <activity android:name=".fragments.AboutFragmentActivity" />
         <activity android:name=".screenshot.ScreenshotActivity" />
+        <activity android:name=".reader.pdf.PdfReaderActivity" />
         <activity android:name=".bottomnav.BottomNavActivity" />
         <activity android:name=".room.RoomCoroutinesActivity" />
         <activity android:name=".draggable.DragViewActivity" />

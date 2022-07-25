@@ -20,4 +20,5 @@ plugins {
 
 tasks.register('clean', Delete) {
     delete rootProject.buildDir
+    delete './app/.cxx'
 }

@@ -26,6 +26,7 @@ import mutnemom.android.kotlindemo.image.ShapeableImageViewActivity
 import mutnemom.android.kotlindemo.location.LocationDemoActivity
 import mutnemom.android.kotlindemo.model.DownloadModel
 import mutnemom.android.kotlindemo.notification.NotificationActivity
+import mutnemom.android.kotlindemo.reader.pdf.PdfReaderActivity
 import mutnemom.android.kotlindemo.recyclerview.ListAdapterDemoActivity
 import mutnemom.android.kotlindemo.recyclerview.RecyclerViewActivity
 import mutnemom.android.kotlindemo.room.RoomCoroutinesActivity
@@ -111,6 +112,7 @@ class MainActivity :
             btnShapeableImageView.setOnClickListener { openShapeableImageViewPage() }
             btnMonitorNetwork.setOnClickListener { openMonitorNetworkStatePage() }
             btnListAdapter.setOnClickListener { openListAdapterDemoPage() }
+            btnPdfRenderer.setOnClickListener { openPdfPage() }
             btnCounterFab.setOnClickListener { increaseCounterFabNumber() }
             btnTabLayout.setOnClickListener { openTabLayoutDemoPage() }
             btnDataFile.setOnClickListener { openDataAndFileDemoPage() }
@@ -204,6 +206,11 @@ class MainActivity :
 
     private fun openDebouncePage() {
         Intent(this, DebounceClickActivity::class.java)
+            .apply { startActivity(this) }
+    }
+
+    private fun openPdfPage() {
+        Intent(this, PdfReaderActivity::class.java)
             .apply { startActivity(this) }
     }
 

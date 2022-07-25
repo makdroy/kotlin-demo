@@ -158,10 +158,17 @@
             tools:ignore="HardcodedText" />
 
         <Button
-            android:id="@+id/btnMediaStore"
+            android:id="@+id/btnListAdapter"
             android:layout_width="wrap_content"
             android:layout_height="56dp"
-            android:text="MediaStore Api"
+            android:text="List Adapter"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/btnPdfRenderer"
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:text="PDF"
             tools:ignore="HardcodedText" />
 
         <Button
@@ -172,10 +179,10 @@
             tools:ignore="HardcodedText" />
 
         <Button
-            android:id="@+id/btnListAdapter"
+            android:id="@+id/btnMediaStore"
             android:layout_width="wrap_content"
             android:layout_height="56dp"
-            android:text="List Adapter"
+            android:text="MediaStore Api"
             tools:ignore="HardcodedText" />
 
         <Button
