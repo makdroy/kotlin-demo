@@ -4,6 +4,7 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
+import android.os.Build
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
@@ -41,7 +42,14 @@ class MainActivity :
             intent?.also {
                 if (it.action == "message_progress") {
                     val downloadModel =
-                        intent.getParcelableExtra<DownloadModel>("download") ?: return
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                            intent.getParcelableExtra("download", DownloadModel::class.java)
+                        } else {
+                            @Suppress("DEPRECATION")
+                            intent.getParcelableExtra("download")
+                        }
+
+                    downloadModel ?: return@also
 
                     binding.progressDownload.progress = downloadModel.progress
                     if (downloadModel.progress == 100) {
