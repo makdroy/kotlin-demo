@@ -37,17 +37,22 @@
         android:layout_marginStart="@dimen/margin_default"
         android:layout_weight="1"
         android:background="#e0e0e0"
+        android:gravity="center_horizontal"
         android:orientation="vertical"
         android:padding="@dimen/padding_default">
 
         <Button
             android:id="@+id/btnSwitchIcon"
             style="@style/Theme.MaterialComponents"
-            android:layout_width="match_parent"
+            android:layout_width="280dp"
             android:layout_height="wrap_content"
             android:padding="@dimen/padding_default"
             android:text="@string/txt_switch_chapter_switch_icon_button"
-            android:textColor="@color/colorAccent" />
+            android:textColor="@android:color/black" />
+
+        <include
+            android:id="@+id/switchRadioButton"
+            layout="@layout/layout_switch_radio_button" />
 
     </LinearLayout>
 
