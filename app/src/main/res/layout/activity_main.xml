@@ -165,6 +165,15 @@
             tools:ignore="HardcodedText" />
 
         <Button
+            android:id="@+id/btnJetpackCompose"
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:text="Jetpack Compose"
+            android:textAllCaps="false"
+            android:textColor="@color/colorAccent"
+            tools:ignore="HardcodedText" />
+
+        <Button
             android:id="@+id/btnMonitorNetwork"
             android:layout_width="wrap_content"
             android:layout_height="56dp"

@@ -110,6 +110,7 @@ class MainActivity :
         with(binding) {
             btnShapeableImageView.setOnClickListener { openShapeableImageViewPage() }
             btnMonitorNetwork.setOnClickListener { openMonitorNetworkStatePage() }
+            btnJetpackCompose.setOnClickListener { openJetpackComposeDemoPage() }
             btnListAdapter.setOnClickListener { openListAdapterDemoPage() }
             btnCounterFab.setOnClickListener { increaseCounterFabNumber() }
             btnTabLayout.setOnClickListener { openTabLayoutDemoPage() }
@@ -179,6 +180,11 @@ class MainActivity :
 
     private fun openMonitorNetworkStatePage() {
         Intent(this, NetworkStateActivity::class.java)
+            .apply { startActivity(this) }
+    }
+
+    private fun openJetpackComposeDemoPage() {
+        Intent(this, JetpackComposeDemoActivity::class.java)
             .apply { startActivity(this) }
     }
 
