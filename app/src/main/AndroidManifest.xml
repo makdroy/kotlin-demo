@@ -9,6 +9,12 @@
     <uses-permission android:name="android.permission.CAMERA" />
 
     <uses-feature android:name="android.hardware.camera2.full" />
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" />
 
     <application
         android:icon="@mipmap/ic_launcher"
@@ -27,6 +33,8 @@
         <activity android:name=".fragments.transaction.AnimateFragmentTransactionActivity" />
         <activity android:name=".fragments.backpress.BackPressDispatcherActivity" />
         <activity android:name=".animations.transitions.TransitionsActivity" />
+        <activity android:name=".recyclerview.ListAdapterDemoActivity" />
+        <activity android:name=".recyclerview.RecyclerViewActivity" />
         <activity android:name=".notification.NotificationActivity" />
         <activity android:name=".bottomsheet.BottomSheetActivity" />
         <activity android:name=".fragments.AboutFragmentActivity" />
@@ -43,7 +51,6 @@
         <activity android:name=".dialog.DialogActivity" />
         <activity android:name=".toggle.SwitchActivity" />
         <activity android:name=".search.SearchActivity" />
-        <activity android:name=".RecyclerViewActivity" />
         <activity android:name=".ProgressBarActivity" />
         <activity android:name=".WebSocketActivity" />
         <activity android:name=".coil.CoilActivity" />

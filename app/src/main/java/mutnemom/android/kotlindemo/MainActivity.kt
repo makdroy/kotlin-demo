@@ -23,6 +23,8 @@ import mutnemom.android.kotlindemo.fragments.AboutFragmentActivity
 import mutnemom.android.kotlindemo.gesture.GestureActivity
 import mutnemom.android.kotlindemo.model.DownloadModel
 import mutnemom.android.kotlindemo.notification.NotificationActivity
+import mutnemom.android.kotlindemo.recyclerview.ListAdapterDemoActivity
+import mutnemom.android.kotlindemo.recyclerview.RecyclerViewActivity
 import mutnemom.android.kotlindemo.room.RoomCoroutinesActivity
 import mutnemom.android.kotlindemo.screenshot.ScreenshotActivity
 import mutnemom.android.kotlindemo.search.SearchActivity
@@ -101,7 +103,10 @@ class MainActivity :
         binding.btnDragView.setOnClickListener { openDragViewPage() }
         binding.btnTts.setOnClickListener { openTtsPage() }
 
-        binding.btnMonitorNetwork.setOnClickListener { openMonitorNetworkStatePage() }
+        with(binding) {
+            btnMonitorNetwork.setOnClickListener { openMonitorNetworkStatePage() }
+            btnListAdapter.setOnClickListener { openListAdapterDemoPage() }
+        }
     }
 
     override fun onClick(v: View) {
@@ -163,6 +168,11 @@ class MainActivity :
 
     private fun openMonitorNetworkStatePage() {
         Intent(this, NetworkStateActivity::class.java)
+            .apply { startActivity(this) }
+    }
+
+    private fun openListAdapterDemoPage() {
+        Intent(this, ListAdapterDemoActivity::class.java)
             .apply { startActivity(this) }
     }
 
