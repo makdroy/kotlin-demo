@@ -72,9 +72,11 @@ class ListAdapterDemoActivity : AppCompatActivity() {
         val num1 = Random.nextInt(0, initialData.size)
         val num2 = Random.nextInt(0, initialData.size)
 
-        personAdapter?.list = initialData.asReversed()
+        val newList = initialData.asReversed()
             .subList(minOf(num1, num2), maxOf(num1, num2))
             .shuffled()
+
+        personAdapter?.list = newList.ifEmpty { listOf(Person("", "--", "")) }
     }
 
     private fun resetData() {
