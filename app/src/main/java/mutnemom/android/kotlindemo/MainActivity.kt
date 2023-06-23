@@ -12,7 +12,6 @@ import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import mutnemom.android.kotlindemo.animations.transitions.TransitionsActivity
 import mutnemom.android.kotlindemo.bottomnav.BottomNavActivity
 import mutnemom.android.kotlindemo.bottomsheet.BottomSheetActivity
-import mutnemom.android.kotlindemo.coil.CoilActivity
 import mutnemom.android.kotlindemo.custom.CustomViewActivity
 import mutnemom.android.kotlindemo.databinding.ActivityMainBinding
 import mutnemom.android.kotlindemo.datetime.DateTimeActivity
@@ -21,6 +20,8 @@ import mutnemom.android.kotlindemo.draggable.DragViewActivity
 import mutnemom.android.kotlindemo.encrypt.AES256Activity
 import mutnemom.android.kotlindemo.fragments.AboutFragmentActivity
 import mutnemom.android.kotlindemo.gesture.GestureActivity
+import mutnemom.android.kotlindemo.image.CoilActivity
+import mutnemom.android.kotlindemo.image.ShapeableImageViewActivity
 import mutnemom.android.kotlindemo.model.DownloadModel
 import mutnemom.android.kotlindemo.notification.NotificationActivity
 import mutnemom.android.kotlindemo.recyclerview.ListAdapterDemoActivity
@@ -105,6 +106,7 @@ class MainActivity :
         binding.btnTts.setOnClickListener { openTtsPage() }
 
         with(binding) {
+            btnShapeableImageView.setOnClickListener { openShapeableImageViewPage() }
             btnMonitorNetwork.setOnClickListener { openMonitorNetworkStatePage() }
             btnListAdapter.setOnClickListener { openListAdapterDemoPage() }
             btnDataFile.setOnClickListener { openDataAndFileDemoPage() }
@@ -170,6 +172,11 @@ class MainActivity :
 
     private fun openMonitorNetworkStatePage() {
         Intent(this, NetworkStateActivity::class.java)
+            .apply { startActivity(this) }
+    }
+
+    private fun openShapeableImageViewPage() {
+        Intent(this, ShapeableImageViewActivity::class.java)
             .apply { startActivity(this) }
     }
 

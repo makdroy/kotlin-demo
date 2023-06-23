@@ -178,6 +178,14 @@
             android:text="List Adapter"
             tools:ignore="HardcodedText" />
 
+        <Button
+            android:id="@+id/btnShapeableImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:text="MDC Shapeable Image View"
+            android:textAllCaps="false"
+            tools:ignore="HardcodedText" />
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

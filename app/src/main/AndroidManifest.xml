@@ -23,21 +23,22 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity
-            android:name=".NetworkStateActivity"
-            android:exported="false" />
-        <activity
-            android:name=".storage.MediaStoreActivity"
-            android:exported="false" />
+        <activity android:name=".animations.transitions.TransitionsActivity" />
 
         <activity android:name=".fragments.transaction.AnimateFragmentTransactionActivity" />
         <activity android:name=".fragments.backpress.BackPressDispatcherActivity" />
-        <activity android:name=".animations.transitions.TransitionsActivity" />
+
         <activity android:name=".recyclerview.ListAdapterDemoActivity" />
         <activity android:name=".recyclerview.RecyclerViewActivity" />
+
+        <activity android:name=".image.ShapeableImageViewActivity" />
+        <activity android:name=".image.CoilActivity" />
+
+        <activity android:name=".storage.DataAndFileDemoActivity" />
+        <activity android:name=".storage.MediaStoreActivity" />
+
         <activity android:name=".notification.NotificationActivity" />
         <activity android:name=".bottomsheet.BottomSheetActivity" />
-        <activity android:name=".storage.DataAndFileDemoActivity" />
         <activity android:name=".fragments.AboutFragmentActivity" />
         <activity android:name=".screenshot.ScreenshotActivity" />
         <activity android:name=".bottomnav.BottomNavActivity" />
@@ -52,9 +53,10 @@
         <activity android:name=".dialog.DialogActivity" />
         <activity android:name=".toggle.SwitchActivity" />
         <activity android:name=".search.SearchActivity" />
+
+        <activity android:name=".NetworkStateActivity" />
         <activity android:name=".ProgressBarActivity" />
         <activity android:name=".WebSocketActivity" />
-        <activity android:name=".coil.CoilActivity" />
         <activity android:name=".WebViewActivity" />
         <activity android:name=".ButtonActivity" />
 
