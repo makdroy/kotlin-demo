@@ -68,6 +68,7 @@
         <activity android:name=".toggle.SwitchActivity" />
         <activity android:name=".search.SearchActivity" />
 
+        <activity android:name=".Media3ExoplayerActivity" />
         <activity android:name=".TabLayoutDemoActivity" />
         <activity android:name=".DebounceClickActivity" />
         <activity android:name=".NetworkStateActivity" />

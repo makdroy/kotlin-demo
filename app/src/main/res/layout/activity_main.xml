@@ -179,6 +179,14 @@
             tools:ignore="HardcodedText" />
 
         <Button
+            android:id="@+id/btnMedia3"
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:text="Media3"
+            android:textAllCaps="false"
+            tools:ignore="HardcodedText" />
+
+        <Button
             android:id="@+id/btnLocalize"
             android:layout_width="wrap_content"
             android:layout_height="56dp"

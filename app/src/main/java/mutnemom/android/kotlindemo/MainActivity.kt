@@ -101,13 +101,13 @@ class MainActivity :
 
         registerReceiver()
 
-        binding.btnFragmentChapter.setOnClickListener { openFragmentChapterPage() }
-        binding.btnRoomCoroutines.setOnClickListener { openRoomCoroutinesPage() }
-        binding.btnMediaStore.setOnClickListener { openMediaStorePage() }
-        binding.btnDragView.setOnClickListener { openDragViewPage() }
-        binding.btnTts.setOnClickListener { openTtsPage() }
-
         with(binding) {
+            btnFragmentChapter.setOnClickListener { openFragmentChapterPage() }
+            btnRoomCoroutines.setOnClickListener { openRoomCoroutinesPage() }
+            btnMediaStore.setOnClickListener { openMediaStorePage() }
+            btnDragView.setOnClickListener { openDragViewPage() }
+            btnTts.setOnClickListener { openTtsPage() }
+
             btnShapeableImageView.setOnClickListener { openShapeableImageViewPage() }
             btnMonitorNetwork.setOnClickListener { openMonitorNetworkStatePage() }
             btnListAdapter.setOnClickListener { openListAdapterDemoPage() }
@@ -117,6 +117,7 @@ class MainActivity :
             btnLocalize.setOnClickListener { openPerAppLanguagePage() }
             btnDebounce.setOnClickListener { openDebouncePage() }
             btnLocation.setOnClickListener { openLocationDemoPage() }
+            btnMedia3.setOnClickListener { openMedia3ExoplayerPage() }
         }
     }
 
@@ -199,6 +200,11 @@ class MainActivity :
 
     private fun openPerAppLanguagePage() {
         Intent(this, PerAppLanguageActivity::class.java)
+            .apply { startActivity(this) }
+    }
+
+    private fun openMedia3ExoplayerPage() {
+        Intent(this, Media3ExoplayerActivity::class.java)
             .apply { startActivity(this) }
     }
 
