@@ -21,6 +21,7 @@ android {
         targetSdk 33
         versionCode 1
         versionName "1.1.0"
+        resourceConfigurations += ["th"]
 
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
     }

@@ -1,0 +1,161 @@
+<resources>
+    <string name="app_name">เดโม่ คอตลิน</string>
+    <string name="product_item_image_description">Image of product item.</string>
+
+    <string name="button_web_view">WebView</string>
+    <string name="button_recycler_view">Recycler View</string>
+    <string name="button_button">Button</string>
+    <string name="button_screenshot">Screenshot</string>
+    <string name="button_camera">Camera</string>
+    <string name="button_material_raised">Material Raised</string>
+    <string name="button_material_raised_disable">Material Raised Disable</string>
+    <string name="button_material_flat">Material Flat</string>
+    <string name="button_material_flat_disable">Material Flat Disable</string>
+    <string name="button_borderless">Borderless</string>
+    <string name="button_borderless_disable">Borderless Disable</string>
+    <string name="button_custom_view">Custom View</string>
+    <string name="button_websocket">WebSocket OkHttp</string>
+    <string name="txt_test_call_websocket">Test Call WebSocket</string>
+    <string name="button_animate_progress_bar">Animate Progress</string>
+    <string name="button_start_download">Download</string>
+    <string name="txt_0_mb">0 MB</string>
+    <string name="txt_download_file_complete">File Download Complete</string>
+    <string name="desc_image_button_with_item_background">Image Button With Item Background</string>
+    <string name="txt_webview_load_pdf_button">Load PDF</string>
+    <string name="txt_circle">Circle</string>
+
+    <string name="txt_on_back_pressed_dispatcher">Press system UI back button</string>
+
+    <string name="txt_demo">demo</string>
+
+    <!--  about fragment page -->
+    <string name="txt_fragment_chapter">About Fragment</string>
+    <string name="txt_back_press_dispatcher_description">Handle back press event in active fragment when press system UI back button</string>
+    <string name="txt_custom_fragment_transaction_animation_description">Implement custom animations in fragment transaction instance</string>
+    <string name="txt_hint_display_animation">Tap hear to display fragment transaction animation</string>
+    <!--    -->
+
+    <!--  drag view page -->
+    <string name="txt_drag_view_chapter">Drag View</string>
+    <string name="txt_draggable_image_view">Draggable Image View</string>
+    <!--    -->
+
+    <!--  TTS page -->
+    <string name="txt_text_to_speech_chapter">Text to Speech</string>
+    <string name="txt_text_to_speech_sample_paragraph">ตามแนวคิดของ Single Responsibility Principle (SRP) มันสำคัญมาก ๆ นั่นคือแต่ละ test case ควรตรวจสอบเรื่องเดียว เป้าหมายเดียว แต่ไม่ใช่บอกว่ามีการ assert เพียงบรรทัดเดียวนะ !! เพราะว่า ถ้ามีการทดสอบในหลาย ๆ เรื่องพร้อมกันใน test case เดียวแล้ว ปัญหาที่ตามมาคือ ความงง ความซับซ้อน ดูแลรักษายากมาก ๆ ดังนั้นในแต่ละ test case ต้องเฉพาะเจาะจงไปเลย ว่าต้องการจะทดสอบอะไร ถ้ามีหลายเรื่องก็ให้แยกเป็นเรื่องย่อย ๆ จากนั้นจึงแยกออกเป็น test case ไปซะ</string>
+    <string name="txt_text_to_speech_start_button">start</string>
+    <string name="txt_text_to_speech_stop_button">stop</string>
+    <string name="txt_text_to_speech_header">Sample quote for reading by TTS</string>
+    <!--    -->
+
+    <!--  AES256 page -->
+    <string name="txt_aes256_chapter">AES256</string>
+    <string name="txt_aes256_encrypt_button">Encrypt Message</string>
+    <string name="txt_aes256_plain_text">Plain Text</string>
+    <string name="txt_aes256_encrypted">Encrypted</string>
+    <string name="txt_aes256_decrypted">Decrypted</string>
+    <!--    -->
+
+    <!--  Room + Coroutines page -->
+    <string name="txt_room_coroutines_chapter">Room + Coroutines</string>
+    <string name="txt_hint_member_name">Member Name</string>
+    <string name="txt_insert_button">insert</string>
+    <string name="txt_delete_button">delete</string>
+    <!--    -->
+
+    <!--  about epub reader page -->
+    <string name="txt_epub_reader_chapter">EPUB Reader</string>
+    <!--    -->
+
+    <!--  about ratio image view page -->
+    <string name="txt_ratio_image_portrait_ratio_image_view_2_3"><![CDATA[-> Portrait Ratio Image View 2:3]]></string>
+    <string name="txt_ratio_image_landscape_ratio_image_view_2_3"><![CDATA[-> Landscape Ratio Image View 2:3]]></string>
+    <!--    -->
+
+    <!--  Switch Chapter page -->
+    <string name="txt_switch_chapter">switch tutorials</string>
+    <string name="txt_switch_chapter_arrow">-<![CDATA[->]]></string>
+    <string name="txt_switch_chapter_description">Demo for toggle or switching state components</string>
+    <string name="txt_switch_chapter_switch_icon_button">Switch Icon</string>
+    <!--    -->
+
+    <!--  Switch Icon page -->
+    <string name="txt_switch_icon_description">Switch Icon</string>
+    <string name="txt_switch_icon_properties">
+        android:layout_width="wrap_content"
+        \nandroid:layout_height="wrap_content"
+        \nandroid:padding="8dp"
+        \napp:si_animation_duration="500"
+        \napp:si_disabled_alpha=".3"
+        \napp:si_disabled_color="#b7b7b7"
+        \napp:si_tint_color="#ff3c00"
+        \napp:si_enabled="false"
+        \napp:si_no_dash="true"
+        \napp:srcCompat="@drawable/ic_cloud"</string>
+    <!--    -->
+
+    <!--  DateTime page -->
+    <string name="txt_date_time_chapter">date time</string>
+    <string name="txt_date_time_destination_format">Format %s</string>
+    <string name="txt_date_time_2_days_ago">2 days ago</string>
+    <string name="txt_date_time_in_5_days">in 5 days</string>
+    <string name="txt_date_time_today">today</string>
+    <string name="txt_date_time_timestamp">Timestamp</string>
+    <string name="txt_date_time_title">Convert Timestamp to DateTime format</string>
+    <!--    -->
+
+    <!--  Screenshot page -->
+    <string name="txt_screenshot_title">take screenshot full page</string>
+    <!--    -->
+
+    <!--  Transitions page -->
+    <string name="txt_animations_chapter">Transitions</string>
+    <string name="txt_animations_sample_transitions_label"><![CDATA[with -> TransitionManager\n#beginDelayedTransition()]]></string>
+    <string name="txt_transition_first">Transition First Sample</string>
+    <string name="btn_transitions_first">First</string>
+    <string name="btn_transitions_toggle">Toggle Menu</string>
+    <string name="btn_cross_fade_drawable">Cross-fade drawable</string>
+    <string name="btn_cross_fade_color">Cross-fade BG color</string>
+    <!--    -->
+
+    <!--  Bottom Navigation -->
+    <string name="txt_bottom_navigation_chapter">Bottom Nav</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <!--    -->
+
+    <!--  Gesture -->
+    <string name="txt_gesture_chapter">Gesture</string>
+    <!--    -->
+
+    <!--  Search Field -->
+    <string name="txt_search_field_chapter">Search</string>
+    <!--    -->
+
+    <!--  Coroutines Image Loader -->
+    <string name="txt_coil_chapter">Coil</string>
+    <string name="desc_coil_rounded_corner_image">Rounded Corner Image</string>
+    <string name="desc_coil_circle_crop_image">Circle Crop Image</string>
+    <!--    -->
+
+    <!--  Dialog -->
+    <string name="txt_dialog_chapter">Dialog</string>
+    <string name="txt_dialog_multiple_choice_title">เลือกรายการ</string>
+    <string name="txt_dialog_multiple_choice_1">คืนอีบุ๊ก</string>
+    <string name="txt_dialog_multiple_choice_2">ลบไฟล์</string>
+    <string name="txt_dialog_description_1">Custom multiple choice dialog fragment</string>
+    <string name="txt_description_2">Other Header</string>
+    <!--    -->
+
+    <!--  Notification -->
+    <string name="txt_notification_chapter">Notification</string>
+    <string name="btn_send">send</string>
+    <string name="txt_send_notification_immediately_label">Send notification immediately</string>
+    <!--    -->
+
+    <!--  BottomSheet -->
+    <string name="txt_bottom_sheet_chapter">Bottom Sheet</string>
+    <!--    -->
+
+</resources>
