@@ -110,6 +110,7 @@ class MainActivity :
             btnMonitorNetwork.setOnClickListener { openMonitorNetworkStatePage() }
             btnListAdapter.setOnClickListener { openListAdapterDemoPage() }
             btnDataFile.setOnClickListener { openDataAndFileDemoPage() }
+            btnLocalize.setOnClickListener { openPerAppLanguagePage() }
         }
     }
 
@@ -187,6 +188,11 @@ class MainActivity :
 
     private fun openDataAndFileDemoPage() {
         Intent(this, DataAndFileDemoActivity::class.java)
+            .apply { startActivity(this) }
+    }
+
+    private fun openPerAppLanguagePage() {
+        Intent(this, PerAppLanguageActivity::class.java)
             .apply { startActivity(this) }
     }
 
