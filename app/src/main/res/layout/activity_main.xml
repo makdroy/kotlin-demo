@@ -209,6 +209,14 @@
             android:textAllCaps="false"
             tools:ignore="HardcodedText" />
 
+        <mutnemom.android.kotlindemo.custom.CounterFab
+            android:id="@+id/btnCounterFab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_default"
+            app:badgePosition="RightTop"
+            app:srcCompat="@drawable/ic_check" />
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

@@ -18,6 +18,7 @@ import mutnemom.android.kotlindemo.datetime.DateTimeActivity
 import mutnemom.android.kotlindemo.dialog.DialogActivity
 import mutnemom.android.kotlindemo.draggable.DragViewActivity
 import mutnemom.android.kotlindemo.encrypt.AES256Activity
+import mutnemom.android.kotlindemo.extensions.toast
 import mutnemom.android.kotlindemo.fragments.AboutFragmentActivity
 import mutnemom.android.kotlindemo.gesture.GestureActivity
 import mutnemom.android.kotlindemo.image.CoilActivity
@@ -110,6 +111,7 @@ class MainActivity :
             btnShapeableImageView.setOnClickListener { openShapeableImageViewPage() }
             btnMonitorNetwork.setOnClickListener { openMonitorNetworkStatePage() }
             btnListAdapter.setOnClickListener { openListAdapterDemoPage() }
+            btnCounterFab.setOnClickListener { increaseCounterFabNumber() }
             btnDataFile.setOnClickListener { openDataAndFileDemoPage() }
             btnLocalize.setOnClickListener { openPerAppLanguagePage() }
             btnDebounce.setOnClickListener { openDebouncePage() }
@@ -207,6 +209,17 @@ class MainActivity :
     private fun openLocationDemoPage() {
         Intent(this, LocationDemoActivity::class.java)
             .apply { startActivity(this) }
+    }
+
+    private fun increaseCounterFabNumber() {
+        val isIncreasingMode = true
+        if (isIncreasingMode) {
+            binding.btnCounterFab.increase()
+        } else {
+            binding.btnCounterFab.decrease()
+        }
+
+        toast("count: ${binding.btnCounterFab.count}")
     }
 
 }
