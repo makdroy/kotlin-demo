@@ -57,6 +57,7 @@
         <activity android:name=".toggle.SwitchActivity" />
         <activity android:name=".search.SearchActivity" />
 
+        <activity android:name=".DebounceClickActivity" />
         <activity android:name=".NetworkStateActivity" />
         <activity android:name=".ProgressBarActivity" />
         <activity android:name=".WebSocketActivity" />

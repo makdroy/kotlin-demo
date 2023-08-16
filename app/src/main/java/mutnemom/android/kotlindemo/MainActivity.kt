@@ -111,6 +111,7 @@ class MainActivity :
             btnListAdapter.setOnClickListener { openListAdapterDemoPage() }
             btnDataFile.setOnClickListener { openDataAndFileDemoPage() }
             btnLocalize.setOnClickListener { openPerAppLanguagePage() }
+            btnDebounce.setOnClickListener { openDebouncePage() }
         }
     }
 
@@ -193,6 +194,11 @@ class MainActivity :
 
     private fun openPerAppLanguagePage() {
         Intent(this, PerAppLanguageActivity::class.java)
+            .apply { startActivity(this) }
+    }
+
+    private fun openDebouncePage() {
+        Intent(this, DebounceClickActivity::class.java)
             .apply { startActivity(this) }
     }
 

@@ -186,6 +186,14 @@
             tools:ignore="HardcodedText" />
 
         <Button
+            android:id="@+id/btnDebounce"
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:text="Debounce OnClick"
+            android:textAllCaps="false"
+            tools:ignore="HardcodedText" />
+
+        <Button
             android:id="@+id/btnShapeableImageView"
             android:layout_width="wrap_content"
             android:layout_height="56dp"
