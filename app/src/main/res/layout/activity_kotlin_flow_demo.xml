@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/padding_default"
+    tools:context=".KotlinFlowDemoActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btnEmit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Flow with emit()"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/btnAsFlow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Flow with asFlow()"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/txtFlowEvent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_default"
+            android:textSize="22sp"
+            tools:text="text line 1 \ntext line 2" />
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

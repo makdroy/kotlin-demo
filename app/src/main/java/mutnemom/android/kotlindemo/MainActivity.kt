@@ -57,12 +57,21 @@ class MainActivity :
 
                     downloadModel ?: return@also
 
+                    val locale = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                        resources.configuration.locales.get(0)
+                    } else {
+                        @Suppress("DEPRECATION")
+                        resources.configuration.locale
+                    }
+
                     binding.progressDownload.progress = downloadModel.progress
                     if (downloadModel.progress == 100) {
                         binding.txtProgressDownload.text =
                             getString(R.string.txt_download_file_complete)
+
                     } else {
                         binding.txtProgressDownload.text = String.format(
+                            locale,
                             "Download (%d/%d) MB",
                             downloadModel.currentFileSize,
                             downloadModel.totalFileSize
@@ -111,6 +120,7 @@ class MainActivity :
             btnShapeableImageView.setOnClickListener { openShapeableImageViewPage() }
             btnMonitorNetwork.setOnClickListener { openMonitorNetworkStatePage() }
             btnListAdapter.setOnClickListener { openListAdapterDemoPage() }
+            btnKotlinFlow.setOnClickListener { openKotlinFlowDemoPage() }
             btnCounterFab.setOnClickListener { increaseCounterFabNumber() }
             btnTabLayout.setOnClickListener { openTabLayoutDemoPage() }
             btnDataFile.setOnClickListener { openDataAndFileDemoPage() }
@@ -212,6 +222,11 @@ class MainActivity :
             .apply { startActivity(this) }
     }
 
+    private fun openKotlinFlowDemoPage() {
+        Intent(this, KotlinFlowDemoActivity::class.java)
+            .apply { startActivity(this) }
+    }
+
     private fun openTabLayoutDemoPage() {
         Intent(this, TabLayoutDemoActivity::class.java)
             .apply { startActivity(this) }
@@ -227,5 +242,4 @@ class MainActivity :
 
         toast("count: ${binding.btnCounterFab.count}")
     }
-
 }
