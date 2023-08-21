@@ -6,9 +6,24 @@ import android.content.Intent
 import android.content.IntentFilter
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.asFlow
+import kotlinx.coroutines.flow.catch
+import kotlinx.coroutines.flow.collectIndexed
+import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.flowOf
+import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.flow.onCompletion
+import kotlinx.coroutines.flow.onEach
+import kotlinx.coroutines.flow.onStart
+import kotlinx.coroutines.launch
 import mutnemom.android.kotlindemo.animations.transitions.TransitionsActivity
 import mutnemom.android.kotlindemo.bottomnav.BottomNavActivity
 import mutnemom.android.kotlindemo.bottomsheet.BottomSheetActivity
@@ -111,6 +126,7 @@ class MainActivity :
             btnShapeableImageView.setOnClickListener { openShapeableImageViewPage() }
             btnMonitorNetwork.setOnClickListener { openMonitorNetworkStatePage() }
             btnListAdapter.setOnClickListener { openListAdapterDemoPage() }
+            btnKotlinFlow.setOnClickListener { testKotlinFlow() }
             btnCounterFab.setOnClickListener { increaseCounterFabNumber() }
             btnTabLayout.setOnClickListener { openTabLayoutDemoPage() }
             btnDataFile.setOnClickListener { openDataAndFileDemoPage() }
@@ -211,6 +227,44 @@ class MainActivity :
         Intent(this, LocationDemoActivity::class.java)
             .apply { startActivity(this) }
     }
+
+    private fun testKotlinFlow() {
+        CoroutineScope(Dispatchers.IO).launch {
+            createFlowWithEmit()
+                .onStart { Log.e("tt", "-> start flow with emit()") }
+                .catch { error -> Log.e("tt", "-> emit() error: $error") }
+                .onCompletion { error -> Log.e("tt", "-> emit() complete: ${error == null}") }
+                .collectIndexed { index, value -> Log.e("tt", "-> with emit(): $index, $value") }
+
+            val job = createFlowWithAsFlow()
+                .onEach { Log.e("tt", "-> with asFlow(): $it") }
+                .launchIn(this)
+
+            delay(1_000L)
+            job.cancel()
+
+            createFlowWithFlowOf()
+                .collect { Log.e("tt", "-> with flowOf(): $it") }
+        }
+    }
+
+    private fun createFlowWithEmit() = flow {
+        for (i in 1..3) {
+            delay(299L)
+            emit(i)
+        }
+    }
+
+    private fun createFlowWithAsFlow(): Flow<Int> =
+        listOf(6, 7, 8)
+            .asFlow()
+            .onEach { delay(299L) }
+//            .flowOn(Dispatchers.IO)
+
+    private fun createFlowWithFlowOf(): Flow<Int> =
+        flowOf(9, 10, 11)
+            .onEach { delay(299L) }
+//            .flowOn(Dispatchers.IO)
 
     private fun openTabLayoutDemoPage() {
         Intent(this, TabLayoutDemoActivity::class.java)
