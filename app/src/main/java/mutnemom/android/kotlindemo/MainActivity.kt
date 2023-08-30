@@ -22,6 +22,7 @@ import mutnemom.android.kotlindemo.fragments.AboutFragmentActivity
 import mutnemom.android.kotlindemo.gesture.GestureActivity
 import mutnemom.android.kotlindemo.image.CoilActivity
 import mutnemom.android.kotlindemo.image.ShapeableImageViewActivity
+import mutnemom.android.kotlindemo.location.LocationDemoActivity
 import mutnemom.android.kotlindemo.model.DownloadModel
 import mutnemom.android.kotlindemo.notification.NotificationActivity
 import mutnemom.android.kotlindemo.recyclerview.ListAdapterDemoActivity
@@ -112,6 +113,7 @@ class MainActivity :
             btnDataFile.setOnClickListener { openDataAndFileDemoPage() }
             btnLocalize.setOnClickListener { openPerAppLanguagePage() }
             btnDebounce.setOnClickListener { openDebouncePage() }
+            btnLocation.setOnClickListener { openLocationDemoPage() }
         }
     }
 
@@ -199,6 +201,11 @@ class MainActivity :
 
     private fun openDebouncePage() {
         Intent(this, DebounceClickActivity::class.java)
+            .apply { startActivity(this) }
+    }
+
+    private fun openLocationDemoPage() {
+        Intent(this, LocationDemoActivity::class.java)
             .apply { startActivity(this) }
     }
 

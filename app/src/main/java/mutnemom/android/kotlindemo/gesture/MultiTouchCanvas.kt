@@ -21,9 +21,9 @@ class MultiTouchCanvas(context: Context) : View(context) {
         paint.strokeWidth = 5f
     }
 
-    override fun onDraw(canvas: Canvas?) {
+    override fun onDraw(canvas: Canvas) {
         pointerIdMapToPath.forEach { (_, path) ->
-            canvas?.drawPath(path, paint)
+            canvas.drawPath(path, paint)
         }
     }
 

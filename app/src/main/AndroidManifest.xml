@@ -6,6 +6,12 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
+    <!-- Always include this permission if your app use location services. -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <!-- Include only if your app benefits from precise location access. -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
     <!-- request permission -->
     <uses-permission android:name="android.permission.CAMERA" />
 
@@ -15,6 +21,9 @@
         android:required="false" />
     <uses-feature
         android:name="android.hardware.camera.autofocus"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.location"
         android:required="false" />
 
     <application
@@ -36,6 +45,8 @@
 
         <activity android:name=".image.ShapeableImageViewActivity" />
         <activity android:name=".image.CoilActivity" />
+
+        <activity android:name=".location.LocationDemoActivity" />
 
         <activity android:name=".storage.DataAndFileDemoActivity" />
         <activity android:name=".storage.MediaStoreActivity" />

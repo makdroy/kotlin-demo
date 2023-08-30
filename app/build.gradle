@@ -13,14 +13,14 @@ java {
 
 android {
     namespace 'mutnemom.android.kotlindemo'
-    compileSdk 33
+    compileSdk 34
 
     defaultConfig {
         applicationId "mutnemom.android.kotlindemo"
         minSdk 21
-        targetSdk 33
+        targetSdk 34
         versionCode 1
-        versionName "1.1.0"
+        versionName "1.2.0"
         resourceConfigurations += ["th"]
 
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
@@ -67,11 +67,16 @@ dependencies {
     implementation "androidx.gridlayout:gridlayout:1.0.0"
     implementation "androidx.appcompat:appcompat:1.6.1"
     implementation "androidx.core:core-ktx:1.10.1"
+
+    // material design
     implementation "com.google.android.material:material:1.9.0"
 
+    // gms location
+    implementation "com.google.android.gms:play-services-location:21.0.1"
+
     // Bottom Navigation
-    implementation 'androidx.navigation:navigation-fragment-ktx:2.6.0'
-    implementation 'androidx.navigation:navigation-ui-ktx:2.6.0'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.7.1'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.7.1'
 
     // lifecycle-viewmodel-ktx: for using CoroutineScope ViewModel extension
     androidTestImplementation "androidx.arch.core:core-testing:2.2.0"
