@@ -217,6 +217,14 @@
             android:textAllCaps="false"
             tools:ignore="HardcodedText" />
 
+        <Button
+            android:id="@+id/btnSmsRetriever"
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:text="SMS"
+            android:textAllCaps="false"
+            tools:ignore="HardcodedText" />
+
         <mutnemom.android.kotlindemo.custom.CounterFab
             android:id="@+id/btnCounterFab"
             android:layout_width="wrap_content"

@@ -74,6 +74,10 @@ dependencies {
     // gms location
     implementation "com.google.android.gms:play-services-location:21.0.1"
 
+    // for sms retriever
+    implementation 'com.google.android.gms:play-services-auth:20.7.0'
+    implementation 'com.google.android.gms:play-services-auth-api-phone:18.0.1'
+
     // Bottom Navigation
     implementation 'androidx.navigation:navigation-fragment-ktx:2.7.1'
     implementation 'androidx.navigation:navigation-ui-ktx:2.7.1'

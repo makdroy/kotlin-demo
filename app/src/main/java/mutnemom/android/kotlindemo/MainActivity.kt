@@ -110,6 +110,7 @@ class MainActivity :
         with(binding) {
             btnShapeableImageView.setOnClickListener { openShapeableImageViewPage() }
             btnMonitorNetwork.setOnClickListener { openMonitorNetworkStatePage() }
+            btnSmsRetriever.setOnClickListener { openSmsRetrieverDemoPage() }
             btnListAdapter.setOnClickListener { openListAdapterDemoPage() }
             btnCounterFab.setOnClickListener { increaseCounterFabNumber() }
             btnTabLayout.setOnClickListener { openTabLayoutDemoPage() }
@@ -214,6 +215,11 @@ class MainActivity :
 
     private fun openTabLayoutDemoPage() {
         Intent(this, TabLayoutDemoActivity::class.java)
+            .apply { startActivity(this) }
+    }
+
+    private fun openSmsRetrieverDemoPage() {
+        Intent(this, SmsRetrieverDemoActivity::class.java)
             .apply { startActivity(this) }
     }
 
