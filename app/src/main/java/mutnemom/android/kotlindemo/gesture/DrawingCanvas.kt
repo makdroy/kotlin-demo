@@ -21,8 +21,8 @@ class DrawingCanvas(context: Context): View(context) {
         paint.strokeWidth = 5f
     }
 
-    override fun onDraw(canvas: Canvas?) {
-        canvas?.drawPath(path, paint)
+    override fun onDraw(canvas: Canvas) {
+        canvas.drawPath(path, paint)
     }
 
     @SuppressLint("ClickableViewAccessibility")

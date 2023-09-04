@@ -16,7 +16,6 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import mutnemom.android.kotlindemo.BuildConfig
 import mutnemom.android.kotlindemo.R
 import mutnemom.android.kotlindemo.extensions.requestPermission
 import mutnemom.android.kotlindemo.extensions.toast
@@ -67,7 +66,7 @@ class ScreenshotActivity : AppCompatActivity() {
         return grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED
     }
 
-    @Suppress("deprecation")
+    @Suppress("BlockingMethodInNonBlockingContext")
     private fun takeScreenshot() = CoroutineScope(Dispatchers.IO).launch {
         val appName = resources.getString(R.string.app_name)
         val view = window.decorView.rootView
@@ -104,21 +103,26 @@ class ScreenshotActivity : AppCompatActivity() {
             }
 
         } catch (e: Throwable) {
-            if (BuildConfig.DEBUG) e.printStackTrace()
+            e.printStackTrace()
         }
     }
 
     private suspend fun saveScreenshot(bitmap: Bitmap, ops: OutputStream?, filePath: String?) {
-        filePath?.let {
-            try {
-                val mime = arrayOf("image/png")
-                bitmap.compress(Bitmap.CompressFormat.PNG, 70, ops)
-                withContext(Dispatchers.Main) { toast("บันทึกหน้าจอแล้ว") }
-                MediaScannerConnection.scanFile(this, arrayOf(filePath), mime, null)
-            } catch (e: Throwable) {
-                if (BuildConfig.DEBUG) e.printStackTrace()
+        ops ?: return
+        filePath
+            ?.let {
+                try {
+                    val mime = arrayOf("image/png")
+                    bitmap.compress(Bitmap.CompressFormat.PNG, 70, ops)
+                    withContext(Dispatchers.Main) { toast("บันทึกหน้าจอแล้ว") }
+                    MediaScannerConnection
+                        .scanFile(this, arrayOf(filePath), mime, null)
+
+                } catch (e: Throwable) {
+                    e.printStackTrace()
+                }
             }
-        } ?: run { Log.e(ScreenshotActivity::class.java.simpleName, "-> file path not found") }
+            ?: run {Log.e(this.javaClass.simpleName, "-> file path not found") }
     }
 
 }
