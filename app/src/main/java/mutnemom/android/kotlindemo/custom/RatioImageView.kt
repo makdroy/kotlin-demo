@@ -2,7 +2,6 @@ package mutnemom.android.kotlindemo.custom
 
 import android.content.Context
 import android.util.AttributeSet
-import androidx.annotation.Nullable
 import androidx.appcompat.widget.AppCompatImageView
 import mutnemom.android.kotlindemo.R
 
@@ -17,13 +16,12 @@ class RatioImageView : AppCompatImageView {
         private const val PORTRAIT = 0
     }
 
-    var imageOrientation: Int? = 0
-    var imageRatio: Int? = 0
-
+    private var imageOrientation: Int? = 0
+    private var imageRatio: Int? = 0
 
     constructor(context: Context) : super(context)
-    constructor(context: Context, @Nullable attrs: AttributeSet) : this(context, attrs, 0)
-    constructor(context: Context, @Nullable attrs: AttributeSet, defaultStyleAttr: Int)
+    constructor(context: Context, attrs: AttributeSet) : this(context, attrs, 0)
+    constructor(context: Context, attrs: AttributeSet, defaultStyleAttr: Int)
             : super(context, attrs, defaultStyleAttr) {
 
         val typedArray = context.obtainStyledAttributes(attrs, R.styleable.RatioImageView)

@@ -4,6 +4,7 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
+import android.os.Build
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
@@ -11,7 +12,6 @@ import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import mutnemom.android.kotlindemo.animations.transitions.TransitionsActivity
 import mutnemom.android.kotlindemo.bottomnav.BottomNavActivity
 import mutnemom.android.kotlindemo.bottomsheet.BottomSheetActivity
-import mutnemom.android.kotlindemo.coil.CoilActivity
 import mutnemom.android.kotlindemo.custom.CustomViewActivity
 import mutnemom.android.kotlindemo.databinding.ActivityMainBinding
 import mutnemom.android.kotlindemo.datetime.DateTimeActivity
@@ -20,12 +20,19 @@ import mutnemom.android.kotlindemo.draggable.DragViewActivity
 import mutnemom.android.kotlindemo.encrypt.AES256Activity
 import mutnemom.android.kotlindemo.fragments.AboutFragmentActivity
 import mutnemom.android.kotlindemo.gesture.GestureActivity
+import mutnemom.android.kotlindemo.image.CoilActivity
+import mutnemom.android.kotlindemo.image.ShapeableImageViewActivity
+import mutnemom.android.kotlindemo.location.LocationDemoActivity
 import mutnemom.android.kotlindemo.model.DownloadModel
 import mutnemom.android.kotlindemo.notification.NotificationActivity
+import mutnemom.android.kotlindemo.recyclerview.ListAdapterDemoActivity
+import mutnemom.android.kotlindemo.recyclerview.RecyclerViewActivity
 import mutnemom.android.kotlindemo.room.RoomCoroutinesActivity
 import mutnemom.android.kotlindemo.screenshot.ScreenshotActivity
 import mutnemom.android.kotlindemo.search.SearchActivity
 import mutnemom.android.kotlindemo.services.DownloadFileService
+import mutnemom.android.kotlindemo.storage.DataAndFileDemoActivity
+import mutnemom.android.kotlindemo.storage.MediaStoreActivity
 import mutnemom.android.kotlindemo.toggle.SwitchActivity
 import mutnemom.android.kotlindemo.tts.TextToSpeechActivity
 
@@ -40,7 +47,14 @@ class MainActivity :
             intent?.also {
                 if (it.action == "message_progress") {
                     val downloadModel =
-                        intent.getParcelableExtra<DownloadModel>("download") ?: return
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                            intent.getParcelableExtra("download", DownloadModel::class.java)
+                        } else {
+                            @Suppress("DEPRECATION")
+                            intent.getParcelableExtra("download")
+                        }
+
+                    downloadModel ?: return@also
 
                     binding.progressDownload.progress = downloadModel.progress
                     if (downloadModel.progress == 100) {
@@ -88,8 +102,19 @@ class MainActivity :
 
         binding.btnFragmentChapter.setOnClickListener { openFragmentChapterPage() }
         binding.btnRoomCoroutines.setOnClickListener { openRoomCoroutinesPage() }
+        binding.btnMediaStore.setOnClickListener { openMediaStorePage() }
         binding.btnDragView.setOnClickListener { openDragViewPage() }
         binding.btnTts.setOnClickListener { openTtsPage() }
+
+        with(binding) {
+            btnShapeableImageView.setOnClickListener { openShapeableImageViewPage() }
+            btnMonitorNetwork.setOnClickListener { openMonitorNetworkStatePage() }
+            btnListAdapter.setOnClickListener { openListAdapterDemoPage() }
+            btnDataFile.setOnClickListener { openDataAndFileDemoPage() }
+            btnLocalize.setOnClickListener { openPerAppLanguagePage() }
+            btnDebounce.setOnClickListener { openDebouncePage() }
+            btnLocation.setOnClickListener { openLocationDemoPage() }
+        }
     }
 
     override fun onClick(v: View) {
@@ -141,6 +166,46 @@ class MainActivity :
 
     private fun openRoomCoroutinesPage() {
         Intent(this, RoomCoroutinesActivity::class.java)
+            .apply { startActivity(this) }
+    }
+
+    private fun openMediaStorePage() {
+        Intent(this, MediaStoreActivity::class.java)
+            .apply { startActivity(this) }
+    }
+
+    private fun openMonitorNetworkStatePage() {
+        Intent(this, NetworkStateActivity::class.java)
+            .apply { startActivity(this) }
+    }
+
+    private fun openShapeableImageViewPage() {
+        Intent(this, ShapeableImageViewActivity::class.java)
+            .apply { startActivity(this) }
+    }
+
+    private fun openListAdapterDemoPage() {
+        Intent(this, ListAdapterDemoActivity::class.java)
+            .apply { startActivity(this) }
+    }
+
+    private fun openDataAndFileDemoPage() {
+        Intent(this, DataAndFileDemoActivity::class.java)
+            .apply { startActivity(this) }
+    }
+
+    private fun openPerAppLanguagePage() {
+        Intent(this, PerAppLanguageActivity::class.java)
+            .apply { startActivity(this) }
+    }
+
+    private fun openDebouncePage() {
+        Intent(this, DebounceClickActivity::class.java)
+            .apply { startActivity(this) }
+    }
+
+    private fun openLocationDemoPage() {
+        Intent(this, LocationDemoActivity::class.java)
             .apply { startActivity(this) }
     }
 

@@ -150,6 +150,65 @@
             android:layout_height="56dp"
             android:text="@string/button_animate_progress_bar" />
 
+        <Button
+            android:id="@+id/btnDataFile"
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:text="Data and File"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/btnMediaStore"
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:text="MediaStore Api"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/btnMonitorNetwork"
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:text="Monitor Internet"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/btnListAdapter"
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:text="List Adapter"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/btnLocalize"
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:text="Localize"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/btnDebounce"
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:text="Debounce OnClick"
+            android:textAllCaps="false"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/btnLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:text="Location"
+            android:textAllCaps="false"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/btnShapeableImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:text="MDC Shapeable Image View"
+            android:textAllCaps="false"
+            tools:ignore="HardcodedText" />
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

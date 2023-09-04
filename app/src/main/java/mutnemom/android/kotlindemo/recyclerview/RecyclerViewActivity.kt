@@ -1,8 +1,9 @@
-package mutnemom.android.kotlindemo
+package mutnemom.android.kotlindemo.recyclerview
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import mutnemom.android.kotlindemo.ProductsAdapter
 import mutnemom.android.kotlindemo.databinding.ActivityRecyclerViewBinding
 import mutnemom.android.kotlindemo.model.Product
 

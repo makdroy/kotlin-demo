@@ -1,4 +1,4 @@
-package mutnemom.android.kotlindemo.coil
+package mutnemom.android.kotlindemo.image
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

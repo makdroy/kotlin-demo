@@ -1,85 +1,165 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollRoot"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="@dimen/margin_default"
-    android:orientation="vertical"
+    android:overScrollMode="never"
+    android:padding="@dimen/padding_default"
+    android:scrollbars="none"
     tools:context=".custom.CustomViewActivity">
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_small"
-        android:text="@string/txt_ratio_image_portrait_ratio_image_view_2_3" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_default"
-        android:layout_marginBottom="@dimen/margin_default"
-        android:orientation="horizontal"
-        android:weightSum="4">
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
+            android:text="@string/txt_ratio_image_portrait_ratio_image_view_2_3" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_default"
+            android:layout_marginBottom="@dimen/margin_default"
+            android:orientation="horizontal"
+            android:weightSum="4">
+
+            <mutnemom.android.kotlindemo.custom.RatioImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_small"
+                android:layout_weight="1"
+                android:background="@color/colorPrimary"
+                app:imageOrientation="portrait"
+                app:imageRatio="rectangle" />
+
+            <mutnemom.android.kotlindemo.custom.RatioImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_small"
+                android:layout_weight="1"
+                android:background="@color/colorPrimary"
+                app:imageOrientation="portrait"
+                app:imageRatio="rectangle" />
+
+            <mutnemom.android.kotlindemo.custom.RatioImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_small"
+                android:layout_weight="1"
+                android:background="@color/colorPrimary"
+                app:imageOrientation="portrait"
+                app:imageRatio="rectangle" />
+
+            <mutnemom.android.kotlindemo.custom.RatioImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/colorPrimary"
+                app:imageOrientation="portrait"
+                app:imageRatio="rectangle" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_large"
+            android:text="@string/txt_ratio_image_landscape_ratio_image_view_2_3" />
 
         <mutnemom.android.kotlindemo.custom.RatioImageView
-            android:layout_width="0dp"
+            android:layout_width="160dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_default"
             android:layout_marginEnd="@dimen/margin_small"
-            android:layout_weight="1"
+            android:layout_marginBottom="@dimen/margin_small"
             android:background="@color/colorPrimary"
-            app:imageOrientation="portrait"
+            app:imageOrientation="landscape"
             app:imageRatio="rectangle" />
 
         <mutnemom.android.kotlindemo.custom.RatioImageView
-            android:layout_width="0dp"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/margin_small"
-            android:layout_weight="1"
             android:background="@color/colorPrimary"
-            app:imageOrientation="portrait"
+            app:imageOrientation="landscape"
             app:imageRatio="rectangle" />
 
-        <mutnemom.android.kotlindemo.custom.RatioImageView
-            android:layout_width="0dp"
+        <TextView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/margin_small"
-            android:layout_weight="1"
-            android:background="@color/colorPrimary"
-            app:imageOrientation="portrait"
-            app:imageRatio="rectangle" />
+            android:layout_marginTop="32dp"
+            android:text="-> Expandable TextView without ellipsis"
+            tools:ignore="HardcodedText" />
 
-        <mutnemom.android.kotlindemo.custom.RatioImageView
-            android:layout_width="0dp"
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/expandableTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_default"
+                android:background="#EAE4E3"
+                android:foreground="?attr/selectableItemBackground"
+                android:padding="@dimen/padding_small"
+                android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/tvDummy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_default"
+                android:padding="@dimen/padding_small"
+                android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+                tools:ellipsize="end"
+                tools:maxLines="3" />
+
+        </FrameLayout>
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switchShortText"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@color/colorPrimary"
-            app:imageOrientation="portrait"
-            app:imageRatio="rectangle" />
+            android:layout_marginTop="@dimen/margin_default"
+            android:text="short text"
+            app:switchPadding="@dimen/padding_default"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="-> Expandable TextView + ellipsis"
+            tools:ignore="HardcodedText" />
+
+        <mutnemom.android.kotlindemo.custom.ExpandableTextView
+            android:id="@+id/tvCustomExpandable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_default"
+            android:background="#EAE4E3"
+            android:foreground="?attr/selectableItemBackground"
+            android:maxLines="3"
+            android:padding="@dimen/padding_small"
+            android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+            tools:ignore="HardcodedText" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switchShortText2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_default"
+            android:layout_marginBottom="100dp"
+            android:text="short text"
+            app:switchPadding="@dimen/padding_default"
+            tools:ignore="HardcodedText" />
 
     </LinearLayout>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_large"
-        android:text="@string/txt_ratio_image_landscape_ratio_image_view_2_3" />
-
-    <mutnemom.android.kotlindemo.custom.RatioImageView
-        android:layout_width="160dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_default"
-        android:layout_marginEnd="@dimen/margin_small"
-        android:layout_marginBottom="@dimen/margin_small"
-        android:background="@color/colorPrimary"
-        app:imageOrientation="landscape"
-        app:imageRatio="rectangle" />
-
-    <mutnemom.android.kotlindemo.custom.RatioImageView
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
-        app:imageOrientation="landscape"
-        app:imageRatio="rectangle" />
-
-</LinearLayout>
+</androidx.core.widget.NestedScrollView>

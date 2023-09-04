@@ -11,19 +11,19 @@ interface MemberDao {
     fun getMembers(): LiveData<List<Member>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertMember(member: Member)
+    fun insertMember(member: Member)
 
     @Update
-    suspend fun updateMember(member: Member)
+    fun updateMember(member: Member)
 
     @Delete
-    suspend fun deleteMember(member: Member)
+    fun deleteMember(member: Member)
 
     @Query("DELETE FROM members")
-    suspend fun deleteMembers()
+    fun deleteMembers()
 
     @Transaction
-    suspend fun setLoggedInMember(loggedInMember: Member) {
+    fun setLoggedInMember(loggedInMember: Member) {
         deleteMember(loggedInMember)
         insertMember(loggedInMember)
     }

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RadioGroup
+        android:id="@+id/radioGroup2Item"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/margin_default"
+        android:background="@drawable/toggle_switch_background_outline"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/radioSection1"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            android:layout_weight="1"
+            android:background="@drawable/toggle_switch_background_selector"
+            android:button="@null"
+            android:checked="true"
+            android:gravity="center"
+            android:paddingTop="@dimen/padding_small"
+            android:paddingBottom="@dimen/padding_small"
+            android:text="Section 1"
+            tools:ignore="HardcodedText" />
+
+        <RadioButton
+            android:id="@+id/radioSection2"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginBottom="2dp"
+            android:layout_weight="1"
+            android:background="@drawable/toggle_switch_background_selector"
+            android:button="@null"
+            android:gravity="center"
+            android:paddingTop="@dimen/padding_small"
+            android:paddingBottom="@dimen/padding_small"
+            android:text="Section 2"
+            tools:ignore="HardcodedText" />
+
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/radioGroup3Item"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/margin_default"
+        android:background="@drawable/control_switch_background_border"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/radioItemLeft"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="3dp"
+            android:layout_weight="1"
+            android:background="@drawable/control_switch_background_selector_middle"
+            android:button="@null"
+            android:checked="true"
+            android:gravity="center"
+            android:paddingTop="@dimen/padding_small"
+            android:paddingBottom="@dimen/padding_small"
+            android:text="Left"
+            android:textColor="@color/control_switch_color_selector"
+            tools:ignore="HardcodedText"
+            tools:textColor="@android:color/black" />
+
+        <RadioButton
+            android:id="@+id/radioItemMiddle"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="3dp"
+            android:layout_weight="1"
+            android:background="@drawable/control_switch_background_selector_middle"
+            android:button="@null"
+            android:gravity="center"
+            android:paddingTop="@dimen/padding_small"
+            android:paddingBottom="@dimen/padding_small"
+            android:text="Middle"
+            android:textColor="@color/control_switch_color_selector"
+            tools:ignore="HardcodedText"
+            tools:textColor="@android:color/black" />
+
+        <RadioButton
+            android:id="@+id/radioItemRight"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="3dp"
+            android:layout_marginBottom="3dp"
+            android:layout_weight="1"
+            android:background="@drawable/control_switch_background_selector"
+            android:button="@null"
+            android:gravity="center"
+            android:paddingTop="@dimen/padding_small"
+            android:paddingBottom="@dimen/padding_small"
+            android:text="Right"
+            android:textColor="@color/control_switch_color_selector"
+            tools:ignore="HardcodedText"
+            tools:textColor="@android:color/black" />
+
+    </RadioGroup>
+
+</LinearLayout>

@@ -29,22 +29,20 @@ class SearchActivity : AppCompatActivity() {
         setupRecyclerView()
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menu?.apply {
-            menuInflater.inflate(R.menu.search_menu, this)
-            val item = findItem(R.id.action_search)
-            val searchView = item.actionView as? SearchView
-            searchView?.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-                override fun onQueryTextChange(newText: String?): Boolean {
-                    searchAdapter.filter.filter(newText)
-                    return false
-                }
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.search_menu, menu)
+        val item = menu.findItem(R.id.action_search)
+        val searchView = item.actionView as? SearchView
+        searchView?.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextChange(newText: String?): Boolean {
+                searchAdapter.filter.filter(newText)
+                return false
+            }
 
-                override fun onQueryTextSubmit(query: String?): Boolean {
-                    return false
-                }
-            })
-        }
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                return false
+            }
+        })
 
         return super.onCreateOptionsMenu(menu)
     }

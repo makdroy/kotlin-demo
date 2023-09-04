@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="false"
+    android:orientation="vertical"
+    android:padding="@dimen/padding_default"
+    tools:context=".storage.DataAndFileDemoActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_small"
+        android:text="Storage Access Framework"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/btnCreateFileSAF"
+        android:layout_width="200dp"
+        android:layout_height="56dp"
+        android:text="Create File"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/btnOpenFileSAF"
+        android:layout_width="200dp"
+        android:layout_height="56dp"
+        android:text="Open File"
+        tools:ignore="HardcodedText" />
+
+</LinearLayout>
