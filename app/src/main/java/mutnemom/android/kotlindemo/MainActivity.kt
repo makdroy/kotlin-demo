@@ -112,6 +112,7 @@ class MainActivity :
             btnMonitorNetwork.setOnClickListener { openMonitorNetworkStatePage() }
             btnListAdapter.setOnClickListener { openListAdapterDemoPage() }
             btnCounterFab.setOnClickListener { increaseCounterFabNumber() }
+            btnTabLayout.setOnClickListener { openTabLayoutDemoPage() }
             btnDataFile.setOnClickListener { openDataAndFileDemoPage() }
             btnLocalize.setOnClickListener { openPerAppLanguagePage() }
             btnDebounce.setOnClickListener { openDebouncePage() }
@@ -208,6 +209,11 @@ class MainActivity :
 
     private fun openLocationDemoPage() {
         Intent(this, LocationDemoActivity::class.java)
+            .apply { startActivity(this) }
+    }
+
+    private fun openTabLayoutDemoPage() {
+        Intent(this, TabLayoutDemoActivity::class.java)
             .apply { startActivity(this) }
     }
 
