@@ -9,6 +9,9 @@ import androidx.navigation.ui.setupWithNavController
 import mutnemom.android.kotlindemo.R
 import mutnemom.android.kotlindemo.databinding.ActivityBottomNavBinding
 
+/**
+ * See [Medium](https://proandroiddev.com/fragments-swapping-with-bottom-bar-ffbd265bd742)
+ */
 class BottomNavActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityBottomNavBinding
