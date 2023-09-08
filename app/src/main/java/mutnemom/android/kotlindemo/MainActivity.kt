@@ -12,6 +12,7 @@ import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import mutnemom.android.kotlindemo.animations.transitions.TransitionsActivity
 import mutnemom.android.kotlindemo.bottomnav.BottomNavActivity
 import mutnemom.android.kotlindemo.bottomsheet.BottomSheetActivity
+import mutnemom.android.kotlindemo.custom.CustomShapeDemoActivity
 import mutnemom.android.kotlindemo.custom.CustomViewActivity
 import mutnemom.android.kotlindemo.databinding.ActivityMainBinding
 import mutnemom.android.kotlindemo.datetime.DateTimeActivity
@@ -110,6 +111,7 @@ class MainActivity :
         with(binding) {
             btnShapeableImageView.setOnClickListener { openShapeableImageViewPage() }
             btnMonitorNetwork.setOnClickListener { openMonitorNetworkStatePage() }
+            btnCustomShape.setOnClickListener { openCustomShapeDemoPage() }
             btnListAdapter.setOnClickListener { openListAdapterDemoPage() }
             btnCounterFab.setOnClickListener { increaseCounterFabNumber() }
             btnTabLayout.setOnClickListener { openTabLayoutDemoPage() }
@@ -226,6 +228,11 @@ class MainActivity :
         }
 
         toast("count: ${binding.btnCounterFab.count}")
+    }
+
+    private fun openCustomShapeDemoPage() {
+        Intent(this, CustomShapeDemoActivity::class.java)
+            .apply { startActivity(this) }
     }
 
 }

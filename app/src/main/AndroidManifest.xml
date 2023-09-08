@@ -51,6 +51,9 @@
         <activity android:name=".storage.DataAndFileDemoActivity" />
         <activity android:name=".storage.MediaStoreActivity" />
 
+        <activity android:name=".custom.CustomShapeDemoActivity" />
+        <activity android:name=".custom.CustomViewActivity" />
+
         <activity android:name=".notification.NotificationActivity" />
         <activity android:name=".bottomsheet.BottomSheetActivity" />
         <activity android:name=".fragments.AboutFragmentActivity" />
@@ -58,7 +61,6 @@
         <activity android:name=".bottomnav.BottomNavActivity" />
         <activity android:name=".room.RoomCoroutinesActivity" />
         <activity android:name=".draggable.DragViewActivity" />
-        <activity android:name=".custom.CustomViewActivity" />
         <activity android:name=".datetime.DateTimeActivity" />
         <activity android:name=".toggle.SwitchIconActivity" />
         <activity android:name=".tts.TextToSpeechActivity" />
