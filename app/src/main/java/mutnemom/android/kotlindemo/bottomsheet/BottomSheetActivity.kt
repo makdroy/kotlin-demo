@@ -18,8 +18,18 @@ class BottomSheetActivity : AppCompatActivity() {
     }
 
     private fun setEvent() {
-        binding.btnToggle.setOnClickListener {
-            KDBottomSheet().show(supportFragmentManager, "KDBottomSheet")
+        binding.apply {
+            btnToggle.setOnClickListener {
+                KDBottomSheet().show(supportFragmentManager, "KDBottomSheet")
+            }
+
+            btnSheetWithButtonAnimate.setOnClickListener {
+                OnTopButtonBottomSheet().show(supportFragmentManager, "OnTopButtonBottomSheet")
+            }
+
+            btnSheetWithButtonMargin.setOnClickListener {
+                OnTopButtonBottomSheet2().show(supportFragmentManager, "OnTopButtonBottomSheet2")
+            }
         }
     }
 

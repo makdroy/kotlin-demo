@@ -14,4 +14,20 @@
         android:text="Toggle Sheet"
         tools:ignore="HardcodedText" />
 
+    <Button
+        android:id="@+id/btnSheetWithButtonAnimate"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_margin="@dimen/margin_large"
+        android:text="sheet with on top button animate"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/btnSheetWithButtonMargin"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_margin="@dimen/margin_large"
+        android:text="sheet with on top button margin"
+        tools:ignore="HardcodedText" />
+
 </LinearLayout>
