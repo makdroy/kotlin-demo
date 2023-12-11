@@ -64,12 +64,13 @@ class WebSocketActivity : AppCompatActivity() {
             }
 
             override fun onFailure(webSocket: WebSocket, t: Throwable, response: Response?) {
-                Log.e(LOG_TAG, "-> failure")
+                Log.e(LOG_TAG, "-> failure: ${response?.message}")
+                t.printStackTrace()
                 super.onFailure(webSocket, t, response)
             }
         }
 
         clientCoinPrice.newWebSocket(request, webSocketListenerCoinPrice)
-        clientCoinPrice.dispatcher().executorService().shutdown()
+        clientCoinPrice.dispatcher.executorService.shutdown()
     }
 }
