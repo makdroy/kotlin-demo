@@ -15,7 +15,6 @@ import android.view.animation.OvershootInterpolator
 import androidx.annotation.IntRange
 import androidx.core.graphics.ColorUtils
 import androidx.core.os.bundleOf
-import androidx.core.view.ViewCompat
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.stateful.ExtendableSavedState
 import mutnemom.android.kotlindemo.R
@@ -77,7 +76,7 @@ open class CounterFab @JvmOverloads constructor(
             field = maxOf(value, 0)
 
             updateCountText()
-            if (ViewCompat.isLaidOut(this)) {
+            if (isLaidOut) {
                 startAnimation()
             }
         }

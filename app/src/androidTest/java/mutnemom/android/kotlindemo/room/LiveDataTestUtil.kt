@@ -11,8 +11,8 @@ fun <T> LiveData<T>.waitForValue(): T {
     val data = arrayOfNulls<Any>(1)
     val latch = CountDownLatch(1)
     val observer = object : Observer<T> {
-        override fun onChanged(t: T?) {
-            data[0] = t
+        override fun onChanged(value: T) {
+            data[0] = value
             latch.countDown()
             this@waitForValue.removeObserver(this)
         }
