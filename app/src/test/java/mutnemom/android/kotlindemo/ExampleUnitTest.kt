@@ -1,7 +1,7 @@
 package mutnemom.android.kotlindemo
 
-import org.junit.Assert.assertEquals
-import org.junit.Test
+import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Test
 
 class ExampleUnitTest {
 
@@ -9,5 +9,4 @@ class ExampleUnitTest {
     fun addition_isCorrect() {
         assertEquals(4, 2 + 2)
     }
-
 }

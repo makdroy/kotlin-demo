@@ -42,8 +42,6 @@ open class CounterFab @JvmOverloads constructor(
         private const val MINI_MAX_COUNT_TEXT = "9+"
         private const val MINI_MAX_COUNT = 9
 
-        private val MASK_COLOR = Color.parseColor("#33000000")
-
         private const val RIGHT_BOTTOM_POSITION = 3
         private const val RIGHT_TOP_POSITION = 0
 
@@ -275,6 +273,8 @@ open class CounterFab @JvmOverloads constructor(
         }
     }.applyColorMask()
 
-    private fun Int.applyColorMask() = ColorUtils.compositeColors(MASK_COLOR, this)
-
+    private fun Int.applyColorMask(): Int {
+        val colorMask = Color.parseColor("#33000000")
+        return ColorUtils.compositeColors(colorMask, this)
+    }
 }

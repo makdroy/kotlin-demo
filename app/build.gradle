@@ -34,6 +34,12 @@ android {
         jvmTarget = JavaVersion.VERSION_11
     }
 
+    testOptions {
+        unitTests.all {
+            useJUnitPlatform()
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -47,6 +53,12 @@ android {
         resources {
             excludes += ['META-INF/atomicfu.kotlin_module']
         }
+    }
+}
+
+configurations {
+    configureEach {
+        exclude group: "org.slf4j", module: "slf4j-api"
     }
 }
 
@@ -106,7 +118,9 @@ dependencies {
     implementation "io.coil-kt:coil:2.2.2"
 
     // Unit test
-    testImplementation 'junit:junit:4.13.2'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.9.2'
+    testImplementation 'io.mockk:mockk:1.13.4'
+
     androidTestImplementation 'androidx.test.ext:junit:1.2.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.1'
 }
